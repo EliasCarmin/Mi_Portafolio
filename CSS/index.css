@@ -4,10 +4,11 @@ html{
     font-family: inherit   
 }
 
+/*En este codigo del cuerpo, el rango mínimo de altura se amplifica para dar mas espacio*/
 body{
     position: relative;
     padding-bottom: 150px;
-    min-height: 170vh;
+    min-height: 200vh;
 }
 /*ESTILO INTRO ANIMADA*/
 *,
