@@ -16,7 +16,7 @@
         <!--CSS-->
         <link rel="stylesheet" href="/CSS/index.css">
         <link rel="stylesheet" href="/CSS/pdf.css">
- <title>Mi Página</title>
+ <title>Currículum</title>
 </head>
 <body>
     <?php include '../BACK/Header.php'; ?>
