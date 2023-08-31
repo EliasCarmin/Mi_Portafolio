@@ -14,7 +14,7 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
      <!--CSS-->
     <link rel="stylesheet" href="/CSS/index.css">
-    
+    <link rel="stylesheet" href="/CSS/bodyindex.css">
 
     <title>Elías Jesús</title>
 </head>
@@ -38,6 +38,7 @@
 
 
     <!--Encabezado-->
+    <header>
     <nav>
         <input type="checkbox" id="check">
         <label for="check" class="checkbtn">
@@ -59,6 +60,8 @@
             <li><a href="#">CONTACTO</a></li>
         </ul>
     </nav>
+    </header>
+    
     <br>
     <br>
     <br>

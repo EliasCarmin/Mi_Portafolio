@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
         <!-- Aquí puedes colocar tus etiquetas <meta>, enlaces a hojas de estilo, scripts, etc. -->
         <meta charset="UTF-8">
