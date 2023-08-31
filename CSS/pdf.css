@@ -3,11 +3,12 @@
         padding-bottom: 150px;
         min-height: 160vh;
     }
+        
     .pdf-container {
         position: relative;
         overflow: hidden;
         width: 100%;
-        padding-top: 56.25%; /* 16:9 aspect ratio (h/w) */
+        height: 100vh; /* Altura del viewport */
     }
     .pdf {
         position: absolute;
@@ -23,4 +24,14 @@
         object-fit: contain; /* Ajusta el contenido del PDF para que esté completo */
         display: block;
         margin: 0 auto; /* Centra horizontalmente */
+    }
+
+    /* Estilos para tablet y dispositivos móviles */
+    @media (max-width: 768px) {
+        .pdf-container {
+            padding-top: 75%; /* Ajusta el aspect ratio para dispositivos más pequeños */
+        }
+        body{
+            min-height: 250vh;
+        }
     }

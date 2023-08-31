@@ -10,3 +10,9 @@ body{
     padding-bottom: 150px;
     min-height: 200vh;
 }
+@media (max-width: 768px){
+body{
+    padding-bottom: 1200px;
+    /*min-height: 500vh;*/
+}
+}

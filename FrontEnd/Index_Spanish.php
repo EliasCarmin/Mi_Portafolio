@@ -71,6 +71,25 @@
     <!--Fin de encabezado-->
 
     <!--CONTENIDO-->
+
+     <!--Sobre Mí-->
+    <div class="Sobremi">
+        <img src="/IMG/elias.jpg" alt="Tu Fotografía">
+        <div class="Sobremi-content">
+            <h2>Sobre Mí</h2>
+            <p>Hola, soy Elías.<br> 
+            Ingeniero de Sistemas en Formación en Últimos Ciclos, 
+            con Habilidad para trabajar en colaboración en equipos 
+            multidisciplinarios y pasión por el aprendizaje continuo.
+             Busco oportunidades para aplicar mis conocimientos en Ingeniería 
+             de Sistemas y adquirir experiencia laboral en un entorno desafiante, 
+             Actualmente estoy en búsqueda de mis primeras experiencias laborales relacionadas  
+             mi carrera profesional en curso.
+            </p>
+        </div>
+    </div>
+    
+    <!--Pasiones-->
     <div class="titulos_secciones">
         <h1 class="">Pasiones</h1>
     </div>

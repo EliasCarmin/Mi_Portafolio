@@ -8,7 +8,7 @@
             <img src="/IMG/prueba 1.jpeg" alt="" class="image">
         </a>
         <ul class="menu-principal">
-            <li><a href="#">Inicio</a></li>
+            <li><a href="../FrontEnd/Index_Spanish.php">Inicio</a></li>
             <li><a href="#">ACERCA DE MÍ</a></li>
             <!--submenú-->
             <ul class="sub-menu">
