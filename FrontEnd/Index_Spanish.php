@@ -73,10 +73,12 @@
     <!--CONTENIDO-->
 
      <!--Sobre Mí-->
+     <div class="titulos_secciones">
+        <h1 class="">Sobre Mí</h1>
+    </div>
     <div class="Sobremi">
         <img src="/IMG/elias.jpg" alt="Tu Fotografía">
         <div class="Sobremi-content">
-            <h2>Sobre Mí</h2>
             <p>Hola, soy Elías.<br> 
             Ingeniero de Sistemas en Formación en Últimos Ciclos, 
             con Habilidad para trabajar en colaboración en equipos 
