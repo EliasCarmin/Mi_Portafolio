@@ -14,7 +14,6 @@
      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
      <!--CSS-->
     <link rel="stylesheet" href="/CSS/index.css">
-    <link rel="stylesheet" href="/CSS/bodyindex.css">
 
     <title>Elías Jesús</title>
 </head>
@@ -116,7 +115,10 @@
         </div>
 
         <div class="columns">
+            <div data-aos="fade-left">
             <img src="/IMG/Olivia Wilson Dance Club Logo.png" alt="" class="imagenes">
+            </div>
+            
             <h2 class="titulos">Danza</h2>
             <p>
                 Danza: “La fé me hace bailar”, bailar es una de mis grandes pasiones preferidos y practicados frecuentemente, 
@@ -125,7 +127,10 @@
         </div>
 
         <div class="columns" >
+            <div data-aos="fade-left">
             <img src="/IMG/Blue Minimal Lion Technology Free Logo.png" alt="" class="imagenes">
+            </div>
+            
             <h2 class="titulos">Tecnología</h2>
             <p>
                 Tecnología: La tecnología es mi pasión sin embargo la idea de que la ésta no es aprovechada es un poco descabellante, las herramientas y conocimientos en la palma de nuestra mano en toda disposición deben usarse en favor a la sociedad; 
