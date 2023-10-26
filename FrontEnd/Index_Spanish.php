@@ -140,12 +140,40 @@
         </div>
     </div>
 
-    <div class="experience">
+    <!--Portafolio-->
+    <div class="titulos_secciones">
+        <h1 class="">PORTAFOLIO</h1>
+    </div>
 
+    <div class="experiencia">
+        <div class="item_portafolio">
+            <img src="/IMG/negro.webp" alt="">
+            <div class="item_descripcion">
+                <h3>Título</h3>
+            </div>
+        </div>
+        <div class="item_portafolio">
+             <img src="/IMG/negro.webp" alt="">
+        </div>
+        <div class="item_portafolio">
+            <img src="/IMG/negro.webp" alt="">
+        </div>
+        <div class="item_portafolio">
+            <img src="/IMG/negro.webp" alt="">
+        </div>
+        <div class="item_portafolio">
+            <img src="/IMG/negro.webp" alt="">
+        </div>
+        <div class="item_portafolio">
+            <img src="/IMG/negro.webp" alt="">
+        </div>
     </div>
   
+
+
+    <!--SKILL SETS-->
     <div class="titulos_secciones">
-        <h1 class="">Conjunto de Habilidades</h1>
+        <h1 class="">SKILL SETS</h1>
     </div>
     
     <div class="skill_set" id="skill">
