@@ -9,7 +9,7 @@
         </div> 
         <div class="texto_abajo">
             <p>Portafolio personal del estudiante de ingeniería de Sistemas Elías Carmín,
-                actualmente cursando el séptimo ciclo en la Universidad Tecnológica del
+                actualmente cursando el octavo ciclo en la Universidad Tecnológica del
                 Perú</p>
         </div>
     </div>
@@ -23,7 +23,7 @@
     <div class="box_footer">
         <h2>Contacto</h2>
         <h3><i class="fa fa-phone-square"></i> eliasjesuscarmin@gmail.com</h3>
-        <h3><i class="fa fa-envelope"></i> +51 947 788 401</h3>
+        <h3><i class="fa fa-envelope"></i> +51 956 224 010</h3>
     </div>
     <div class="box_footer">
         <h2>Redes Sociales</h2>
