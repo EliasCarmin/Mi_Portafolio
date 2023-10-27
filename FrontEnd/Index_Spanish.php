@@ -46,15 +46,15 @@
         <img src="/IMG/prueba 1.jpeg" alt="" class="image_nav">
               
         <ul class="menu-principal">
-            <li><a href="#">Inicio</a></li>
-            <li><a href="#">ACERCA DE MÍ</a></li>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="">ACERCA DE MÍ</a></li>
             <!--submenú-->
             <ul class="sub-menu">
                     <li><a href="#">Pasiones</a></li>
-                    <li><a href="#">Habilidades</a></li>
+                    <li><a href="#skill">Habilidades</a></li>
                 </ul>
             <!--submenú-->
-            <li><a href="#">EXPERIENCIA</a></li>
+            <li><a href="#experiencia">EXPERIENCIA</a></li>
             <li><a href="#">CONTACTO</a></li>
         </ul>
     </nav>
@@ -77,7 +77,7 @@
     <!--CONTENIDO-->
 
      <!--Sobre Mí-->
-     <div class="titulos_secciones">
+     <div class="titulos_secciones" id="inicio">
         <h1 class="">Sobre Mí</h1>
     </div>
     <div class="Sobremi">
@@ -95,11 +95,11 @@
     </div>
     
     <!--Pasiones-->
-    <div class="titulos_secciones">
+    <div class="titulos_secciones" id="pasion">
         <h1 class="">Pasiones</h1>
     </div>
     
-    <div class="Pasions" id="pasion">
+    <div class="Pasions">
         <div class="columns">
             <div data-aos="fade-left">
                 <img src="/IMG/Black Simple Music Studio Logo.png" alt="" class="imagenes" >
@@ -139,7 +139,7 @@
     </div>
 
     <!--Portafolio-->
-    <div class="titulos_secciones">
+    <div class="titulos_secciones" id="experiencia">
         <h1 class="">Portafolio</h1>
     </div>
 

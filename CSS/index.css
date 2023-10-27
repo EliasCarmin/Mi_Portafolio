@@ -111,15 +111,23 @@ nav ul li a{
     font-size: 22px;
 }
 
-.sub-menu{
+.menu-principal .sub-menu{
     position: absolute;
     display: none;
     list-style: none;
-    width: 1000px;
+    width: 100%;
     background-color: red;
+    padding: 0;
 }
 .menu-principal li:hover .sub-menu{
     display: block;
+}
+.menu-principal.sub-menu{
+    left: 0;
+    top: 100%;
+}
+.menu-principal li{
+    position: relative;
 }
 .sub-menu li a{
     display: block;
