@@ -83,14 +83,13 @@
     <div class="Sobremi">
         <img src="/IMG/elias.jpg" alt="Tu Fotografía">
         <div class="Sobremi-content">
-            <p>Hola, soy Elías.<br> 
-            Ingeniero de Sistemas en Formación en Últimos Ciclos, 
+            <p>Buenas, soy Elías.<br> 
+            Soy ingeniero de Sistemas en Formación en los Últimos Ciclos, 
             con Habilidad para trabajar en colaboración en equipos 
             multidisciplinarios y pasión por el aprendizaje continuo.
              Busco oportunidades para aplicar mis conocimientos en Ingeniería 
              de Sistemas y adquirir experiencia laboral en un entorno desafiante, 
-             Actualmente estoy en búsqueda de mis primeras experiencias laborales relacionadas  
-             mi carrera profesional en curso.
+             Mi pasíon por la tecnología está dirigido en el rubro de TI y Análisis de datos
             </p>
         </div>
     </div>
@@ -141,30 +140,63 @@
 
     <!--Portafolio-->
     <div class="titulos_secciones">
-        <h1 class="">PORTAFOLIO</h1>
+        <h1 class="">Portafolio</h1>
     </div>
 
     <div class="experiencia">
         <div class="item_portafolio">
+            <div class="img_experiencia">
             <img src="/IMG/negro.webp" alt="">
+            </div>
             <div class="item_descripcion">
-                <h3>Título</h3>
+                <h2>Título</h2>
+                <p>blablablalbalbalblalbalblablalbablablablablabla
+                blablablalbalbalblalbalblablalbablablablablabla
+                blablablalbalbalblalbalblablalbablablablablabla
+                blablablalbalbalblalbalblablalbablablablablabla
+                </p>
+                <a href="">Ver más...</a>
             </div>
         </div>
         <div class="item_portafolio">
-             <img src="/IMG/negro.webp" alt="">
+        <div class="img_experiencia">
+            <img src="/IMG/negro.webp" alt="">
+            </div>
+            <div class="item_descripcion">
+                <h2>Título</h2>
+            </div>
         </div>
         <div class="item_portafolio">
+        <div class="img_experiencia">
             <img src="/IMG/negro.webp" alt="">
+            </div>
+            <div class="item_descripcion">
+              <h2>Título</h2>
+            </div>
         </div>
         <div class="item_portafolio">
+        <div class="img_experiencia">
             <img src="/IMG/negro.webp" alt="">
+            </div>
+            <div class="item_descripcion">
+                <h2>Título</h2>
+            </div>
         </div>
         <div class="item_portafolio">
+        <div class="img_experiencia">
             <img src="/IMG/negro.webp" alt="">
+            </div>
+            <div class="item_descripcion">
+               <h2>Título</h2>
+            </div>
         </div>
         <div class="item_portafolio">
+        <div class="img_experiencia">
             <img src="/IMG/negro.webp" alt="">
+            </div>
+            <div class="item_descripcion">
+                <h2>Título</h2>
+            </div>
         </div>
     </div>
   
@@ -172,7 +204,7 @@
 
     <!--SKILL SETS-->
     <div class="titulos_secciones">
-        <h1 class="">SKILL SETS</h1>
+        <h1 class="">Skill Sets</h1>
     </div>
     
     <div class="skill_set" id="skill">
