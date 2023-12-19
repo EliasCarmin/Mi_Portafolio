@@ -11,7 +11,7 @@
    <!--AOS-->
    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">  
     <!--librarys-->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+     <link rel="stylesheet" href="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
      <!--CSS-->
     <link rel="stylesheet" href="/CSS/index.css">
 
@@ -47,7 +47,7 @@
               
         <ul class="menu-principal">
             <li><a href="#inicio">Inicio</a></li>
-            <li><a href="">ACERCA DE MÍ</a></li>
+            <li class="hola"><a href="">ACERCA DE MÍ</a>
             <!--submenú-->
             <ul class="sub-menu">
                     <li><a href="#">Pasiones</a></li>

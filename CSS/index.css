@@ -116,7 +116,7 @@ nav ul li a{
     display: none;
     list-style: none;
     width: 100%;
-    background-color: red;
+    background-color: #44535e;
     padding: 0;
 }
 .menu-principal li:hover .sub-menu{
