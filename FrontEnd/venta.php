@@ -23,8 +23,17 @@
 
         <div class="texto">
         <h1>Panel de Control: Llamadas de emergencia en el distrito de Ventanilla</h1>
-        <p>En el presente proyecto, se obtuvo la información de registro de llamadas de emergencias en el centro de datos abiertos del Gobierno Peruano; el objetivo principal es estudiar los datos para brindar un apoyo estadístico para las toma de desiciones a las fuerzas policiales, utilizando técnicas de análisis de datos.</p>
-        <br>
+        <h2>Descripción General:</h2><p>En el presente proyecto, se obtuvo la información de registro de llamadas de emergencias en el centro de datos abiertos del Gobierno Peruano; el objetivo principal es estudiar los datos para brindar un apoyo estadístico para las toma de desiciones a las fuerzas policiales, utilizando técnicas de análisis de datos.</p>
+        <h2>Contexto del Problema:</h2><p></p>
+        <h2>Objetivos Generales y Específicos:</h2><p>Enumera los objetivos que esperabas lograr con el proyecto.</p>
+        <h2>Tecnologías y Métodos Utilizados:</h2><ul>
+            <li>1. Excel</li>
+            <li>2. Power Bi</li>
+            <li>3. Procesos ETL</li>
+        </ul>
+        <h2>Desafíos Superados:</h2><p></p>
+        <h2>Logros Alcanzados:</h2><p></p>
+        <h2>Enlaces:</h2><p></p>
         <p>Repositorio en Git Hub:</p>
         </div>
         
