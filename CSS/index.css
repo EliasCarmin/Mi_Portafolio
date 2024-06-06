@@ -344,7 +344,7 @@ margin-bottom: 35px;
 footer{
     width: 100%;
     padding: 50px 0px;
-    background-image: url(IMG/background-footer.svg);
+    background-image: url(background-footer.svg);
     background-size: cover;
     position: absolute;
     bottom: 0;
@@ -411,13 +411,14 @@ footer{
     text-align: center;
     height: 100%;
     width: 100%;
+    align-items: center;
 }
 .item_portafolio:hover{
     background-color: #D5DBDB;
 }
 .img_experiencia img{
     width: 195px;
-    height: 195px;    
+    height: 195px;  
 }
 .img_experiencia{
     float: left;
@@ -425,9 +426,7 @@ footer{
 }
 
 .item_descripcion{
-    text-align: center;
     width: 70%;
-    float: left;
 }
 .item_descripcion h2{
     color: black;
@@ -438,6 +437,7 @@ footer{
     color: black;
     font-size: 17px;
     font-weight: 300;
+    text-align: center;
 }
 
 .item_descripcion a{
@@ -460,7 +460,7 @@ footer{
 @media (max-width: 768px){
     /*BODY*/
     body{
-        min-height: 830vh;
+        min-height: 1050vh;
     }
     /*HEADER*/
     header {
@@ -474,7 +474,7 @@ footer{
         position: fixed;
         height: 100vh;
         background: #44535e;
-        top: 105px;
+        top: 102px;
         left: -100%;
         transition: all .5s;
         font-size: 10px;
@@ -568,7 +568,7 @@ footer{
     .columns p{
         font-size: 25px;
         font-weight: 300;
-        padding-top: 50px;
+        padding-top: 60px;
         text-align: justify;
     }
     .imagenes{
@@ -616,16 +616,12 @@ footer{
 
     /*EXPERIENCIA-PORTAFOLIO*/
     .experiencia{
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
+        display: flex;
+        flex-direction: column;
         grid-gap: 10px;
         padding: 20px;
     }
     .item_portafolio {
-        display: flex;
-        flex-direction: column;
-        text-align: center;
-        
         text-align: center;
     }
     .item_portafolio:hover{
@@ -640,14 +636,19 @@ footer{
         width: 93%;
     }
     .item_descripcion{
-        text-align: center;
         flex: 1;
+        padding: 50px;
     }
     .item_descripcion h2{
+        padding-top: 100px;
         font-size: 25px;
+        text-align: center;
     }
     .item_descripcion p{
+        font-weight: 300;
+        text-align: justify;
         font-size: 22px;
+        max-width: 800px;
     }
     .item_descripcion a{
         font-size: 14px;
