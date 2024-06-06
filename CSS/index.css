@@ -237,9 +237,13 @@ nav a{
 .columns{
     text-align: center;
     padding: 80px;
+    max-width: 1000px;
 }
 .columns:hover{
     background-color: #D5DBDB;
+}
+.columns_texto{
+    flex: 1;
 }
 .titulos{
     margin: 10px 0;
@@ -250,7 +254,6 @@ nav a{
     font-weight: 300;
     text-align: justify;
     font-size: 22px;
-    max-width: 1000px;
 }
 .imagenes{
     width: 30%;
@@ -341,7 +344,7 @@ margin-bottom: 35px;
 footer{
     width: 100%;
     padding: 50px 0px;
-    background-image: url(/IMG/background-footer.svg);
+    background-image: url(IMG/background-footer.svg);
     background-size: cover;
     position: absolute;
     bottom: 0;
@@ -407,6 +410,7 @@ footer{
 .item_portafolio {
     text-align: center;
     height: 100%;
+    width: 100%;
 }
 .item_portafolio:hover{
     background-color: #D5DBDB;
@@ -458,13 +462,20 @@ footer{
     body{
         min-height: 830vh;
     }
+    /*HEADER*/
+    header {
+        
+    }
     /*MENÚ DEL HEADER*/
+    /*.menu-principal{
+        display: none;
+    }*/
     ul{
         position: fixed;
         height: 100vh;
         background: #44535e;
         top: 105px;
-        left: -50%;
+        left: -100%;
         transition: all .5s;
         font-size: 10px;
     }
@@ -486,7 +497,7 @@ footer{
         left:0;
     }
     nav{
-        width: 65%;
+        width: 85%;
     }
     .image_nav{
         padding-top: 5px;
@@ -495,14 +506,15 @@ footer{
     }
     /*animación*/
     .intro{
-        width: 72%;
+        width: 100%;
         height: 100vh;
     }
     .logo-parts{
-        bottom: 140px;
+        bottom: 220px;
         font-size: 2rem;
         padding: 0.5px;
         justify-content: left;
+        padding-bottom: 20px;
         }
     .imagen-logo{
         width: 100%;
@@ -511,12 +523,15 @@ footer{
         padding: -100px;
         }
     /*SKILL SETS*/
+    .skill_set{
+        min-width: 400px;
+    }
     .container_skills{
         width: 60%;
     }
 
     .checkbtn{
-        display: block;
+        display: block; /* Muestra el botón en dispositivos móviles */
     }
 
     .image{
@@ -541,17 +556,20 @@ footer{
      }
 
     /*Pasiones*/
+    
     .Pasions{
         justify-content: center;
         flex-direction: column;
+        max-width: 400px;
     }
     .columns{
-        width: 100%;
-        text-align: center;
+        flex-direction: column;
     }
     .columns p{
         font-size: 25px;
-        padding: 50px;
+        font-weight: 300;
+        padding-top: 50px;
+        text-align: justify;
     }
     .imagenes{
         width: 70%;
@@ -607,7 +625,8 @@ footer{
         display: flex;
         flex-direction: column;
         text-align: center;
-        height: 100%;
+        
+        text-align: center;
     }
     .item_portafolio:hover{
         background-color: #D5DBDB;
@@ -622,8 +641,7 @@ footer{
     }
     .item_descripcion{
         text-align: center;
-        width: 98%;
-        float: left;
+        flex: 1;
     }
     .item_descripcion h2{
         font-size: 25px;
