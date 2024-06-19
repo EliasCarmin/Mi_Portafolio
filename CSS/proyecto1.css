@@ -2,9 +2,75 @@
 body{
     position: relative;
     padding-bottom: 150px;
-    min-height: 250vh;
+    min-height: 130vh;
+
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 200px;
+}
+.project-container {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    /*box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);*/
+    max-width: 800px;
+    width: 100%;
 }
 
+.project-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.project-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.project-details h2 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    color: #333;
+}
+
+.tech-list, .features-list {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #555;
+}
+
+.screenshots {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.screenshots img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.project-link:hover {
+    background-color: #0056b3;
+}
 /*RESPONSIVE*/
 @media (max-width: 952px){
     .enlace{
