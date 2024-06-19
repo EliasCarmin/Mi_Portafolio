@@ -167,9 +167,6 @@ footer{
 }
 @media (max-width: 768px){
     /*HEADER*/
-    header {
-        
-    }
     /*MENÚ DEL HEADER*/
     /*.menu-principal{
         display: none;
