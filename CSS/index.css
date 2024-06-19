@@ -114,7 +114,6 @@ body{
     display: flex;
 }
 
-
 .skills{
     width: 90%;
 }
@@ -159,7 +158,7 @@ margin-bottom: 35px;
     background-image: linear-gradient(270deg, #4eb58d 0, #3ea88a 10%, #309884 20%, #26857a 30%,
      #21706c 40%, #1f5959 50%, #1e4345 60%, #1b3033 70%, #182122 80%, #131414 90%, #0c0502 100%);
 }
-
+/*------>INGLÉS<------*/
 #ingles-menu{
     animation: ingles-barra 3s forwards;
 }
@@ -168,6 +167,7 @@ margin-bottom: 35px;
         width: 30%;
     }
 }
+/*------>DATA<------*/
 #data-menu{
     animation: data-barra 3s forwards;
 }
@@ -176,15 +176,33 @@ margin-bottom: 35px;
         width: 50%;
     }
 }
+/*------>PYTHON<------*/
+#Python-menu{
+    animation: python-barra 3s forwards;
+}
+@keyframes python-barra{
+    100%{
+        width: 20%;
+    }
+}
+/*------>JAVA<------*/
 #java-menu{
     animation: java-barra 3s forwards;
 }
 @keyframes java-barra{
     100%{
-        width: 90%;
+        width: 30%;
     }
 }
-
+/*------>POWERBI<------*/
+#PowerBi-menu{
+    animation: PowerBi-barra 3s forwards;
+}
+@keyframes PowerBi-barra{
+    100%{
+        width: 50%;
+    }
+}
 .imagen-skill{
     width: 30px;
 }
