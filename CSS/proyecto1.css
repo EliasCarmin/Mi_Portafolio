@@ -2,14 +2,14 @@
 body{
     position: relative;
     padding-bottom: 150px;
-    min-height: 130vh;
+    min-height: 180vh;
 
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
-    padding-top: 200px;
+    padding-top: 180px;
 }
 .project-container {
     background: #fff;
