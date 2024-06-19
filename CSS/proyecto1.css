@@ -2,7 +2,7 @@
 body{
     position: relative;
     padding-bottom: 150px;
-    min-height: 180vh;
+    min-height: 300vh;
 
     font-family: Arial, sans-serif;
     margin: 0;
@@ -70,6 +70,43 @@ body{
 
 .project-link:hover {
     background-color: #0056b3;
+}
+
+/*TABLA*/
+.grupo {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+.grupo th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+.grupo th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+.grupo caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/*TABLA CUARTOS*/
+.cuartos {
+    width: 80%;
+    border-collapse: collapse;
+}
+.cuartos th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+.cuartos th {
+    background-color: #f2f2f2;
+}
+.cuartos caption {
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 /*RESPONSIVE*/
 @media (max-width: 952px){
