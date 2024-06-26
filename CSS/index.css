@@ -267,14 +267,14 @@ margin-bottom: 35px;
 @media (max-width: 768px){
     /*BODY*/
     body{
-        min-height: 1050vh;
+        min-height: 630vh;
     }
     /*SKILL SETS*/
     .skill_set{
-        min-width: 400px;
+        min-width: 450px;
     }
     .container_skills{
-        width: 60%;
+        width: 90%;
     }
 
     .checkbtn{
