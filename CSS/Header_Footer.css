@@ -98,14 +98,12 @@ nav a{
 /*FOOTER- PIE DE PÁGINA*/
 
 footer{
-    padding-top: 10px;
     width: 100%;
     padding: 50px 0px;
     background-image: url(background-footer.svg);
     background-size: cover;
     position: absolute;
     bottom: 0;
-    overflow: auto;
 }
 .container_footer{
     display: flex;
@@ -114,7 +112,6 @@ footer{
     max-width: 1200px;
     margin: auto;
     margin-top: 100px;
-    overflow: hidden;
 }
 
 .box_footer{

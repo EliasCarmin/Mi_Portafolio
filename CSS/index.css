@@ -7,8 +7,8 @@ html{
 /*En este codigo del cuerpo, el rango mínimo de altura se amplifica para dar mas espacio*/
 body{
     position: relative;
-    padding-bottom: 480px;
-    min-height: 250vh;
+    padding-bottom: 150px;
+    min-height: 270vh;
 }
 
 /*---------CONTENIDO---------*/
