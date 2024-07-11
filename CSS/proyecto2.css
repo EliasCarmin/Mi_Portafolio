@@ -1,0 +1,129 @@
+/*En este codigo del cuerpo, el rango mínimo de altura se amplifica para dar mas espacio*/
+body{
+    position: relative;
+    padding-bottom: 450px;
+    padding-top: 130px;
+    min-height: 290vh;
+    font-family: Arial, sans-serif;
+    
+    display: flex;
+    justify-content: center;
+}
+.project-container {
+    overflow: hidden;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 800px;
+    width: 100%;
+    justify-content: space-between;
+    margin-bottom: 340px;
+}
+
+.project-title {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.project-description {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.project-details h2 {
+    font-size: 1.8rem;
+    margin-top: 20px;
+    color: #333;
+}
+
+.tech-list, .features-list {
+    list-style-type: disc;
+    margin-left: 20px;
+    color: #555;
+}
+
+.screenshots {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.screenshots img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.project-link {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.project-link:hover {
+    background-color: #0056b3;
+}
+
+/*TABLA*/
+.grupo {
+    width: 50%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    justify-content: space-between;
+}
+.grupo th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+.grupo th {
+    background-color: #f2f2f2;
+    text-align: center;
+}
+.grupo caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/*TABLA CUARTOS*/
+.cuartos {
+    width: 80%;
+    border-collapse: collapse;
+    justify-content: space-between;
+    overflow: hidden;
+}
+.cuartos th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+.cuartos th {
+    background-color: #f2f2f2;
+}
+.cuartos caption {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+/*RESPONSIVE*/
+@media (max-width: 952px){
+    .enlace{
+        padding-left: 5px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+@media (max-width: 768px){
+body{
+    min-height: 300vh;
+}
+
+}
