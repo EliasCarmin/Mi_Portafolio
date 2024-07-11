@@ -64,13 +64,10 @@
 
     <div class="project-container">
         <h1 class="project-title">Sistema de Recomendación</h1>
-        <a href="https://github.com/EliasCarmin/Prediction_CupAmerica" class="project-link">View Project Code in Git Hub</a>
+        <a href="https://app.powerbi.com/onedrive/error?pbi_source=ODSPViewer&driveId=b!Wvl3294_2UmOX-31Na3gZsH8PtKuSl5AvCvJUVvOvDCOqbR_zGE7RaqSm9Wt6lvV&itemId=01HQIYXF4QTILUCM2GLRDZ72FSLQ2QC5BN" class="project-link">View Dashboard Power Bi</a>
         <p class="project-description">
-            El presente proyecto de Data Science tiene como objetivo pronósticar el futuro
-            campeón de la Copa América 2024 utilizando técnicas de web scraping para la 
-            recolección de datos y procesos ETL para el tratamiento de los mismos, para el
-            pronóstico se utilizó un algoritmo de probabilidad aunque en un futuro se pretende
-            reemplazarlo por un algoritmo de Machine Learning</p>
+            El presente proyecto de Sistema de Recomendación tiene como objetivo realizar un proceso de recomendación de un producto para un cliente B basado en un cliente A, utilizando el algoritmo de similitud de coseno, que pertenece al filtrado colaborativo. El dataset del estudio fue obtenido de un repositorio público de Microsoft. Utilizando SQL Server, se realiza la consulta y, con Python y sus respectivas librerías, se llevan a cabo los procesos ETL. Finalmente, se diseña el dashboard con Power BI.
+</p>
         <div class="project-details">
             <h2>Tecnologías Usadas</h2>
             <ul class="tech-list">
@@ -84,12 +81,13 @@
             <div class="screenshots">
                 <img src="IMG/BD.jpg" alt="Screenshot 1">
                 <img src="IMG/dashnoard.jpg" alt="Screenshot 2">
+                <img src="IMG/spider.jpg" alt="Screenshot 2">
             </div>
             <h2>Características</h2>
             <ul class="features-list">
-                <li>dashboard interactivo para el mejor entendimiento del usuario.</li>
-                <li>Característica 2: Descripción de la característica 2.</li>
-                <li>Característica 3: Descripción de la característica 3.</li>
+                <li>Dashboard interactivo para el mejor entendimiento del usuario.</li>
+                <li>Se utilizó filtrado colaborativo con el algoritmo de similitud del coseno.</li>
+                <li>El dashboard de Power Bi está conectado con la base de datos SQL Server ejecutando un script de Python.</li>
             </ul>
             <h2>Retos y Experiencias Afrontados</h2>
             <p>
@@ -106,141 +104,99 @@
                 4. Para la transformación y limpieza de los datos se usó la librería Pandas
             <h2>Resultados</h2>
             <p>
-              El resultado de la predicción tiene como campeón a Argentina, sin embargo
-              a continuación se detallará las fases octavos y finales con sus respectivos ganadores
-
+              A continuación se mostrará el procedimiento de para realizar el proceso de recomendación un producto
+              de un cliente A a un cliente B
             </p>
             <table class="grupo">
-                <caption>Group A</caption>
+                <caption>Datos de muestra, datos totales: 227982 filas</caption>
                 <tr>
-                    <th>País</th>
-                    <th>Pts.</th>
+                    <th>factura</th>
+                    <th>productID</th>
+                    <th>producto</th>
+                    <th>cantidad</th>
+                    <th>fecha</th>
+                    <th>precio</th>
+                    <th>clienteID</th>
+                    <th>cliente</th>
                 </tr>
                 <tr>
-                    <td>Argentina</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>Peru</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>Chile</td>
                     <td>1</td>
+                    <td>67</td>
+                    <td>Ride on toy sedan car (Black) 1/12 scale</td>
+                    <td>10</td>
+                    <td>1/1/2013</td>
+                    <td>230.00</td>
+                    <td>832</td>
+                    <td>Aakriti Byrraju</td>
                 </tr>
                 <tr>
-                    <td>Canadá</td>
-                    <td>0</td>
-                </tr>
-            </table>
-        
-            <table class="grupo">
-                <caption>Group B</caption>
-                <tr>
-                    <th>País</th>
-                    <th>Pts.</th>
-                </tr>
-                <tr>
-                    <td>Mexico</td>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td>Ecuador</td>
-                    <td>5</td>
-                </tr>
-                <tr>
-                    <td>Venezuela</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>Jamaica</td>
-                    <td>0</td>
-                </tr>
-            </table>
-        
-            <table class="grupo">
-                <caption>Group C</caption>
-                <tr>
-                    <th>País</th>
-                    <th>Pts.</th>
-                </tr>
-                <tr>
-                    <td>Uruguay</td>
-                    <td>6</td>
-                </tr>
-                <tr>
-                    <td>United States</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>Bolivia</td>
-                    <td>3</td>
-                </tr>
-                <tr>
-                    <td>Panama</td>
                     <td>2</td>
-                </tr>
-            </table>
-        
-            <table class="grupo">
-                <caption>Group D</caption>
-                <tr>
-                    <th>País</th>
-                    <th>Pts.</th>
-                </tr>
-                <tr>
-                    <td>Brazil</td>
-                    <td>6</td>
+                    <td>50</td>
+                    <td>Developer joke mug - old C developers never die (White)</td>
+                    <td>9</td>
+                    <td>1/1/2013</td>
+                    <td>13.00</td>
+                    <td>803</td>
+                    <td>Bala Dixit</td>
                 </tr>
                 <tr>
-                    <td>Colombia</td>
+                    <td>2</td>
+                    <td>10</td>
+                    <td>USB food flash drive - chocolate bar</td>
+                    <td>9</td>
+                    <td>1/1/2013</td>
+                    <td>32.00</td>
+                    <td>803</td>
+                    <td>Bala Dixit</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>114</td>
+                    <td>Superhero action jacket (Blue) XXL</td>
+                    <td>3</td>
+                    <td>1/1/2013</td>
+                    <td>30.00</td>
+                    <td>105</td>
+                    <td>Sung-Hwan Hwang</td>
+                </tr>
+                <tr>
                     <td>4</td>
+                    <td>206</td>
+                    <td>Permanent marker black 5mm nib (Black) 5mm</td>
+                    <td>96</td>
+                    <td>1/1/2013</td>
+                    <td>2.70</td>
+                    <td>57</td>
+                    <td>Aile Mae</td>
                 </tr>
                 <tr>
-                    <td>Paraguay</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>Costa Rica</td>
-                    <td>1</td>
+                    <td>4</td>
+                    <td>130</td>
+                    <td>Furry gorilla with big eyes slippers (Black) S</td>
+                    <td>5</td>
+                    <td>1/1/2013</td>
+                    <td>32.00</td>
+                    <td>57</td>
+                    <td>Aile Mae</td>
                 </tr>
             </table>
-
-
-            <table class="cuartos">
-                <caption>Fase de Cuartos Copa América 2024</caption>
-                <tr>
-                    <th>Home</th>
-                    <th>Score</th>
-                    <th>Away</th>
-                    <th>Year</th>
-                </tr>
-                <tr>
-                    <td>Argentina</td>
-                    <td>Match 25</td>
-                    <td>Ecuador</td>
-                    <td>2024</td>
-                </tr>
-                <tr>
-                    <td>Mexico</td>
-                    <td>Match 26</td>
-                    <td>Peru</td>
-                    <td>2024</td>
-                </tr>
-                <tr>
-                    <td>Uruguay</td>
-                    <td>Match 27</td>
-                    <td>Colombia</td>
-                    <td>2024</td>
-                </tr>
-                <tr>
-                    <td>Brazil</td>
-                    <td>Match 28</td>
-                    <td>United States</td>
-                    <td>2024</td>
-                </tr>
-            </table>
-            <a href="https://github.com/EliasCarmin/Prediction_CupAmerica" class="project-link">View Project Code in Git Hub</a>
+            <div class="Pasos_Imagenes">
+                <h3>Paso 1</h3>
+                <img src="IMG/comparativa.jpg" alt="">
+                <p></p>
+                <h3>Paso 2</h3>
+                <img src="IMG/perfil.jpg" alt="">
+                <p></p>
+                <h3>Paso 3</h3>
+                <img src="IMG/similitud.jpg" alt="">
+                <p></p>
+                <h3>Paso 4</h3>
+                <img src="IMG/recomendacion.jpg" alt="">
+                <p></p>
+            </div>
+        
+            
+            <a href="https://app.powerbi.com/onedrive/error?pbi_source=ODSPViewer&driveId=b!Wvl3294_2UmOX-31Na3gZsH8PtKuSl5AvCvJUVvOvDCOqbR_zGE7RaqSm9Wt6lvV&itemId=01HQIYXF4QTILUCM2GLRDZ72FSLQ2QC5BN" class="project-link">View Dashboard Power Bi</a>
         </div>
     </div>
 
