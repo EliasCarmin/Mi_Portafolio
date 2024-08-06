@@ -1,7 +1,7 @@
 /*En este codigo del cuerpo, el rango mínimo de altura se amplifica para dar mas espacio*/
 body{
     position: relative;
-    padding-bottom: 450px;
+    padding-bottom: 470px;
     padding-top: 130px;
     min-height: 290vh;
     font-family: Arial, sans-serif;
@@ -18,7 +18,7 @@ body{
     max-width: 800px;
     width: 100%;
     justify-content: space-between;
-    margin-bottom: 340px;
+    margin-bottom: 480px;
 }
 
 .project-title {
@@ -148,5 +148,13 @@ body{
 
 .tecnologias_utilizadas{
     font-size: 18px;
+}
+
+.project-container a{
+    justify-content: center;
+}
+
+.grupo{
+    width: 10%;
 }
 }
