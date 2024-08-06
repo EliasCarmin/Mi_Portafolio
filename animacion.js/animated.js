@@ -31,13 +31,13 @@ window.addEventListener('DOMContentLoaded',() => {
 
 //Código para el contador 
 let con1=document.getElementById('number1');
-let con2=document.getElementById('number2');
+let con_database=document.getElementById('database');
 let con3=document.getElementById('number3');
 let con4=document.getElementById('number4');
-let con5=document.getElementById('number5');
+let con5=document.getElementById('powerbi');
 
-let can1=0,can2=0,can3=0,can4=0,can5=0;
-let time=25;
+let can1=0,can_database=0,can3=0,can4=0,can5=0;
+let time=225;
 
 let tiempo1 = setInterval(()=>{
     con1.textContent=can1+=1;
@@ -48,11 +48,11 @@ let tiempo1 = setInterval(()=>{
 
 },200);
 
-let tiempo2 = setInterval(()=>{
-    con2.textContent=can2+=1;
+let tiempo_database = setInterval(()=>{
+    con_database.textContent=can_database+=1;
     
-    if(can2==50){
-        clearInterval(tiempo2);
+    if(can_database==80){
+        clearInterval(tiempo_database);
     }
 
 },200);
