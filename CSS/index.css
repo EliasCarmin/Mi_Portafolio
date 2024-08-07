@@ -173,7 +173,7 @@ margin-bottom: 35px;
 }
 @keyframes data-barra{
     100%{
-        width: 85%;
+        width: 80%;
     }
 }
 /*------>PYTHON<------*/
@@ -206,7 +206,15 @@ margin-bottom: 35px;
 .imagen-skill{
     width: 30px;
 }
-
+/*------>EXCEL<------*/
+#excel-menu{
+    animation: excel-barra 3s forwards;
+}
+@keyframes excel-barra{
+    100%{
+        width: 80%;
+    }
+}
 /*EXPERIENCIA*/
 .experiencia{
     display: grid;

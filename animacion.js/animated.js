@@ -35,8 +35,9 @@ let con_database=document.getElementById('database');
 let con3=document.getElementById('number3');
 let con4=document.getElementById('number4');
 let con5=document.getElementById('powerbi');
+let con_excel=document.getElementById('excel');
 
-let can1=0,can_database=0,can3=0,can4=0,can5=0;
+let can1=0,can_database=0,can3=0,can4=0,can5=0,can_excel=0;
 let time=225;
 
 let tiempo1 = setInterval(()=>{
@@ -78,6 +79,14 @@ let tiempo5 = setInterval(()=>{
     
     if(can5==50){
         clearInterval(tiempo5);
+    }
+
+},200);
+let tiempo_excel = setInterval(()=>{
+    con_excel.textContent=can_excel+=1;
+    
+    if(can_excel==80){
+        clearInterval(tiempo_excel);
     }
 
 },200);
