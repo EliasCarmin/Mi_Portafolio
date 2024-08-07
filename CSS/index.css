@@ -275,14 +275,15 @@ margin-bottom: 35px;
 @media (max-width: 768px){
     /*BODY*/
     body{
-        min-height: 870vh;
+        min-height: 630vh;
     }
     /*SKILL SETS*/
     .skill_set{
         min-width: 300px;
+        margin: 0px;
     }
     .container_skills{
-        width: 60%;
+        width: 100%;
     }
 
     .checkbtn{
@@ -393,10 +394,10 @@ margin-bottom: 35px;
     }
   /*TÍTULOS SECCIONES*/
     .titulos_secciones h1::after{
-        left: 275px;
+        left: 295px;
         }
      .titulos_secciones h1::before{
-        right: 275px;
+        right: 295px;
         }
     .titulos_secciones h1::after{
             width: 50px;
