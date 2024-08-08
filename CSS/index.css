@@ -274,7 +274,7 @@ margin-bottom: 35px;
 @media (max-width: 768px){
     /*BODY*/
     body{
-        min-height: 880vh;
+        min-height: 630vh;
     }
     /*SKILL SETS*/
     .skill_set{
@@ -339,17 +339,17 @@ margin-bottom: 35px;
     /*TÍTULO SECCIONES*/
     .titulos_secciones h1::after{
         width: 80px;
-        height: 2px;
+        height: 2.5px;
     }
     .titulos_secciones h1::before{
         width: 80px;
-        height: 2px;
+        height: 2.5px;
     }
     .titulos_secciones h1::after{
-        left: 300px;
+        left: 310px;
         }
      .titulos_secciones h1::before{
-        right: 300px;
+        right: 310px;
         }
 
     /*EXPERIENCIA-PORTAFOLIO*/
