@@ -33,7 +33,7 @@ window.addEventListener('DOMContentLoaded',() => {
 let con1=document.getElementById('number1');
 let con_database=document.getElementById('database');
 let con_python=document.getElementById('number_python');
-let con_java=document.getElementById('number_java');
+let con_java=document.getElementById('java');
 let con5=document.getElementById('powerbi');
 let con_excel=document.getElementById('excel');
 
