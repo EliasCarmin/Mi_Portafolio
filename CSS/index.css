@@ -274,7 +274,7 @@ margin-bottom: 35px;
 @media (max-width: 768px){
     /*BODY*/
     body{
-        min-height: 625vh;
+        min-height: 880vh;
     }
     /*SKILL SETS*/
     .skill_set{
