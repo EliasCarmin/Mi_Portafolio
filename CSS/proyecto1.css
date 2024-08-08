@@ -5,6 +5,7 @@ body{
     padding-top: 130px;
     min-height: 290vh;
     font-family: Arial, sans-serif;
+    font-size: 62.5%;
     
     display: flex;
     justify-content: center;
@@ -124,6 +125,7 @@ body{
 @media (max-width: 768px){
 body{
     min-height: 320vh;
+    padding-bottom: 650px;
 }
 /*IMÁGENES INICIO*/
 .screenshots {
@@ -134,5 +136,4 @@ body{
     width: 100%;
     height: 100%;
 }
-
 }
