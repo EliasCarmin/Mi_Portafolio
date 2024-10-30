@@ -36,8 +36,9 @@ let con_python=document.getElementById('number_python');
 let con_java=document.getElementById('java');
 let con5=document.getElementById('powerbi');
 let con_excel=document.getElementById('excel');
+let con_looker=document.getElementById('looker');
 
-let can1=0,can_database=0,can_python=0,can_java=0,can5=0,can_excel=0;
+let can1=0,can_database=0,can_python=0,can_java=0,can5=0,can_excel,can_looker=0;
 let time=225;
 
 let tiempo1 = setInterval(()=>{
@@ -87,6 +88,14 @@ let tiempo_excel = setInterval(()=>{
     
     if(can_excel==80){
         clearInterval(tiempo_excel);
+    }
+
+},200);
+let tiempo_looker = setInterval(()=>{
+    con_looker.textContent=can_looker+=1;
+    
+    if(can_looker==50){
+        clearInterval(tiempo_looker);
     }
 
 },200);

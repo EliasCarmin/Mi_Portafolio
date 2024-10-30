@@ -215,6 +215,15 @@ margin-bottom: 35px;
         width: 80%;
     }
 }
+/*------>LOOKER<------*/
+#looker-menu{
+    animation: looker-barra 3s forwards;
+}
+@keyframes looker-barra{
+    100%{
+        width: 50%;
+    }
+}
 /*EXPERIENCIA*/
 .experiencia{
     display: grid;
