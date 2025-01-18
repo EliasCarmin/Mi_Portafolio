@@ -18,15 +18,15 @@
         -> Click on tab (Color Conversion)
         -> Copy the color mode (HSL)
   */
-  --hue: 230;
-  --first-color: hsl(var(--hue), 55%, 55%);
-  --first-color-light: hsl(var(--hue), 55%, 65%);
-  --first-color-alt: hsl(var(--hue), 50%, 50%);
-  --title-color: hsl(var(--hue), 30%, 95%);
-  --text-color: hsl(var(--hue), 20%, 80%);
-  --text-color-light: hsl(var(--hue), 20%, 70%);
-  --body-color: hsl(var(--hue), 40%, 16%);
-  --container-color: hsl(var(--hue), 40%, 20%);
+  --hue: 160; /* Base verde moderna */
+  --first-color: hsl(var(--hue), 75%, 50%); /* Verde vibrante */
+  --first-color-light: hsl(var(--hue), 75%, 60%); /* Verde pastel */
+  --first-color-alt: hsl(var(--hue), 70%, 40%); /* Verde oscuro */
+  --title-color: hsl(var(--hue), 15%, 95%); /* Blanco suave */
+  --text-color: hsl(var(--hue), 10%, 70%); /* Gris claro */
+  --text-color-light: hsl(var(--hue), 10%, 60%); /* Gris más oscuro */
+  --body-color: hsl(var(--hue), 20%, 10%); /* Fondo oscuro */
+  --container-color: hsl(var(--hue), 20%, 15%); /* Fondo de contenedores */
 
   /*========== Font and typography ==========*/
   /*.5rem = 8px | 1rem = 16px ...*/
@@ -158,7 +158,7 @@ img {
   justify-content: space-between;
   align-items: center;
 }
-.nav_logo{
+.nav__logo{
   color: var(--title-color);
   font-weight: var(--font-bold);
 }
@@ -173,13 +173,13 @@ img {
   .nav__menu{
     position: fixed;
     top: 0;
-    right: 0;
+    right: -100%;
     background-color: hsl(var(--hue),70%, 4%, .2);
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
-    witdh:80%;
+    width:80%;
     height: 100%;
-    padding: 7rem 3 rem;
+    padding: 7rem 3rem;
     transition: right .4s;
   }
 }
@@ -218,26 +218,148 @@ img {
   right: 1.5rem;
 }
 /* Show menu */
-
-
+.show-menu{
+  right: 0;
+}
 /* Add blur header */
-
+.blur-header{
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: hsla(var(--hue),70%,4%,.2);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
 
 /* Active link */
 
 
 /*=============== HOME ===============*/
+.home__container{
+  row-gap: 2rem;
+  padding-top: 1rem;
+}
 
+.home__img{
+  width: 220px;
+  justify-self: center;
+  mask-image: linear-gradient(to bottom,
+              hsla(var(--hue),40%,10%)60%,
+              transparent 100%);
+}
 
+.home__name{
+  font-size: var(--biggest-font-size);
+  font-weight: var(--font-bold);
+  word-break: break-word;
+  margin-bottom: 1rem;
+}
+
+.home__profession{
+  position: relative;
+  font-size: var(--big-font-size);
+  color: var(--text-color);
+}
+
+.home__profession::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -.5rem;
+  width: 25%;
+  height: 3px;
+  background-color: var(--text-color);
+}
+
+.home__scroll{
+  color: var(--title-color);
+  display: inline-flex;
+  column-gap: .5rem;
+  align-items: center;
+  justify-self: center;
+  margin-top: 3rem;
+}
+
+.home__scroll-box{
+  background-color: var(--first-color);
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  font-size: 1.5rem;
+  overflow: hidden;
+}
+
+.home__scroll-text{
+  font-weight: var(--font-semi-bold);
+}
+
+.home__scroll-box i{
+  animation: scroll-down 3s infinite;
+}
 /* Animate scroll icon */
+@keyframes scroll-down{
+  0%{
+    transform: translate(-1rem);
+    opacity: 0;
+  }
 
+  50%{
+    transform: translate(0);
+    opacity: 1;
+  }
+  100%{
+    transform: translate(.6rem);
+    opacity: 0;
+  }
+}
 
 /*=============== BUTTON ===============*/
 
 
 /*=============== WORKS ===============*/
+.work{
+  background-color: var(--container-color);
+}
 
+.work__card{
+  display: block;
+  position: relative;
+  background-color: var(--body-color);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  color: var(--text-color);
+  transition: transform .4s;
+}
 
+.work__title{
+  font-size: var(--h3-font-size);
+  margin-bottom: .75rem;
+}
+
+.work__description{
+  margin-bottom: 1.5rem;
+}
+
+.work__link i{
+  position: absolute;
+  top: 1.8rem;
+  right: 1.5rem;
+  font-size: 1.5rem;
+  color: var(--first-color-light);
+  transition: transform .4s;
+}
+
+.work__link:hover{
+  transform: translateY(-3.5rem);
+}
+
+.work__link:hover i{
+  transform: translateY(.5rem);
+}
 /*=============== INFO ===============*/
 
 
