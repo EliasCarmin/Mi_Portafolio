@@ -33,7 +33,25 @@ const scrollHeader = () =>{
 }
 window.addEventListener('scroll',blurHeader)
 /*=============== EMAIL JS ===============*/
+const contactForm = document.getElementById('contact-form'),
+        contactMessage = document.getElementById('contact-message')
 
+const sendEmail = (e) =>{
+    e.preventtDefault()
+    emailjs.sendForm('service_n91jr8e','template_11rc1ui','#contact-form','GndKCsa6Vs7yR64cf')
+    .then(() =>{
+        //showmeesage
+        contactMessage.textContent = "Mensaje enviado correctamente ✅"
+
+        //remove message
+        setTimeout(() => {
+            contactMessage.textContent = ""
+        }, 5000);
+
+        //clear input fields
+        contactForm.reset()
+    })
+}
 
 /*=============== SHOW SCROLL UP ===============*/ 
 

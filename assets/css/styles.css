@@ -319,7 +319,18 @@ img {
 }
 
 /*=============== BUTTON ===============*/
-
+.button{
+  display: inline-flex;
+  justify-content: center;
+  background-color: var(--first-color);
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+  padding: 1.25rem 2rem;
+  transition: background-color .4s;
+}
+.button:hover{
+  background-color: var(--first-color-alt);
+}
 
 /*=============== WORKS ===============*/
 .work{
@@ -399,17 +410,106 @@ img {
               transparent 100%);
 }
 /* EXPERIENCE */
-
-
+.experience__content{
+  row-gap: 2rem;
+}
+.experience__data{
+  row-gap: 1rem;
+}
+.experience__company{
+  font-size: var(--h2-font-size);
+  font-weight: var(--font-bold);
+}
+.experience__profession{
+font-size: var(--h2-font-size);
+margin-bottom: .25rem;
+}
+.experience__data{
+  display: block;
+  font-size: var(--small-font-size);
+  margin-bottom: .75rem;
+}
 /* SKILLS */
-
-
+.skills__img{
+  width: 35px;
+  margin-bottom: .5rem;
+}
+.skills__name{
+  font-size: var(--small-font-size);
+}
+.skills__content{
+  grid-template-columns: repeat(3,max-content);
+  justify-content: space-around;
+  align-items: flex-end;
+}
+.skills__box{
+  display: flex;
+  place-items: center;
+  transition: transform .4s;
+}
+.skills__box:hover{
+  transform: translateY(-.25rem);
+}
 /*=============== SERVICES ===============*/
 
 
 /*=============== CONTACT ===============*/
-
-
+.contact__container{
+  row-gap: 4rem;
+}
+.contact__group,
+.contact__form{
+  gap: 1rem;
+}
+.contact__form{
+  position: relative;
+}
+.contact__input{
+  padding: 1.25rem;
+  background-color: var(--container-color);
+  color: var(--title-color);
+  font-weight: var(--font-semi-bold);
+}
+.contact__input::placeholder{
+  color: var(--text-color-light);
+}
+.contact__area{
+  height: 10rem;
+  resize: none;
+}
+.contact__button{
+  margin-top: 1rem;
+  cursor: pointer;
+}
+.contact__social{
+  grid-template-columns: repeat(1,max-content);
+  justify-content: center;
+  column-gap: .25rem;
+  align-items: center;
+  transition: color .4s;
+}
+.contact__social-link{
+  color: var(--title-color);
+  display: inline-flex;
+  column-gap: .25rem;
+  align-items: center;
+  transform: color .4s;
+}
+.contact__social-link span{
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+}
+.contact__social-link:hover{
+  color: var(--first-color-light);
+}
+.contact__message{
+  position: absolute;
+  left: 0;
+  bottom: -2rem;
+  font-size: var(--small-font-size);
+  font-weight: var(--font-semi-bold);
+  color: var(--title-color);
+}
 /*=============== FOOTER ===============*/
 
 
