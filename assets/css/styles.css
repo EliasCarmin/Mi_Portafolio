@@ -428,7 +428,7 @@ img {
 font-size: var(--h2-font-size);
 margin-bottom: .25rem;
 }
-.experience__data{
+.experience__date{
   display: block;
   font-size: var(--small-font-size);
   margin-bottom: .75rem;
@@ -629,7 +629,7 @@ color: var(--first-color-light);
 }
 
 .experience__data{
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
 }
 .skills__content{
   grid-template-columns: repeat(5, max-content);
@@ -722,7 +722,7 @@ color: var(--first-color-light);
     row-gap: 4rem;
   }
   .experience__data{
-    grid-template-columns: 320px 180px;
+    grid-template-columns: 320px 380px;
     column-gap: 11.5rem;
   }
 
