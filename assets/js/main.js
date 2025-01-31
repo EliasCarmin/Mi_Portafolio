@@ -97,7 +97,7 @@ const sr = ScrollReveal({
     delay: 400,
 })
 
-sr.reveal('.home__data, .expriencie, .skills')
+sr.reveal('.home__data, .expriencie, .skills, .contact__container')
 sr.reveal('.home__img'), {delay: 600}
 sr.reveal('.home__scroll'), {delay: 800}
 sr.reveal('.work__card, .services__card'), {interval: 100}
