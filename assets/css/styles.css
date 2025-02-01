@@ -784,4 +784,7 @@ color: var(--first-color-light);
   .scrollup{
     height: 3rem;
   }
+  .work__img{
+    width: 350px;
+  }
 }
