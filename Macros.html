@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--ÍCONO DE PESTAÑA -->
+    <link rel="icon" href="IMG/mishi blanco.png" type="image/x-icon">
+
+   <!--AOS-->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">  
+    <!--librarys-->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <!--CSS-->
+    <link rel="stylesheet" href="CSS/intro_animado.css">
+    <link rel="stylesheet" href="CSS/proyecto2.css">
+    <link rel="stylesheet" href="CSS/Header_Footer.css">
+
+    <title>Elías Jesús</title>
+</head>
+<body>
+
+
+    <!--Intro Animado-->
+    <div class="intro">
+        <img src="IMG/elias-cn.png" alt="imagen-logo" width="30%" height="60%" class="imagen-logo">
+        <h1 class="logo">
+            <span class="logo-parts">Si</span>
+            <span class="logo-parts"> se</span>
+            <span class="logo-parts"> puede</span>
+            <span class="logo-parts"> imaginar,</span>
+            <span class="logo-parts"> se </span>
+            <span class="logo-parts"> puede</span>
+            <span class="logo-parts"> programar </span>
+        </h1>
+    </div>
+    <!--Encabezado-->
+    <header>
+    <nav>
+        <input type="checkbox" id="check">
+        <label for="check" class="checkbtn">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </label>
+        <img src="IMG/prueba 1.jpeg" alt="" class="image_nav">
+              
+        <ul class="menu-principal">
+            <li><a href="index.html">Inicio</a></li>
+            <li class="hola"><a href="">ACERCA DE MÍ</a>
+            <!--submenú-->
+            <ul class="sub-menu">
+                    <li><a href="#">Pasiones</a></li>
+                    <li><a href="#skill">Habilidades</a></li>
+                </ul>
+            <!--submenú-->
+            <li><a href="#experiencia">EXPERIENCIA</a></li>
+            <li><a href="CV.html">CURRÍCULUM</a></li>
+        </ul>
+    </nav>
+    </header>
+    <br><br><br><br>
+    <br><br><br><br>
+    <!--BODY-->
+
+    <div class="project-container">
+        <h1 class="project-title">Sistema de Recomendación</h1>
+        <a href="https://app.powerbi.com/view?r=eyJrIjoiOGY4OGQwOTAtNGY4My00N2FkLWJmMmYtNmM4ZjIyYzhhN2M5IiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" class="project-link">View Dashboard Power Bi</a>
+        <p class="project-description">
+            El presente proyecto de Sistema de Recomendación tiene como objetivo realizar un proceso de recomendación de un producto para un cliente B basado en un cliente A, utilizando el algoritmo de similitud de coseno, que pertenece al filtrado colaborativo. El dataset del estudio fue obtenido de un repositorio público de Microsoft. Utilizando SQL Server, se realiza la consulta y, con Python y sus respectivas librerías, se llevan a cabo los procesos ETL. Finalmente, se diseña el dashboard con Power BI.
+</p>
+<iframe title="Sistema de Recomendacion" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiOGY4OGQwOTAtNGY4My00N2FkLWJmMmYtNmM4ZjIyYzhhN2M5IiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+        <div class="project-details">
+            <div class="tecnologias_utilizadas">
+                <h2>Tecnologías Usadas</h2>
+                <ul class="tech-list">
+                    <li>PYTHON</li>
+                    <li>PANDAS</li>
+                    <li>ScikitLearn</li>
+                    <li>Power Bi</li>
+                    <li>SQL Server</li>
+                </ul>
+            </div>
+            
+            <h2>Proyecto Screenshots</h2>
+            <div class="screenshots">
+                <div>
+                    <img src="IMG/BD.jpg" alt="Screenshot 1">
+                </div>
+                    
+                <div>
+                    <img src="IMG/dashnoard.jpg" alt="Screenshot 2">
+                </div>
+                
+                <div>
+                    <img src="IMG/spider.jpg" alt="Screenshot 2">
+                </div>
+                
+            </div>
+            <h2>Características</h2>
+            <ul class="features-list">
+                <li>Dashboard interactivo para el mejor entendimiento del usuario.</li>
+                <li>Se utilizó filtrado colaborativo con el algoritmo de similitud del coseno.</li>
+                <li>El dashboard de Power Bi está conectado con la base de datos SQL Server ejecutando un script de Python.</li>
+            </ul>
+            <h2>Retos y Experiencias Afrontados</h2>
+            <p>
+                Los desafíos afrontados fueron nuevos y sastifactoriamente afrontados
+                <br><br>
+                1. Este proyecto me permitió interactuar diferentes herramientas en diferentes entornos para un único fin
+                <br><br>
+                2. Los datos que se utilizaron del estudio se obtuvo en un dataset público de microsoft
+                <br><br>
+                3. Se procuró tener una paleta de colores familiar para el diseño de los dashboards
+                <br><br>
+                4. Para la transformación y limpieza de los datos se usó la librería Pandas y la interfaz de transformación de datos en Power Bi
+            <h2>Resultados</h2>
+            <p>
+              A continuación se mostrará el procedimiento de para realizar el proceso de recomendación un producto
+              de un cliente A a un cliente B
+            </p>
+            <table class="grupo">
+                <caption>Datos de muestra, datos totales: 227982 filas</caption>
+                <tr>
+                    <th>factura</th>
+                    <th>productID</th>
+                    <th>producto</th>
+                    <th>cantidad</th>
+                    <th>fecha</th>
+                    <th>precio</th>
+                    <th>clienteID</th>
+                    <th>cliente</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>67</td>
+                    <td>Ride on toy sedan car (Black) 1/12 scale</td>
+                    <td>10</td>
+                    <td>1/1/2013</td>
+                    <td>230.00</td>
+                    <td>832</td>
+                    <td>Aakriti Byrraju</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>50</td>
+                    <td>Developer joke mug - old C developers never die (White)</td>
+                    <td>9</td>
+                    <td>1/1/2013</td>
+                    <td>13.00</td>
+                    <td>803</td>
+                    <td>Bala Dixit</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>10</td>
+                    <td>USB food flash drive - chocolate bar</td>
+                    <td>9</td>
+                    <td>1/1/2013</td>
+                    <td>32.00</td>
+                    <td>803</td>
+                    <td>Bala Dixit</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>114</td>
+                    <td>Superhero action jacket (Blue) XXL</td>
+                    <td>3</td>
+                    <td>1/1/2013</td>
+                    <td>30.00</td>
+                    <td>105</td>
+                    <td>Sung-Hwan Hwang</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>206</td>
+                    <td>Permanent marker black 5mm nib (Black) 5mm</td>
+                    <td>96</td>
+                    <td>1/1/2013</td>
+                    <td>2.70</td>
+                    <td>57</td>
+                    <td>Aile Mae</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>130</td>
+                    <td>Furry gorilla with big eyes slippers (Black) S</td>
+                    <td>5</td>
+                    <td>1/1/2013</td>
+                    <td>32.00</td>
+                    <td>57</td>
+                    <td>Aile Mae</td>
+                </tr>
+            </table>
+            <div class="Pasos_Imagenes">
+                <h3>Paso 1</h3>
+                <img src="IMG/comparativa.jpg" alt="">
+                <p></p>
+                <h3>Paso 2</h3>
+                <img src="IMG/perfil.jpg" alt="">
+                <p></p>
+                <h3>Paso 3</h3>
+                <img src="IMG/similitud.jpg" alt="">
+                <p></p>
+                <h3>Paso 4</h3>
+                <img src="IMG/recomendacion.jpg" alt="">
+                <p></p>
+            </div>
+        
+            
+            <a href="https://app.powerbi.com/onedrive/error?pbi_source=ODSPViewer&driveId=b!Wvl3294_2UmOX-31Na3gZsH8PtKuSl5AvCvJUVvOvDCOqbR_zGE7RaqSm9Wt6lvV&itemId=01HQIYXF4QTILUCM2GLRDZ72FSLQ2QC5BN" class="project-link">View Dashboard Power Bi</a>
+        </div>
+    </div>
+
+
+    <!--BODY-->
+
+
+    <!--Pie de página-->
+    <footer>
+
+        <div class="container_footer">
+
+            <div class="box_footer">
+                <div class="logazo">
+                    <img src="IMG/prueba 1.jpeg" alt="">
+                </div> 
+                <div class="texto_abajo">
+                    <p>Portafolio personal del estudiante de ingeniería de Sistemas Elías Carmín,
+                        actualmente cursando el décimo ciclo en la Universidad Tecnológica del
+                        Perú</p>
+                </div>
+            </div>
+
+            <div class="box_footer">
+                <h2>Mi Persona</h2>
+                <a href="#pasion">Pasiones</a>
+                <a href="#skill">Habilidades</a>
+                <a href="CV.html">CV Completo</a>
+            </div>
+            <div class="box_footer">
+                <h2>Contacto</h2>
+                <h3><i class="fa fa-phone-square"></i> eliasjesuscarmin@gmail.com</h3>
+                <h3><i class="fa fa-envelope"></i> +51 956 224 010</h3>
+            </div>
+            <div class="box_footer">
+                <h2>Redes Sociales</h2>
+                <a href="#"><i class="fab fa-facebook-square"></i> Facebook</a>
+                <a href="#"><i class="fab fa-twitter-square"></i> Gmail</a>
+                <a href="https://www.linkedin.com/in/elias-carmin/"><i class="fab fa-linkedin"></i> Linkedin</a>
+            </div>
+        </div>
+
+    </footer>
+
+
+    <!--JS-->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    AOS.init();
+  </script>
+  <script src="animacion.js/animated.js"></script>
+</body>
+</html>
