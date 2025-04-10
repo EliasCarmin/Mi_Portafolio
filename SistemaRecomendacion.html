@@ -1,264 +1,386 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--ÍCONO DE PESTAÑA -->
-    <link rel="icon" href="IMG/mishi blanco.png" type="image/x-icon">
+   <!--=============== FAVICON ===============-->
+   <link rel="shortcut icon" href="IMG/mishi blanco.png" type="image/x-icon">
 
-   <!--AOS-->
-   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">  
-    <!--librarys-->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     <!--CSS-->
-    <link rel="stylesheet" href="CSS/intro_animado.css">
-    <link rel="stylesheet" href="CSS/proyecto2.css">
-    <link rel="stylesheet" href="CSS/Header_Footer.css">
+   <!--=============== REMIXICONS ===============-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
 
-    <title>Elías Jesús</title>
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="assets/css/styles.css">
+
+   <!-- Estilos específicos para la tabla y galería -->
+   <style>
+    .full-width-iframe {
+        width: 100%;
+        height: 550px;
+        border: none;
+        border-radius: 1rem;
+        margin: 2rem 0;
+        box-shadow: 0 8px 20px hsla(var(--hue), 80%, 5%, .2);
+    }
+
+    .grupo {
+        width: 100%;
+        border-collapse: collapse;
+        margin: 2rem 0;
+        border-radius: 1rem;
+        overflow: hidden;
+        box-shadow: 0 8px 20px hsla(var(--hue), 80%, 5%, .2);
+    }
+
+    .grupo caption {
+        font-weight: var(--font-semi-bold);
+        padding: 1rem;
+        color: var(--title-color);
+        background-color: var(--container-color);
+    }
+
+    .grupo th, .grupo td {
+        padding: 1rem;
+        border: 1px solid hsla(var(--hue), 20%, 20%, .3);
+        text-align: left;
+    }
+
+    .grupo th {
+        background-color: var(--first-color-alt);
+        color: var(--title-color);
+    }
+
+    .grupo tr:nth-child(even) {
+        background-color: hsla(var(--hue), 20%, 20%, .1);
+    }
+
+    .screenshots {
+        display: grid;
+        gap: 1.5rem;
+        margin: 2rem 0;
+    }
+
+    .screenshots img {
+        width: 100%;
+        border-radius: 1rem;
+        box-shadow: 0 8px 20px hsla(var(--hue), 80%, 5%, .2);
+    }
+
+    @media screen and (min-width: 768px) {
+        .screenshots {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+
+    @media screen and (min-width: 1024px) {
+        .screenshots {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .features-list li {
+        margin-bottom: 0.5rem;
+        position: relative;
+        padding-left: 1.5rem;
+    }
+
+    .features-list li::before {
+        content: "✓";
+        position: absolute;
+        left: 0;
+        color: var(--first-color);
+        font-weight: var(--font-semi-bold);
+    }
+
+    /* Estilos para los pasos */
+    .steps-gallery {
+        display: grid;
+        gap: 2rem;
+        margin: 2rem 0;
+    }
+
+    .step-card {
+        background-color: var(--container-color);
+        border-radius: 1rem;
+        padding: 1.5rem;
+        box-shadow: 0 8px 20px hsla(var(--hue), 80%, 5%, .2);
+    }
+
+    .step-card h3 {
+        margin-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    .step-card h3::before {
+        content: "";
+        display: inline-block;
+        width: 24px;
+        height: 24px;
+        background-color: var(--first-color);
+        border-radius: 50%;
+        color: var(--title-color);
+        text-align: center;
+        line-height: 24px;
+        font-size: 0.875rem;
+    }
+
+    .step-card img {
+        width: 100%;
+        border-radius: 0.75rem;
+        margin-bottom: 1rem;
+    }
+
+    @media screen and (min-width: 768px) {
+        .steps-gallery {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+   </style>
+
+   <title>Sistema de Recomendación - Elías Carmín</title>
 </head>
+
 <body>
+   <!--==================== HEADER ====================-->
+   <header class="header" id="header">
+      <nav class="nav container">
+         <a href="index.html" class="nav__logo">Elías</a>
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li>
+                  <a href="index.html#home" class="nav__link">Inicio</a>
+               </li>
 
+               <li>
+                  <a href="index.html#work" class="nav__link">Trabajo</a>
+               </li>
 
-    <!--Intro Animado-->
-    <div class="intro">
-        <img src="IMG/elias-cn.png" alt="imagen-logo" width="30%" height="60%" class="imagen-logo">
-        <h1 class="logo">
-            <span class="logo-parts">Si</span>
-            <span class="logo-parts"> se</span>
-            <span class="logo-parts"> puede</span>
-            <span class="logo-parts"> imaginar,</span>
-            <span class="logo-parts"> se </span>
-            <span class="logo-parts"> puede</span>
-            <span class="logo-parts"> programar </span>
-        </h1>
-    </div>
-    <!--Encabezado-->
-    <header>
-    <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="fa fa-bars" aria-hidden="true"></i>
-        </label>
-        <img src="IMG/prueba 1.jpeg" alt="" class="image_nav">
-              
-        <ul class="menu-principal">
-            <li><a href="index.html">Inicio</a></li>
-            <li class="hola"><a href="">ACERCA DE MÍ</a>
-            <!--submenú-->
-            <ul class="sub-menu">
-                    <li><a href="#">Pasiones</a></li>
-                    <li><a href="#skill">Habilidades</a></li>
-                </ul>
-            <!--submenú-->
-            <li><a href="#experiencia">EXPERIENCIA</a></li>
-            <li><a href="CV.html">CURRÍCULUM</a></li>
-        </ul>
-    </nav>
-    </header>
-    <br><br><br><br>
-    <br><br><br><br>
-    <!--BODY-->
+               <li>
+                  <a href="index.html#info" class="nav__link">Mi Información</a>
+               </li>
 
-    <div class="project-container">
-        <h1 class="project-title">Sistema de Recomendación</h1>
-        <a href="https://app.powerbi.com/view?r=eyJrIjoiOGY4OGQwOTAtNGY4My00N2FkLWJmMmYtNmM4ZjIyYzhhN2M5IiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" class="project-link">View Dashboard Power Bi</a>
-        <p class="project-description">
-            El presente proyecto de Sistema de Recomendación tiene como objetivo realizar un proceso de recomendación de un producto para un cliente B basado en un cliente A, utilizando el algoritmo de similitud de coseno, que pertenece al filtrado colaborativo. El dataset del estudio fue obtenido de un repositorio público de Microsoft. Utilizando SQL Server, se realiza la consulta y, con Python y sus respectivas librerías, se llevan a cabo los procesos ETL. Finalmente, se diseña el dashboard con Power BI.
-</p>
-<iframe title="Sistema de Recomendacion" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiOGY4OGQwOTAtNGY4My00N2FkLWJmMmYtNmM4ZjIyYzhhN2M5IiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
-        <div class="project-details">
-            <div class="tecnologias_utilizadas">
-                <h2>Tecnologías Usadas</h2>
-                <ul class="tech-list">
-                    <li>PYTHON</li>
-                    <li>PANDAS</li>
-                    <li>ScikitLearn</li>
-                    <li>Power Bi</li>
-                    <li>SQL Server</li>
-                </ul>
-            </div>
-            
-            <h2>Proyecto Screenshots</h2>
-            <div class="screenshots">
-                <div>
-                    <img src="IMG/BD.jpg" alt="Screenshot 1">
-                </div>
-                    
-                <div>
-                    <img src="IMG/dashnoard.jpg" alt="Screenshot 2">
-                </div>
-                
-                <div>
-                    <img src="IMG/spider.jpg" alt="Screenshot 2">
-                </div>
-                
-            </div>
-            <h2>Características</h2>
-            <ul class="features-list">
-                <li>Dashboard interactivo para el mejor entendimiento del usuario.</li>
-                <li>Se utilizó filtrado colaborativo con el algoritmo de similitud del coseno.</li>
-                <li>El dashboard de Power Bi está conectado con la base de datos SQL Server ejecutando un script de Python.</li>
+               <li>
+                  <a href="index.html#services" class="nav__link">Servicios</a>
+               </li>
+
+               <li>
+                  <a href="index.html#contact" class="nav__link">Contactame</a>
+               </li>
             </ul>
-            <h2>Retos y Experiencias Afrontados</h2>
-            <p>
-                Los desafíos afrontados fueron nuevos y sastifactoriamente afrontados
-                <br><br>
-                1. Este proyecto me permitió interactuar diferentes herramientas en diferentes entornos para un único fin
-                <br><br>
-                2. Los datos que se utilizaron del estudio se obtuvo en un dataset público de microsoft
-                <br><br>
-                3. Se procuró tener una paleta de colores familiar para el diseño de los dashboards
-                <br><br>
-                4. Para la transformación y limpieza de los datos se usó la librería Pandas y la interfaz de transformación de datos en Power Bi
-            <h2>Resultados</h2>
-            <p>
-              A continuación se mostrará el procedimiento de para realizar el proceso de recomendación un producto
-              de un cliente A a un cliente B
+
+            <!--Clase buttom-->
+            <div class="nav__close" id="nav-close">
+               <i class="ri-close-line"></i>
+            </div>
+         </div>
+         <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-line"></i>
+         </div>
+      </nav>
+   </header>
+
+   <!--==================== MAIN ====================-->
+   <main class="main">
+      <!--==================== PROJECT DETAILS ====================-->
+      <section class="work section">
+         <h2 class="section__title">Sistema de Recomendación</h2>
+
+         <div class="work__container container">
+            <p class="about__description">
+               El presente proyecto de Sistema de Recomendación tiene como objetivo realizar un proceso de recomendación de un producto para un cliente B basado en un cliente A, utilizando el algoritmo de similitud de coseno, que pertenece al filtrado colaborativo. El dataset del estudio fue obtenido de un repositorio público de Microsoft. Utilizando SQL Server, se realiza la consulta y, con Python y sus respectivas librerías, se llevan a cabo los procesos ETL. Finalmente, se diseña el dashboard con Power BI.
             </p>
+
+            <iframe title="Sistema de Recomendacion" class="full-width-iframe" src="https://app.powerbi.com/view?r=eyJrIjoiOGY4OGQwOTAtNGY4My00N2FkLWJmMmYtNmM4ZjIyYzhhN2M5IiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" allowFullScreen="true"></iframe>
+
+            <div class="info__container grid">
+               <div class="skills">
+                  <h3 class="info__title">Tecnologías Usadas</h3>
+                  <ul class="tech-list">
+                     <li>PYTHON</li>
+                     <li>PANDAS</li>
+                     <li>ScikitLearn</li>
+                     <li>Power Bi</li>
+                     <li>SQL Server</li>
+                  </ul>
+               </div>
+
+               <div class="about">
+                  <div class="about__content">
+                     <h3 class="info__title">Características</h3>
+                     <ul class="features-list">
+                        <li>Dashboard interactivo para el mejor entendimiento del usuario.</li>
+                        <li>Se utilizó filtrado colaborativo con el algoritmo de similitud del coseno.</li>
+                        <li>El dashboard de Power Bi está conectado con la base de datos SQL Server ejecutando un script de Python.</li>
+                     </ul>
+                  </div>
+               </div>
+            </div>
+
+            <h3 class="info__title">Screenshots del Proyecto</h3>
+            <div class="screenshots">
+               <div>
+                  <img src="IMG/BD.jpg" alt="Base de datos">
+               </div>
+               <div>
+                  <img src="IMG/dashnoard.jpg" alt="Dashboard">
+               </div>
+               <div>
+                  <img src="IMG/spider.jpg" alt="Diagrama Spider">
+               </div>
+            </div>
+
+            <div class="about">
+               <div class="about__content">
+                  <h3 class="info__title">Retos y Experiencias Afrontados</h3>
+                  <p class="about__description">
+                     Los desafíos afrontados fueron nuevos y sastifactoriamente afrontados:<br><br>
+                     1. Este proyecto me permitió interactuar diferentes herramientas en diferentes entornos para un único fin<br><br>
+                     2. Los datos que se utilizaron del estudio se obtuvo en un dataset público de microsoft<br><br>
+                     3. Se procuró tener una paleta de colores familiar para el diseño de los dashboards<br><br>
+                     4. Para la transformación y limpieza de los datos se usó la librería Pandas y la interfaz de transformación de datos en Power Bi
+                  </p>
+               </div>
+            </div>
+
+            <h3 class="info__title">Resultados</h3>
+            <p class="about__description">
+               A continuación se mostrará el procedimiento de para realizar el proceso de recomendación un producto
+               de un cliente A a un cliente B
+            </p>
+
             <table class="grupo">
-                <caption>Datos de muestra, datos totales: 227982 filas</caption>
-                <tr>
-                    <th>factura</th>
-                    <th>productID</th>
-                    <th>producto</th>
-                    <th>cantidad</th>
-                    <th>fecha</th>
-                    <th>precio</th>
-                    <th>clienteID</th>
-                    <th>cliente</th>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>67</td>
-                    <td>Ride on toy sedan car (Black) 1/12 scale</td>
-                    <td>10</td>
-                    <td>1/1/2013</td>
-                    <td>230.00</td>
-                    <td>832</td>
-                    <td>Aakriti Byrraju</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>50</td>
-                    <td>Developer joke mug - old C developers never die (White)</td>
-                    <td>9</td>
-                    <td>1/1/2013</td>
-                    <td>13.00</td>
-                    <td>803</td>
-                    <td>Bala Dixit</td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>10</td>
-                    <td>USB food flash drive - chocolate bar</td>
-                    <td>9</td>
-                    <td>1/1/2013</td>
-                    <td>32.00</td>
-                    <td>803</td>
-                    <td>Bala Dixit</td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>114</td>
-                    <td>Superhero action jacket (Blue) XXL</td>
-                    <td>3</td>
-                    <td>1/1/2013</td>
-                    <td>30.00</td>
-                    <td>105</td>
-                    <td>Sung-Hwan Hwang</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>206</td>
-                    <td>Permanent marker black 5mm nib (Black) 5mm</td>
-                    <td>96</td>
-                    <td>1/1/2013</td>
-                    <td>2.70</td>
-                    <td>57</td>
-                    <td>Aile Mae</td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>130</td>
-                    <td>Furry gorilla with big eyes slippers (Black) S</td>
-                    <td>5</td>
-                    <td>1/1/2013</td>
-                    <td>32.00</td>
-                    <td>57</td>
-                    <td>Aile Mae</td>
-                </tr>
+               <caption>Datos de muestra, datos totales: 227982 filas</caption>
+               <tr>
+                  <th>factura</th>
+                  <th>productID</th>
+                  <th>producto</th>
+                  <th>cantidad</th>
+                  <th>fecha</th>
+                  <th>precio</th>
+                  <th>clienteID</th>
+                  <th>cliente</th>
+               </tr>
+               <tr>
+                  <td>1</td>
+                  <td>67</td>
+                  <td>Ride on toy sedan car (Black) 1/12 scale</td>
+                  <td>10</td>
+                  <td>1/1/2013</td>
+                  <td>230.00</td>
+                  <td>832</td>
+                  <td>Aakriti Byrraju</td>
+               </tr>
+               <tr>
+                  <td>2</td>
+                  <td>50</td>
+                  <td>Developer joke mug - old C developers never die (White)</td>
+                  <td>9</td>
+                  <td>1/1/2013</td>
+                  <td>13.00</td>
+                  <td>803</td>
+                  <td>Bala Dixit</td>
+               </tr>
+               <tr>
+                  <td>2</td>
+                  <td>10</td>
+                  <td>USB food flash drive - chocolate bar</td>
+                  <td>9</td>
+                  <td>1/1/2013</td>
+                  <td>32.00</td>
+                  <td>803</td>
+                  <td>Bala Dixit</td>
+               </tr>
+               <tr>
+                  <td>3</td>
+                  <td>114</td>
+                  <td>Superhero action jacket (Blue) XXL</td>
+                  <td>3</td>
+                  <td>1/1/2013</td>
+                  <td>30.00</td>
+                  <td>105</td>
+                  <td>Sung-Hwan Hwang</td>
+               </tr>
+               <tr>
+                  <td>4</td>
+                  <td>206</td>
+                  <td>Permanent marker black 5mm nib (Black) 5mm</td>
+                  <td>96</td>
+                  <td>1/1/2013</td>
+                  <td>2.70</td>
+                  <td>57</td>
+                  <td>Aile Mae</td>
+               </tr>
+               <tr>
+                  <td>4</td>
+                  <td>130</td>
+                  <td>Furry gorilla with big eyes slippers (Black) S</td>
+                  <td>5</td>
+                  <td>1/1/2013</td>
+                  <td>32.00</td>
+                  <td>57</td>
+                  <td>Aile Mae</td>
+               </tr>
             </table>
-            <div class="Pasos_Imagenes">
-                <h3>Paso 1</h3>
-                <img src="IMG/comparativa.jpg" alt="">
-                <p></p>
-                <h3>Paso 2</h3>
-                <img src="IMG/perfil.jpg" alt="">
-                <p></p>
-                <h3>Paso 3</h3>
-                <img src="IMG/similitud.jpg" alt="">
-                <p></p>
-                <h3>Paso 4</h3>
-                <img src="IMG/recomendacion.jpg" alt="">
-                <p></p>
-            </div>
-        
-            
-            <a href="https://app.powerbi.com/onedrive/error?pbi_source=ODSPViewer&driveId=b!Wvl3294_2UmOX-31Na3gZsH8PtKuSl5AvCvJUVvOvDCOqbR_zGE7RaqSm9Wt6lvV&itemId=01HQIYXF4QTILUCM2GLRDZ72FSLQ2QC5BN" class="project-link">View Dashboard Power Bi</a>
-        </div>
-    </div>
 
-
-    <!--BODY-->
-
-
-    <!--Pie de página-->
-    <footer>
-
-        <div class="container_footer">
-
-            <div class="box_footer">
-                <div class="logazo">
-                    <img src="IMG/prueba 1.jpeg" alt="">
-                </div> 
-                <div class="texto_abajo">
-                    <p>Portafolio personal del estudiante de ingeniería de Sistemas Elías Carmín,
-                        actualmente cursando el décimo ciclo en la Universidad Tecnológica del
-                        Perú</p>
-                </div>
+            <h3 class="info__title">Proceso Paso a Paso</h3>
+            <div class="steps-gallery">
+               <div class="step-card">
+                  <h3>Paso 1</h3>
+                  <img src="IMG/comparativa.jpg" alt="Paso 1 - Comparativa">
+               </div>
+               <div class="step-card">
+                  <h3>Paso 2</h3>
+                  <img src="IMG/perfil.jpg" alt="Paso 2 - Perfil">
+               </div>
+               <div class="step-card">
+                  <h3>Paso 3</h3>
+                  <img src="IMG/similitud.jpg" alt="Paso 3 - Similitud">
+               </div>
+               <div class="step-card">
+                  <h3>Paso 4</h3>
+                  <img src="IMG/recomendacion.jpg" alt="Paso 4 - Recomendación">
+               </div>
             </div>
 
-            <div class="box_footer">
-                <h2>Mi Persona</h2>
-                <a href="#pasion">Pasiones</a>
-                <a href="#skill">Habilidades</a>
-                <a href="CV.html">CV Completo</a>
-            </div>
-            <div class="box_footer">
-                <h2>Contacto</h2>
-                <h3><i class="fa fa-phone-square"></i> eliasjesuscarmin@gmail.com</h3>
-                <h3><i class="fa fa-envelope"></i> +51 956 224 010</h3>
-            </div>
-            <div class="box_footer">
-                <h2>Redes Sociales</h2>
-                <a href="#"><i class="fab fa-facebook-square"></i> Facebook</a>
-                <a href="#"><i class="fab fa-twitter-square"></i> Gmail</a>
-                <a href="https://www.linkedin.com/in/elias-carmin/"><i class="fab fa-linkedin"></i> Linkedin</a>
-            </div>
-        </div>
+            <a href="https://app.powerbi.com/view?r=eyJrIjoiOGY4OGQwOTAtNGY4My00N2FkLWJmMmYtNmM4ZjIyYzhhN2M5IiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" class="button" target="_blank">Ver Dashboard en Power BI</a>
+         </div>
+      </section>
+   </main>
 
-    </footer>
+   <!--==================== FOOTER ====================-->
+   <footer class="footer">
+      <div class="footer__container container grid">
+         <ul class="footer__links">
+            <li>
+               <a href="index.html" class="footer__link">Inicio</a>
+            </li>
+            <li>
+               <a href="index.html#work" class="footer__link">Trabajo</a>
+            </li>
+            <li>
+               <a href="index.html#info" class="footer__link">información</a>
+            </li>
+         </ul>
+         <span class="footer__copy">
+            &#169; Todos los derechos reservados
+         </span>
+      </div>
+   </footer>
 
+   <!--========== SCROLL UP ==========-->
+   <a href="#" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-line"></i>
+   </a>
 
-    <!--JS-->
+   <!--=============== SCROLLREVEAL ===============-->
+   <script src="assets/js/scrollreveal.min.js"></script>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init();
-  </script>
-  <script src="animacion.js/animated.js"></script>
+   <!--=============== MAIN JS ===============-->
+   <script src="assets/js/main.js"></script>
 </body>
+
 </html>

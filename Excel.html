@@ -1,174 +1,259 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--ÍCONO DE PESTAÑA -->
-    <link rel="icon" href="IMG/mishi blanco.png" type="image/x-icon">
+   <!--=============== FAVICON ===============-->
+   <link rel="shortcut icon" href="IMG/mishi blanco.png" type="image/x-icon">
 
-   <!--AOS-->
-   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">  
-    <!--librarys-->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     <!--CSS-->
-     <link rel="stylesheet" href="CSS/intro_animado.css">
-     <link rel="stylesheet" href="CSS/index.css">
-    <link rel="stylesheet" href="CSS/Header_Footer.css">
-    <link rel="stylesheet" href="CSS/EXCEL.CSS">
-    <title>Elías Jesús</title>
+   <!--=============== REMIXICONS ===============-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
+
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="assets/css/styles.css">
+
+   <!-- Estilos específicos para la página de Excel -->
+   <style>
+      .description-container {
+         background-color: hsla(var(--hue), 70%, 15%, .6);
+         padding: 2rem;
+         border-radius: 1rem;
+         margin-bottom: 2.5rem;
+         box-shadow: 0 8px 20px hsla(var(--hue), 80%, 5%, .2);
+      }
+
+      .content-block {
+         background-color: hsla(var(--hue), 70%, 15%, .7);
+         padding: 1.5rem;
+         border-radius: 1rem;
+         border: 1px solid hsla(var(--hue), 70%, 30%, .3);
+         box-shadow: 0 8px 20px hsla(var(--hue), 80%, 5%, .3);
+         transition: transform .3s, box-shadow .3s;
+      }
+
+      .content-block:hover {
+         transform: translateY(-5px);
+         box-shadow: 0 12px 24px hsla(var(--hue), 80%, 5%, .4);
+      }
+
+      .content-block .info__title {
+         color: var(--first-color);
+         margin-bottom: 1rem;
+         font-size: 1.25rem;
+      }
+
+      .content-block .tech-list li, 
+      .content-block .about__description {
+         position: relative;
+         padding-left: 0.5rem;
+         border-left: 2px solid var(--first-color);
+         margin-bottom: 0.75rem;
+      }
+
+      .grid-gallery {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         gap: 2rem;
+         margin-top: 2.5rem;
+      }
+
+      .grid-gallery .work__card {
+         background-color: hsla(var(--hue), 70%, 15%, .6);
+         padding: 1rem;
+         border-radius: 1rem;
+         overflow: hidden;
+         box-shadow: 0 8px 20px hsla(var(--hue), 80%, 5%, .2);
+         transition: transform .3s, box-shadow .3s;
+         width: 100%;
+         max-width: 1000px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      }
+
+      .grid-gallery .work__card:hover {
+         transform: translateY(-5px);
+         box-shadow: 0 12px 24px hsla(var(--hue), 80%, 5%, .4);
+      }
+      
+      .grid-gallery .work__img {
+         width: 100%;
+         height: 300px;
+         object-fit: contain;
+      }
+      
+      .grid-gallery .info__title {
+         text-align: center;
+         margin-bottom: 1rem;
+         color: var(--first-color);
+      }
+
+      /* Eliminamos los media queries que cambiaban el grid a múltiples columnas */
+      @media screen and (min-width: 768px) {
+         .grid-gallery {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+         }
+      }
+   </style>
+
+   <title>Excel y Macros - Elías Carmín</title>
 </head>
+
 <body>
-    <!--Intro Animado-->
-    <div class="intro">
-        <img src="IMG/elias-cn.png" alt="imagen-logo" width="30%" height="60%" class="imagen-logo">
-        <h1 class="logo">
-            <span class="logo-parts">Si</span>
-            <span class="logo-parts"> se</span>
-            <span class="logo-parts"> puede</span>
-            <span class="logo-parts"> imaginar,</span>
-            <span class="logo-parts"> se </span>
-            <span class="logo-parts"> puede</span>
-            <span class="logo-parts"> programar </span>
-        </h1>
-    </div>
-    <!--Encabezado-->
-    <header>
-    <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="fa fa-bars" aria-hidden="true"></i>
-        </label>
-        <img src="IMG/prueba 1.jpeg" alt="" class="image_nav">
-              
-        <ul class="menu-principal">
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="CV.html">CURRÍCULUM</a></li>
-        </ul>
-    </nav>
-    </header>
-    
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <br>
-    <!--Fin de encabezado-->
+   <!--==================== HEADER ====================-->
+   <header class="header" id="header">
+      <nav class="nav container">
+         <a href="index.html" class="nav__logo">Elías</a>
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li>
+                  <a href="index.html#home" class="nav__link">Inicio</a>
+               </li>
 
-    <!--  body  -->
-    <div class="project-container">
-        <h1 class="project-title">Macros y VBA en Excel</h1>
-        <p class="project-description">
-            los Siguientes proyectos son macros avanzados siendo programados utilizando VBA(Visual Basic For Aplications), implementando la transferencia de datos de excel a la nube, uniendo la lógica del negocio junto con interfaces rápida e intuitivas.
-        </p>
+               <li>
+                  <a href="index.html#work" class="nav__link">Trabajo</a>
+               </li>
 
-        <!--INSERTAR LINK DEL VIDEO-->
-        <div class="project-details">
-            <div class="tecnologias_utilizadas">
-                <h2>Conocimientos Empleados</h2>
-                <ul class="tech-list">
-                    <p>1. Fundamentos de VBA</p>
-                    <p>2. Estructuras de Control</p>
-                    <p>3. Manejo de Objetos en Excel</p>
-                    <p>4. Uso de Funciones y Procedimientos</p>
-                    <p>5. Manejo de Eventos</p>
-                    <p>6. Manejo de Formularios y Controles (UserForms)</p>
-                    <p>7. Automatización y Manipulación de Archivos</p>
-                </ul>
+               <li>
+                  <a href="index.html#info" class="nav__link">Mi Información</a>
+               </li>
+
+               <li>
+                  <a href="index.html#services" class="nav__link">Servicios</a>
+               </li>
+
+               <li>
+                  <a href="index.html#contact" class="nav__link">Contactame</a>
+               </li>
+            </ul>
+
+            <!--Clase buttom-->
+            <div class="nav__close" id="nav-close">
+               <i class="ri-close-line"></i>
             </div>
-            <h2>Retos y Experiencias Afrontados</h2>
-            <p>
-                Los desafíos afrontados:
-                <br><br>
-                1. Problema del rendimiento al manejar miles de registros provocando que la app se vuelva lenta
-                <br><br>
-                2. Manejo de la relación de las tablas
-                <br><br>
-                3. Crear automatizaciones para movimientos de datos entre tablas, generar reportes y ejecutar procesos internos.
-                <br><br>
-                4. Personalización de la interfaz limitada, no se puede modificar el diseño como una app nativa
-                <br><br>
-                5. Seguridad y control de usuarios para roles con permisos
-                <br><br>
-                6. Crear automatizaciones para movimientos de datos entre tablas, generar reportes y ejecutar procesos internos.
-            </p>
-            <div class="Pasos_Imagenes">
-                <h3>Costeo de Importación</h3>
-                <img src="IMG/costeo.png" alt="">
-                <p></p>
-                <h3>Generador de Tarjetas de Letras</h3>
-                <img src="IMG/generador.png" alt="">
-                <img src="IMG/letragenerada.png" alt="">
-                <p></p>
-                <h3>Inventario y Control de Stock</h3>
-                <img src="IMG/entradaysalida.png" alt="">
-                <p></p>
-                <h3>Registro de Ventas</h3>
-                <img src="IMG/registrodeventas.png" alt="">
-                <p></p>
-            </div>
-        
-            
-            <a href="https://app.powerbi.com/onedrive/error?pbi_source=ODSPViewer&driveId=b!Wvl3294_2UmOX-31Na3gZsH8PtKuSl5AvCvJUVvOvDCOqbR_zGE7RaqSm9Wt6lvV&itemId=01HQIYXF4QTILUCM2GLRDZ72FSLQ2QC5BN" class="project-link">View Dashboard Power Bi</a>
-        </div>
-    </div>
+         </div>
+         <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-line"></i>
+         </div>
+      </nav>
+   </header>
 
+   <!--==================== MAIN ====================-->
+   <main class="main">
+      <!--==================== WORK DETAILS ====================-->
+      <section class="work section">
+         <!-- Título con contenedor especial -->
+         <div class="title-container">
+            <h2 class="section__title">Macros y VBA Excel</h2>
+         </div>
 
-    <!--BODY-->
-
-
-    <!--Pie de página-->
-    <footer>
-
-        <div class="container_footer">
-
-            <div class="box_footer">
-                <div class="logazo">
-                    <img src="../IMG/prueba 1.jpeg" alt="">
-                </div> 
-                <div class="texto_abajo">
-                    <p>Portafolio personal del estudiante de ingeniería de Sistemas Elías Carmín,
-                        actualmente cursando el décimo ciclo en la Universidad Tecnológica del
-                        Perú</p>
-                </div>
+         <div class="work__container container">
+            <!-- Descripción con contenedor envolvente -->
+            <div class="description-container">
+               <p class="about__description">
+                  Proyectos de macros y VBA para automatizar tareas en excel, desde macros básicos con la grabadora hasta formularios personalizados utilizando Visual Basic for Aplications. Estas soluciones permiten mejorar la productividad y optimizar procesos repetitivos.
+               </p>
             </div>
 
-            <div class="box_footer">
-                <h2>Mi Persona</h2>
-                <a href="#pasion">Pasiones</a>
-                <a href="#skill">Habilidades</a>
-                <a href="CV.html">CV Completo</a>
+            <div class="info__container grid">
+               <!-- Bloque de Conocimientos mejorado -->
+               <div class="skills content-block">
+                  <h3 class="info__title">Conocimientos Empleados</h3>
+                  <ul class="tech-list">
+                     <li>1. Fundamentos de VBA</li>
+                     <li>2. Estructuras de Control</li>
+                     <li>3. Manejo de Objetos en Excel</li>
+                     <li>4. Uso de Funciones y Procedimientos</li>
+                     <li>5. Manejo de Eventos</li>
+                     <li>6. Manejo de Formularios y Controles (UserForms)</li>
+                     <li>7. Automatización y Manipulación de Archivos</li>
+                  </ul>
+               </div>
+
+               <!-- Bloque de Retos mejorado -->
+               <div class="about content-block">
+                  <div class="about__content">
+                     <h3 class="info__title">Retos y Experiencias Afrontados</h3>
+                     <p class="about__description">
+                        Los desafíos afrontados:<br><br>
+                        1. Problema del rendimiento al manejar miles de registros provocando que la app se vuelva lenta<br><br>
+                        2. Manejo de la relación de las tablas<br><br>
+                        3. Crear automatizaciones para movimientos de datos entre tablas, generar reportes y ejecutar procesos internos.<br><br>
+                        4. Personalización de la interfaz limitada, no se puede modificar el diseño como una app nativa<br><br>
+                        5. Seguridad y control de usuarios para roles con permisos<br><br>
+                        6. Crear automatizaciones para movimientos de datos entre tablas, generar reportes y ejecutar procesos internos.
+                     </p>
+                  </div>
+               </div>
             </div>
-            <div class="box_footer">
-                <h2>Contacto</h2>
-                <h3><i class="fa fa-phone-square"></i> eliasjesuscarmin@gmail.com</h3>
-                <h3><i class="fa fa-envelope"></i> +51 956 224 010</h3>
+
+            <!-- Proyectos de Macros - Imágenes en formato grid -->
+            <div class="grid-gallery">
+               <div class="work__card">
+                  <h3 class="info__title">Costeo de Importación</h3>
+                  <img src="IMG/costeo.png" alt="Costeo de Importación" class="work__img">
+               </div>
+
+               <div class="work__card">
+                  <h3 class="info__title">Generador de Tarjetas de Letras</h3>
+                  <img src="IMG/generador.png" alt="Generador de Tarjetas" class="work__img">
+               </div>
+
+               <div class="work__card">
+                  <img src="IMG/letragenerada.png" alt="Letra Generada" class="work__img">
+               </div>
+
+               <div class="work__card">
+                  <h3 class="info__title">Inventario y Control de Stock</h3>
+                  <img src="IMG/entradaysalida.png" alt="Inventario y Control de Stock" class="work__img">
+               </div>
+
+               <div class="work__card">
+                  <h3 class="info__title">Registro de Ventas</h3>
+                  <img src="IMG/registrodeventas.png" alt="Registro de Ventas" class="work__img">
+               </div>
             </div>
-            <div class="box_footer">
-                <h2>Redes Sociales</h2>
-                <a href="#"><i class="fab fa-facebook-square"></i> Facebook</a>
-                <a href="#"><i class="fab fa-twitter-square"></i> Gmail</a>
-                <a href="https://www.linkedin.com/in/elias-carmin/"><i class="fab fa-linkedin"></i> Linkedin</a>
-            </div>
-        </div>
 
-    </footer>
+            <a href="#" class="button">Ver más proyectos</a>
+         </div>
+      </section>
+   </main>
 
+   <!--==================== FOOTER ====================-->
+   <footer class="footer">
+      <div class="footer__container container grid">
+         <ul class="footer__links">
+            <li>
+               <a href="index.html" class="footer__link">Inicio</a>
+            </li>
+            <li>
+               <a href="index.html#work" class="footer__link">Trabajo</a>
+            </li>
+            <li>
+               <a href="index.html#info" class="footer__link">información</a>
+            </li>
+         </ul>
+         <span class="footer__copy">
+            &#169; Todos los derechos reservados
+         </span>
+      </div>
+   </footer>
 
-    <!--JS-->
+   <!--========== SCROLL UP ==========-->
+   <a href="#" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-line"></i>
+   </a>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init();
-  </script>
-  <script src="animacion.js/animated.js"></script>
+   <!--=============== SCROLLREVEAL ===============-->
+   <script src="assets/js/scrollreveal.min.js"></script>
+
+   <!--=============== MAIN JS ===============-->
+   <script src="assets/js/main.js"></script>
 </body>
+
 </html>

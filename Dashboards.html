@@ -1,163 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--ÍCONO DE PESTAÑA -->
-    <link rel="icon" href="IMG/mishi blanco.png" type="image/x-icon">
+   <!--=============== FAVICON ===============-->
+   <link rel="shortcut icon" href="IMG/mishi blanco.png" type="image/x-icon">
 
-   <!--AOS-->
-   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">  
-    <!--librarys-->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-     <!--CSS-->
-    <link rel="stylesheet" href="CSS/intro_animado.css">
-    <link rel="stylesheet" href="CSS/proyecto2.css">
-    <link rel="stylesheet" href="CSS/Header_Footer.css">
+   <!--=============== REMIXICONS ===============-->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.min.css">
 
-    <title>Dashboards y Paneles de Control</title>
+   <!--=============== CSS ===============-->
+   <link rel="stylesheet" href="assets/css/styles.css">
+
+   <!-- Estilos específicos para la página de Dashboards -->
+   <style>
+      /* Contenedor de descripción principal */
+      .description-container {
+         background-color: hsla(var(--hue), 70%, 15%, .6);
+         padding: 2rem;
+         border-radius: 1rem;
+         margin-bottom: 2.5rem;
+         box-shadow: 0 8px 20px hsla(var(--hue), 80%, 5%, .2);
+         width: 100%;
+         max-width: 1000px;
+      }
+
+      /* Bloques de contenido (Conocimientos y Retos) */
+      .content-block {
+         background-color: hsla(var(--hue), 70%, 15%, .7);
+         padding: 1.5rem;
+         border-radius: 1rem;
+         border: 1px solid hsla(var(--hue), 70%, 30%, .3);
+         box-shadow: 0 8px 20px hsla(var(--hue), 80%, 5%, .3);
+         transition: transform .3s, box-shadow .3s;
+      }
+
+      .content-block:hover {
+         transform: translateY(-5px);
+         box-shadow: 0 12px 24px hsla(var(--hue), 80%, 5%, .4);
+      }
+
+      .content-block .info__title {
+         color: var(--first-color);
+         margin-bottom: 1rem;
+         font-size: 1.25rem;
+      }
+
+      .content-block .tech-list li, 
+      .content-block .about__description {
+         position: relative;
+         padding-left: 0.5rem;
+         border-left: 2px solid var(--first-color);
+         margin-bottom: 0.75rem;
+      }
+
+      /* Contenedor principal */
+      .work__container {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         max-width: 1000px;
+      }
+
+      /* Estilos para las tarjetas de imágenes */
+      .work__card {
+         background-color: hsla(var(--hue), 70%, 15%, .6);
+         padding: 1rem;
+         border-radius: 1rem;
+         overflow: hidden;
+         box-shadow: 0 8px 20px hsla(var(--hue), 80%, 5%, .2);
+         transition: transform .3s, box-shadow .3s;
+         width: 100%;
+         max-width: 1000px;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+         margin-bottom: 2rem;
+      }
+
+      .work__card:hover {
+         transform: translateY(-5px);
+         box-shadow: 0 12px 24px hsla(var(--hue), 80%, 5%, .4);
+      }
+      
+      .work__img {
+         width: 100%;
+         height: 500px;
+         object-fit: contain;
+      }
+      
+      .info__title {
+         text-align: center;
+         margin-bottom: 1rem;
+         color: var(--first-color);
+      }
+
+      /* Ajustar el contenedor de información */
+      .info__container {
+         width: 100%;
+         max-width: 1000px;
+         margin-bottom: 2.5rem;
+      }
+
+      /* Modificar la clase about__description global para que coincida con el estilo */
+      .about__description {
+         line-height: 1.6;
+      }
+
+      /* Estilo para el iframe */
+      .iframe-container {
+         width: 100%;
+         max-width: 1000px;
+         margin-top: 2rem;
+         background-color: hsla(var(--hue), 70%, 15%, .6);
+         padding: 1rem;
+         border-radius: 1rem;
+         overflow: hidden;
+         box-shadow: 0 8px 20px hsla(var(--hue), 80%, 5%, .2);
+      }
+
+      .iframe-container iframe {
+         width: 100%;
+         border-radius: 0.5rem;
+      }
+
+      @media screen and (min-width: 768px) {
+         .work__container {
+            width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+         }
+         
+         .info__container {
+            grid-template-columns: repeat(2, 1fr);
+         }
+      }
+   </style>
+
+   <title>Dashboards - Elías Carmín</title>
 </head>
+
 <body>
+   <!--==================== HEADER ====================-->
+   <header class="header" id="header">
+      <nav class="nav container">
+         <a href="index.html" class="nav__logo">Elías</a>
+         <div class="nav__menu" id="nav-menu">
+            <ul class="nav__list">
+               <li>
+                  <a href="index.html#home" class="nav__link">Inicio</a>
+               </li>
 
+               <li>
+                  <a href="index.html#work" class="nav__link">Trabajo</a>
+               </li>
 
-    <!--Intro Animado-->
-    <div class="intro">
-        <img src="IMG/elias-cn.png" alt="imagen-logo" width="30%" height="60%" class="imagen-logo">
-        <h1 class="logo">
-            <span class="logo-parts">Si</span>
-            <span class="logo-parts"> se</span>
-            <span class="logo-parts"> puede</span>
-            <span class="logo-parts"> imaginar,</span>
-            <span class="logo-parts"> se </span>
-            <span class="logo-parts"> puede</span>
-            <span class="logo-parts"> programar </span>
-        </h1>
-    </div>
-    <!--Encabezado-->
-    <header>
-    <nav>
-        <input type="checkbox" id="check">
-        <label for="check" class="checkbtn">
-            <i class="fa fa-bars" aria-hidden="true"></i>
-        </label>
-        <img src="IMG/prueba 1.jpeg" alt="" class="image_nav">
-              
-        <ul class="menu-principal">
-            <li><a href="index.html">Inicio</a></li>
-            <li class="hola"><a href="">ACERCA DE MÍ</a>
-            <!--submenú-->
-            <ul class="sub-menu">
-                    <li><a href="#">Pasiones</a></li>
-                    <li><a href="#skill">Habilidades</a></li>
-                </ul>
-            <!--submenú-->
-            <li><a href="#experiencia">EXPERIENCIA</a></li>
-            <li><a href="CV.html">CURRÍCULUM</a></li>
-        </ul>
-    </nav>
-    </header>
-    <br><br><br><br>
-    <br><br><br><br>
-    <!--BODY-->
+               <li>
+                  <a href="index.html#info" class="nav__link">Mi Información</a>
+               </li>
 
-    <div class="project-container">
-        <h1 class="project-title">Sistema de Recomendación</h1>
-        <p class="project-description">
-            
-</p>Los presentes proyectos tratan de dashboards interactivos, paneles de control y Storetellings con el objetivo de simplificar la información y mostrar solamente los datos mas relevantes junto con los KPI´s que deben ser cruciales para los stakehodlers, la estética (colores y formatos) y el orden de la jerarquía (estilo Z y F) se toma en cuenta para captar la atención de nuestros interesados y así puedan tomar las mejores desiciones. 
-<iframe title="Sistema de Recomendacion" width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiOGY4OGQwOTAtNGY4My00N2FkLWJmMmYtNmM4ZjIyYzhhN2M5IiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
-        <div class="project-details">
-            <div class="tecnologias_utilizadas">
-                <h2>Tecnologías Usadas</h2>
-                <ul class="tech-list">
-                    <li>PYTHON</li>
-                    <li>PANDAS</li>
-                    <li>Power Bi</li>
-                    <li>DAX</li>
-                    <li>Looker Studio</li>
-                </ul>
+               <li>
+                  <a href="index.html#services" class="nav__link">Servicios</a>
+               </li>
+
+               <li>
+                  <a href="index.html#contact" class="nav__link">Contactame</a>
+               </li>
+            </ul>
+
+            <!--Clase buttom-->
+            <div class="nav__close" id="nav-close">
+               <i class="ri-close-line"></i>
             </div>
-            <h2>Retos y Experiencias Afrontados</h2>
-            <p>
-                Los desafíos afrontados:
-                <br><br>
-                1. Jerarquizar el uso de colores y formato de visualización para captar la atención de los stakehodlers
-                <br><br>
-                2. Realizar los procesos ETL, sobretodo en la transformación y extracción de datos de diversas fuentes
-                <br><br>
-                3. Automatizar las actualizaciones de los paneles para tener la información mas reciente
-                <br><br>
-                4. Capacitar a los stakehodlers para la correcta interpretación y manipulaición de los paneles
-            <div class="Pasos_Imagenes">
-                <h3>Paso 1</h3>
-                <img src="IMG/dash - 2025.png" alt="">
-                <p></p>
-                <h3>Paso 2</h3>
-                <img src="IMG/dash - comparativa triple.png" alt="">
-                <p></p>
-                <h3>Paso 3</h3>
-                <img src="IMG/dash - Ventas 2021-2025.png" alt="">
-                <p></p>
-                <h3>Paso 4</h3>
-                <img src="IMG/dash - flota vehicular.png" alt="">
-                <p></p>
-            </div>
-        
-            
-            <a href="https://app.powerbi.com/onedrive/error?pbi_source=ODSPViewer&driveId=b!Wvl3294_2UmOX-31Na3gZsH8PtKuSl5AvCvJUVvOvDCOqbR_zGE7RaqSm9Wt6lvV&itemId=01HQIYXF4QTILUCM2GLRDZ72FSLQ2QC5BN" class="project-link">View Dashboard Power Bi</a>
-        </div>
-    </div>
+         </div>
+         <div class="nav__toggle" id="nav-toggle">
+            <i class="ri-menu-line"></i>
+         </div>
+      </nav>
+   </header>
 
+   <!--==================== MAIN ====================-->
+   <main class="main">
+      <!--==================== WORK DETAILS ====================-->
+      <section class="work section">
+         <!-- Título con contenedor especial -->
+         <div class="title-container">
+            <h2 class="section__title">Dashboards y Paneles de Control</h2>
+         </div>
 
-    <!--BODY-->
-
-
-    <!--Pie de página-->
-    <footer>
-
-        <div class="container_footer">
-
-            <div class="box_footer">
-                <div class="logazo">
-                    <img src="IMG/prueba 1.jpeg" alt="">
-                </div> 
-                <div class="texto_abajo">
-                    <p>Portafolio personal del estudiante de ingeniería de Sistemas Elías Carmín,
-                        actualmente cursando el décimo ciclo en la Universidad Tecnológica del
-                        Perú</p>
-                </div>
+         <div class="work__container container">
+            <!-- Descripción con contenedor envolvente -->
+            <div class="description-container">
+               <p class="about__description">
+                  Los presentes proyectos tratan de dashboards interactivos, paneles de control y Storetellings con el objetivo de simplificar la información y mostrar solamente los datos mas relevantes junto con los KPI´s que deben ser cruciales para los stakehodlers, la estética (colores y formatos) y el orden de la jerarquía (estilo Z y F) se toma en cuenta para captar la atención de nuestros interesados y así puedan tomar las mejores desiciones.
+               </p>
             </div>
 
-            <div class="box_footer">
-                <h2>Mi Persona</h2>
-                <a href="#pasion">Pasiones</a>
-                <a href="#skill">Habilidades</a>
-                <a href="CV.html">CV Completo</a>
+            <div class="info__container grid">
+               <!-- Bloque de Tecnologías -->
+               <div class="skills content-block">
+                  <h3 class="info__title">Tecnologías Usadas</h3>
+                  <ul class="tech-list">
+                     <li>PYTHON</li>
+                     <li>PANDAS</li>
+                     <li>Power Bi</li>
+                     <li>DAX</li>
+                     <li>Looker Studio</li>
+                  </ul>
+               </div>
+
+               <!-- Bloque de Retos -->
+               <div class="about content-block">
+                  <div class="about__content">
+                     <h3 class="info__title">Retos y Experiencias Afrontados</h3>
+                     <p class="about__description">
+                        Los desafíos afrontados:<br><br>
+                        1. Jerarquizar el uso de colores y formato de visualización para captar la atención de los stakehodlers<br><br>
+                        2. Realizar los procesos ETL, sobretodo en la transformación y extracción de datos de diversas fuentes<br><br>
+                        3. Automatizar las actualizaciones de los paneles para tener la información mas reciente<br><br>
+                        4. Capacitar a los stakehodlers para la correcta interpretación y manipulaición de los paneles
+                     </p>
+                  </div>
+               </div>
             </div>
-            <div class="box_footer">
-                <h2>Contacto</h2>
-                <h3><i class="fa fa-phone-square"></i> eliasjesuscarmin@gmail.com</h3>
-                <h3><i class="fa fa-envelope"></i> +51 956 224 010</h3>
+
+            <!-- Tarjetas de imágenes -->
+            <div class="work__card">
+               <h3 class="info__title">Dashboard 2025</h3>
+               <img src="IMG/dash - 2025.png" alt="Dashboard 2025" class="work__img">
             </div>
-            <div class="box_footer">
-                <h2>Redes Sociales</h2>
-                <a href="#"><i class="fab fa-facebook-square"></i> Facebook</a>
-                <a href="#"><i class="fab fa-twitter-square"></i> Gmail</a>
-                <a href="https://www.linkedin.com/in/elias-carmin/"><i class="fab fa-linkedin"></i> Linkedin</a>
+
+            <div class="work__card">
+               <h3 class="info__title">Comparativa Triple</h3>
+               <img src="IMG/dash - comparativa triple.png" alt="Comparativa triple" class="work__img">
             </div>
-        </div>
 
-    </footer>
+            <div class="work__card">
+               <h3 class="info__title">Ventas 2021-2025</h3>
+               <img src="IMG/dash - Ventas 2021-2025.png" alt="Ventas 2021-2025" class="work__img">
+            </div>
 
+            <div class="work__card">
+               <h3 class="info__title">Flota Vehicular</h3>
+               <img src="IMG/dash - flota vehicular.png" alt="Flota vehicular" class="work__img">
+            </div>
 
-    <!--JS-->
+            <a href="https://app.powerbi.com/onedrive/error?pbi_source=ODSPViewer&driveId=b!Wvl3294_2UmOX-31Na3gZsH8PtKuSl5AvCvJUVvOvDCOqbR_zGE7RaqSm9Wt6lvV&itemId=01HQIYXF4QTILUCM2GLRDZ72FSLQ2QC5BN" class="button">Ver Dashboard en Power BI</a>
 
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-    AOS.init();
-  </script>
-  <script src="animacion.js/animated.js"></script>
+            <!-- Contenedor para el iframe -->
+            <div class="iframe-container">
+               <h3 class="info__title">Sistema de Recomendación</h3>
+               <iframe title="Sistema de Recomendacion" height="500" src="https://app.powerbi.com/view?r=eyJrIjoiOGY4OGQwOTAtNGY4My00N2FkLWJmMmYtNmM4ZjIyYzhhN2M5IiwidCI6ImM0YTY2YzM0LTJiYjctNDUxZi04YmUxLWIyYzI2YTQzMDE1OCIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
+            </div>
+         </div>
+      </section>
+   </main>
+
+   <!--==================== FOOTER ====================-->
+   <footer class="footer">
+      <div class="footer__container container grid">
+         <ul class="footer__links">
+            <li>
+               <a href="index.html" class="footer__link">Inicio</a>
+            </li>
+            <li>
+               <a href="index.html#work" class="footer__link">Trabajo</a>
+            </li>
+            <li>
+               <a href="index.html#info" class="footer__link">información</a>
+            </li>
+         </ul>
+         <span class="footer__copy">
+            &#169; Todos los derechos reservados
+         </span>
+      </div>
+   </footer>
+
+   <!--========== SCROLL UP ==========-->
+   <a href="#" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-line"></i>
+   </a>
+
+   <!--=============== SCROLLREVEAL ===============-->
+   <script src="assets/js/scrollreveal.min.js"></script>
+
+   <!--=============== MAIN JS ===============-->
+   <script src="assets/js/main.js"></script>
 </body>
+
 </html>
