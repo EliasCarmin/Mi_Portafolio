@@ -32,31 +32,48 @@
       <!--==================== HEADER ====================-->
       <header class="header" id="header">
          <nav class="nav container">
-            <a href="#" class="nav__logo">Elías</a>
             <div class="nav__menu" id="nav-menu">
                <ul class="nav__list">
                   <li>
-                     <a href="#home" class="nav__link active-link">Inicio</a>
+                     <a href="#home" class="nav__link active-link">
+                        <i class="ri-home-line"></i>
+                        Elías
+                     </a>
                   </li>
 
                   <li>
-                     <a href="CV.html" class="nav__link">CV</a>
+                     <a href="CV.html" class="nav__link">
+                        <i class="ri-file-text-line"></i>
+                        Curriculum
+                     </a>
                   </li>
                   
                   <li>
-                     <a href="#work" class="nav__link">Trabajo</a>
+                     <a href="#work" class="nav__link">
+                        <i class="ri-briefcase-line"></i>
+                        Trabajo
+                     </a>
                   </li>
 
                   <li>
-                     <a href="#info" class="nav__link">Mi Información</a>
+                     <a href="#info" class="nav__link">
+                        <i class="ri-user-line"></i>
+                        Información
+                     </a>
                   </li>
 
                   <li>
-                     <a href="#services" class="nav__link">Servicios</a>
+                     <a href="#services" class="nav__link">
+                        <i class="ri-service-line"></i>
+                        Servicios
+                     </a>
                   </li>
 
                   <li>
-                     <a href="#contact" class="nav__link">Contactame</a>
+                     <a href="#contact" class="nav__link">
+                        <i class="ri-mail-line"></i>
+                        Contactame
+                     </a>
                   </li>
                </ul>
 
@@ -65,8 +82,12 @@
                   <i class="ri-close-line"></i>
                </div>
             </div>
-            <div class="nav__toggle" id="nav-toggle">
-               <i class="ri-menu-line"></i>
+
+            <div class="nav__actions">
+               <i class="ri-moon-line change-theme" id="theme-button"></i>
+               <div class="nav__toggle" id="nav-toggle">
+                  <i class="ri-menu-line"></i>
+               </div>
             </div>
          </nav>
       </header>
@@ -97,70 +118,84 @@
          <section class="work section" id="work">
             <h2 class="section__title">Trabajos Recientes</h2>
 
+            <div class="work__filters">
+               <span class="work__item active" data-filter="all">Todos</span>
+               <span class="work__item" data-filter=".dashboards">Dashboards</span>
+               <span class="work__item" data-filter=".automation">Automatización</span>
+               <span class="work__item" data-filter=".data">Análisis de Datos</span>
+            </div>
+
             <div class="work__container container grid">
+               <article class="work__card mix dashboards">
+                  <h3 class="work__title">Paneles de Control</h3>
+                  <p class="work__description">
+                     A continuación se observará una galería con una serie de paneles de control y dashboards no
+                     interactivos, con el fin de salvaguardar los datos utilizados.
+                  </p>
+                  <div class="work__tags">
+                     <span class="work__tag">Power BI</span>
+                     <span class="work__tag">Looker Studio</span>
+                     <span class="work__tag">Data Visualization</span>
+                  </div>
+                  <img src="IMG/iconos.img/dashboards.png" alt="Dashboard" class="work__img">
+                  <a href="Dashboards.html" class="work__link">
+                     Ver Proyecto
+                     <i class="ri-arrow-right-line"></i>
+                  </a>
+               </article>
 
-               <article class="work__card">
-                  <a href="Dashboards.html" target="blank" class="work__link">
-                     <h2 class="work__title">Paneles de Control</h2>
-                     <p class="work__description">
-                        A continuación se observará una galería con una serie de paneles de control y dashboards no
-                        interactivos, con el fin de salvaguardar los datos utilizados.
-                     </p>
-
-                     <img src="IMG/iconos.img/dashboards.png" alt="image" class="work__img">
+               <article class="work__card mix automation">
+                  <h3 class="work__title">Aplicaciones para automatizaciones</h3>
+                  <p class="work__description">
+                     Lista de proyectos creados utilizando AppSheet(No Code) para automatizar procecos e incorporar
+                     flujos de trabajo que optimicen procesos empresariales.
+                  </p>
+                  <div class="work__tags">
+                     <span class="work__tag">AppSheet</span>
+                     <span class="work__tag">No Code</span>
+                     <span class="work__tag">Automatización</span>
+                  </div>
+                  <img src="IMG/iconos.img/appsheet.png" alt="AppSheet" class="work__img">
+                  <a href="AppSheet.html" class="work__link">
+                     Ver Proyecto
                      <i class="ri-arrow-right-line"></i>
                   </a>
                </article>
 
                <article class="work__card">
-                  <a href="AppSheet.html" target="blank" class="work__link">
-                     <h2 class="work__title">Aplicaciones para automatizaciones</h2>
-                     <p class="work__description">
-                        Lista de proyectos creados utilizando AppSheet(No Code) para automatizar procecos e incorporar
-                        flujos de trabajo que optimicen procesos empresariales, como aprobación de solicitudes, gestión de
-                        inventarios, entre otros.
-                     </p>
-
-                     <img src="IMG/iconos.img/appsheet.png" alt="image" class="work__img">
-                     <i class="ri-arrow-right-line"></i>
-                  </a>
-               </article>
-
-               <article class="work__card">
+                  <h2 class="work__title">Macros y MiniAplicaciones</h2>
+                  <p class="work__description">
+                     Proyectos de macros y VBA para automatizar tareas en excel, desde macros básicos con la grabadora hasta formularios personalizados utilizando Visual Basic for Aplications
+                  </p>
+                  <img src="IMG/iconos.img/VBA-MACROS.png" alt="image" class="work__img">
                   <a href="Excel.html" target="blank" class="work__link">
-                     <h2 class="work__title">Macros y MiniAplicaciones</h2>
-                     <p class="work__description">
-                        Proyectos de macros y VBA para automatizar tareas en excel, desde macros básicos con la grabadora hasta formularios personalizados utilizando Visual Basic for Aplications
-                     </p>
-                     <img src="IMG/iconos.img/VBA-MACROS.png" alt="image" class="work__img">
+                     Ver Proyecto
                      <i class="ri-arrow-right-line"></i>
                   </a>
                </article>
 
                <article class="work__card">
+                  <h2 class="work__title">Predicción Copa América</h2>
+                  <p class="work__description">
+                     Un proyecto utilizando principalmente Python para la predicción del futuro campeón de la Copa
+                     América 2024 inspirado en la misma antes de su debut este 21/06/2024
+                  </p>
+                  <img src="IMG/iconos.img/CopaAmerica2024_PRINCIPAL_RGB_Full-color_FondoClaro.png" alt="image" class="work__img">
                   <a href="CupAmerica2024.html" target="blank" class="work__link">
-                     <h2 class="work__title">Predicción Copa América</h2>
-                     <p class="work__description">
-                        Un proyecto utilizando principalmente Python para la predicción del futuro campeón de la Copa
-                        América 2024
-                        inspirado en la misma antes de su debut este 21/06/2024
-                     </p>
-
-                     <img src="IMG/iconos.img/CopaAmerica2024_PRINCIPAL_RGB_Full-color_FondoClaro.png" alt="image"
-                        class="work__img">
+                     Ver Proyecto
                      <i class="ri-arrow-right-line"></i>
                   </a>
                </article>
 
                <article class="work__card">
+                  <h2 class="work__title">Sistema de Recomendación</h2>
+                  <p class="work__description">
+                     Un proyecto utilizando principalmente Python para la predicción del futuro campeón de la Copa
+                     América 2024 inspirado en la misma antes de su debut este 21/06/2024
+                  </p>
+                  <img src="IMG/iconos.img/dashboard_icon.png" alt="image" class="work__img">
                   <a href="SistemaRecomendacion.html" target="blank" class="work__link">
-                     <h2 class="work__title">Sistema de Recomendación</h2>
-                     <p class="work__description">
-                        Un proyecto utilizando principalmente Python para la predicción del futuro campeón de la Copa
-                        América 2024
-                        inspirado en la misma antes de su debut este 21/06/2024
-                     </p>
-                     <img src="IMG/iconos.img/dashboard_icon.png" alt="image" class="work__img">
+                     Ver Proyecto
                      <i class="ri-arrow-right-line"></i>
                   </a>
                </article>
@@ -218,20 +253,41 @@
                </div> 
          
                <div class="skills">
-                  <h3 class="info__title">Data Anlytics Skills</h3>
-         
-                  <div class="skills__content grid">
-                     <div class="skills__box">
-                        <img src="IMG/iconos.img/powerbi.png" alt="image" class="skills__img">
-                        <span class="skills_name"> POWER BI</span>
-                     </div>
-                     <div class="skills__box">
-                        <img src="IMG/iconos.img/visualization_lookerstudio.png" alt="image" class="skills__img">
-                        <span class="skills_name"> LOOKER STUDIO</span>
-                     </div>
-                     <div class="skills__box">
-                        <img src="IMG/iconos.img/Excel.png" alt="image" class="skills__img">
-                        <span class="skills_name"> EXCEL</span>
+                  <h3 class="info__title">Data Analytics Skills</h3>
+                  <div class="skills__container">
+                     <div class="skills__content">
+                        <div class="skills__box">
+                           <img src="IMG/iconos.img/powerbi.png" alt="Power BI" class="skills__img">
+                           <div class="skills__info">
+                              <span class="skills__name">Power BI</span>
+                              <div class="skills__level">
+                                 <div class="skills__percentage" style="width: 85%"></div>
+                              </div>
+                              <span class="skills__tooltip">85%</span>
+                           </div>
+                        </div>
+
+                        <div class="skills__box">
+                           <img src="IMG/iconos.img/visualization_lookerstudio.png" alt="Looker Studio" class="skills__img">
+                           <div class="skills__info">
+                              <span class="skills__name">Looker Studio</span>
+                              <div class="skills__level">
+                                 <div class="skills__percentage" style="width: 80%"></div>
+                              </div>
+                              <span class="skills__tooltip">80%</span>
+                           </div>
+                        </div>
+
+                        <div class="skills__certifications">
+                           <h4 class="skills__title">Certificaciones</h4>
+                           <div class="skills__certification">
+                              <img src="IMG/certifications/powerbi-cert.png" alt="Power BI Certification" class="skills__certification-img">
+                              <div class="skills__certification-info">
+                                 <h5 class="skills__certification-title">Power BI Data Analyst Associate</h5>
+                                 <span class="skills__certification-date">2023</span>
+                              </div>
+                           </div>
+                        </div>
                      </div>
                   </div>
                </div>
