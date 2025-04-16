@@ -13,6 +13,7 @@
 
    <!--=============== CSS ===============-->
    <link rel="stylesheet" href="assets/css/styles.css">
+   <link rel="stylesheet" href="assets/css/services.css">
    
    <!--=============== INTRO ANIMATION CSS ===============-->
    <link rel="stylesheet" href="CSS/intro_new.css">
@@ -346,37 +347,60 @@
             <h2 class="section__title">SERVICIOS</h2>
             <div class="services__container container grid">
                <article class="services__card">
-                  <i class="ri-line-chart-fill"></i>
-                  <h3 class="services_tittle">Análisis de Datos</h3>
+                  <div class="services__icon-container">
+                     <i class="ri-line-chart-fill"></i>
+                  </div>
+                  <h3 class="services__title">Análisis de Datos</h3>
                   <p class="services__description">
                      Como rol principal recopilo, limpio, transformo e integro los datos para el correcto análisis e
                      interpretación de los datos en busca de tendencias y patrones. Con ello busco monitorear y crear las
                      mejores métricas KPI´s.
                   </p>
+                  <a href="#contact" class="services__button">
+                     Saber más <i class="ri-arrow-right-line"></i>
+                  </a>
                </article>
+
                <article class="services__card">
-                  <i class="ri-pie-chart-line"></i>
-                  <h3 class="services_tittle">Elaboración de Dashboards</h3>
+                  <div class="services__icon-container">
+                     <i class="ri-pie-chart-line"></i>
+                  </div>
+                  <h3 class="services__title">Elaboración de Dashboards</h3>
                   <p class="services__description">
                      Elaboro paneles de control, historias storetelling y dashboards dinámicos para la correcta toma de
                      desiciones, todo esto utilizando Power BI y Looker Studio
                   </p>
+                  <a href="#contact" class="services__button">
+                     Saber más <i class="ri-arrow-right-line"></i>
+                  </a>
                </article>
+
                <article class="services__card">
-                  <i class="ri-file-excel-2-fill"></i>
-                  <h3 class="services_tittle">Forms de Excel VBA</h3>
+                  <div class="services__icon-container">
+                     <i class="ri-file-excel-2-fill"></i>
+                  </div>
+                  <h3 class="services__title">Forms de Excel VBA</h3>
                   <p class="services__description">
                      Utilizando macros simples o VBA avanzado ayudo con automatizaciones y productividad a las hojas de
                      cálculo, incluyendo conexión con servicios cloud y automatizaciones con Apps Script y AppSheet
                   </p>
+                  <a href="#contact" class="services__button">
+                     Saber más <i class="ri-arrow-right-line"></i>
+                  </a>
                </article>
+
                <article class="services__card">
-                  <i class="ri-google-fill"></i>
-                  <h3 class="services_tittle">Aplicaciones Google NoCode</h3>
+                  <div class="services__icon-container">
+                     <i class="ri-google-fill"></i>
+                  </div>
+                  <h3 class="services__title">Aplicaciones Google NoCode</h3>
                   <p class="services__description">
                      Creo aplicaciones de escritorio y web utilizando el entorno de Google para industrias específicas
                      tales como los inventarios, gestión de usuarios, encuestas, formularios y generador de rutas
                   </p>
+                  <a href="#contact" class="services__button">
+                     Saber más <i class="ri-arrow-right-line"></i>
+                  </a>
                </article>
             </div>
          </section>
@@ -387,19 +411,18 @@
 
             <div class="contact__container container grid">
                <form action="" class="contact__form grid" id="contact-form">
-                  <div class="contact_group grid">
-                     <input type="text" name="user_name" placeholder="Nombre" class="contact__input">
-                     <input type="text" name="user_email" placeholder="Email" class="contact__input">
+                  <div class="contact__group grid">
+                     <input type="text" name="user_name" placeholder="Nombre" class="contact__input" required>
+                     <input type="email" name="user_email" placeholder="Email" class="contact__input" required>
                   </div>
-                  <txtarea name="user_message" placeholder="Mensaje" required class="contact__input contact__area">
-                  </txtarea>
+                  <textarea name="user_message" placeholder="Mensaje" class="contact__input contact__area" required></textarea>
                   <button type="submit" class="button contact__button">Enviar Mensaje</button>
                   <p class="contact__message" id="contact-message"></p>
                </form>
                <div class="contact__social grid">
                   <a href="https://www.linkedin.com/in/elias-carmin/" target="_blank" class="contact__social-link">
                      <i class="ri-linkedin-box-fill"></i>
-                     <span>Linkedln</span>
+                     <span>LinkedIn</span>
                   </a>
                   <a href="" target="_blank" class="contact__social-link">
                      <i class="ri-youtube-fill"></i>
