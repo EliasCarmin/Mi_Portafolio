@@ -20,46 +20,63 @@ if (navClose) {
 /*=============== REMOVE MENU MOBILE ===============*/
 const navLink = document.querySelectorAll('.nav__link')
 
-const linkAction = () =>{
-    const navMenu = Document.getElementById('nav-menu')
+const linkAction = () => {
+    const navMenu = document.getElementById('nav-menu')
     navMenu.classList.remove('show-menu')
 }
 navLink.forEach(n => n.addEventListener('click', linkAction))
+
 /*=============== ADD BLUR HEADER ===============*/
-const scrollHeader = () =>{
+const scrollHeader = () => {
     const header = document.getElementById('header')
-    this.scrollY >= 50 ? header.classList.add('blur-header')
-                        :header.classList.remove('blur-header')
+    window.scrollY >= 50 ? header.classList.add('blur-header')
+                        : header.classList.remove('blur-header')
 }
-window.addEventListener('scroll',blurHeader)
+window.addEventListener('scroll', scrollHeader)
+
 /*=============== EMAIL JS ===============*/
 const contactForm = document.getElementById('contact-form'),
-        contactMessage = document.getElementById('contact-message')
+      contactMessage = document.getElementById('contact-message')
 
-const sendEmail = (e) =>{
-    e.preventtDefault()
-    emailjs.sendForm('service_n91jr8e','template_11rc1ui','#contact-form','GndKCsa6Vs7yR64cf')
-    .then(() =>{
-        //showmeesage
+// Inicializar EmailJS
+emailjs.init("GndKCsa6Vs7yR64cf")
+
+const sendEmail = (e) => {
+    e.preventDefault()
+    
+    // Mostrar mensaje de carga
+    contactMessage.textContent = "Enviando mensaje..."
+    contactMessage.style.color = "#2196F3"
+    
+    emailjs.sendForm('service_n91jr8e', 'template_11rc1ui', contactForm)
+    .then(() => {
+        // Mostrar mensaje de éxito
         contactMessage.textContent = "Mensaje enviado correctamente ✅"
+        contactMessage.style.color = "#4CAF50"
 
-        //remove message
+        // Remover mensaje después de 5 segundos
         setTimeout(() => {
             contactMessage.textContent = ""
-        }, 5000);
+        }, 5000)
 
-        //clear input fields
+        // Limpiar campos del formulario
         contactForm.reset()
-    }, () =>{
-        contactMessage.textContent = 'Mensaje de Error'
+    })
+    .catch((error) => {
+        console.error('Error:', error)
+        // Mostrar mensaje de error
+        contactMessage.textContent = "Error al enviar el mensaje ❌"
+        contactMessage.style.color = "#f44336"
     })
 }
 
-contactForm.addEventListener('submit', sendEmail)
+if (contactForm) {
+    contactForm.addEventListener('submit', sendEmail)
+}
+
 /*=============== SHOW SCROLL UP ===============*/ 
 const scrollUp = () => {
     const scrollUp = document.getElementById('scroll-up')
-
     window.scrollY >= 350 
         ? scrollUp.classList.add('show-scroll')
         : scrollUp.classList.remove('show-scroll')
@@ -88,7 +105,6 @@ const scrollActive = () => {
 
 window.addEventListener('scroll', scrollActive)
 
-
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 const sr = ScrollReveal({
     origin: 'top',
@@ -97,9 +113,9 @@ const sr = ScrollReveal({
     delay: 400,
 })
 
-sr.reveal('.home__data, .expriencie, .skills, .contact__container')
-sr.reveal('.home__img'), {delay: 600}
-sr.reveal('.home__scroll'), {delay: 800}
-sr.reveal('.work__card, .services__card'), {interval: 100}
-sr.reveal('.about__content'), {interval: 100}
-sr.reveal('.about__img'), {interval: 100}
+sr.reveal('.home__data, .experience, .skills, .contact__container')
+sr.reveal('.home__img', {delay: 600})
+sr.reveal('.home__scroll', {delay: 800})
+sr.reveal('.work__card, .services__card', {interval: 100})
+sr.reveal('.about__content', {interval: 100})
+sr.reveal('.about__img', {interval: 100})
