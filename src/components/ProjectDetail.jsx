@@ -565,48 +565,48 @@ const GalleryContent = ({ project, isGalleryExpanded, setIsGalleryExpanded }) =>
     switch(project.htmlContent) {
       case 'GmailPagos':
         return [
-          { src: '/gmail_transacciones/codigo_appsscript.png', title: 'Captura del correo de pago', description: 'El código de appscript captura el último correo de pago sin abrir cada 60 segundos' },
-          { src: '/gmail_transacciones/pln_cloudfunction.png', title: 'Procesamiento del contenido del correo', description: 'Procesamiento de leanguaje natural del contenido del correo y luego envía a la base de datos' },
-          { src: '/gmail_transacciones/postgresql_serveless.png', title: 'Guarda los parametros en la base de datos', description: 'Guarda los parametros, a la par ejecuta triggers y procedimientos almacenados' },
-          { src: '/gmail_transacciones/vercel_host.png', title: 'Host del Sistena de Finanzas Personales', description: 'Es un servicio PaaS para desplegar y alojar la aplicación' },
-          { src: '/gmail_transacciones/interfaz_transacciones.png', title: 'Interfaz de la aplicación de finanzas personales', description: 'Es la aplicación PWA que muestra las finanzas personales' }
+          { src: './gmail_transacciones/codigo_appsscript.png', title: 'Captura del correo de pago', description: 'El código de appscript captura el último correo de pago sin abrir cada 60 segundos' },
+          { src: './gmail_transacciones/pln_cloudfunction.png', title: 'Procesamiento del contenido del correo', description: 'Procesamiento de leanguaje natural del contenido del correo y luego envía a la base de datos' },
+          { src: './gmail_transacciones/postgresql_serveless.png', title: 'Guarda los parametros en la base de datos', description: 'Guarda los parametros, a la par ejecuta triggers y procedimientos almacenados' },
+          { src: './gmail_transacciones/vercel_host.png', title: 'Host del Sistena de Finanzas Personales', description: 'Es un servicio PaaS para desplegar y alojar la aplicación' },
+          { src: './gmail_transacciones/interfaz_transacciones.png', title: 'Interfaz de la aplicación de finanzas personales', description: 'Es la aplicación PWA que muestra las finanzas personales' }
         ]
       case 'AppSheet':
         return [
-          { src: '/images/app_01.png', title: 'Aplicación de Rutas y Tiendas', description: 'Vista principal de la aplicación de gestión de rutas' },
-          { src: '/images/app_02.png', title: 'Panel de Control', description: 'Dashboard de control y monitoreo' },
-          { src: '/images/app_03.png', title: 'Gestión de Permisos', description: 'Sistema de permisos y roles de usuario' },
-          { src: '/images/app_04.png', title: 'Historiales de Precios', description: 'Seguimiento de precios y tendencias' }
+          { src: './images/app_01.png', title: 'Aplicación de Rutas y Tiendas', description: 'Vista principal de la aplicación de gestión de rutas' },
+          { src: './images/app_02.png', title: 'Panel de Control', description: 'Dashboard de control y monitoreo' },
+          { src: './images/app_03.png', title: 'Gestión de Permisos', description: 'Sistema de permisos y roles de usuario' },
+          { src: './images/app_04.png', title: 'Historiales de Precios', description: 'Seguimiento de precios y tendencias' }
         ]
       case 'CupAmerica2024':
         return [
-          { src: '/images/proyect1_img1.jpg', title: 'Análisis de Datos', description: 'Procesamiento y análisis de datos históricos' },
-          { src: '/images/proyect1_img2.jpg', title: 'Modelo Predictivo', description: 'Implementación del algoritmo de Poisson' },
-          { src: '/images/proyect1_img3.jpg', title: 'Visualización', description: 'Resultados y predicciones visualizadas' }
+          { src: './images/proyect1_img1.jpg', title: 'Análisis de Datos', description: 'Procesamiento y análisis de datos históricos' },
+          { src: './images/proyect1_img2.jpg', title: 'Modelo Predictivo', description: 'Implementación del algoritmo de Poisson' },
+          { src: './images/proyect1_img3.jpg', title: 'Visualización', description: 'Resultados y predicciones visualizadas' }
         ]
       case 'Dashboards':
         return [
-          { src: '/images/dash - 2025.png', title: 'Dashboard 2025', description: 'Panel de control ejecutivo para el año 2025' },
-          { src: '/images/dash - comparativa triple.png', title: 'Comparativa Triple', description: 'Análisis comparativo de múltiples métricas' },
-          { src: '/images/dash - Ventas 2021-2025.png', title: 'Ventas 2021-2025', description: 'Evolución de ventas a lo largo de 5 años' },
-          { src: '/images/dash - flota vehicular.png', title: 'Flota Vehicular', description: 'Monitoreo y control de flota de vehículos' }
+          { src: './images/dash - 2025.png', title: 'Dashboard 2025', description: 'Panel de control ejecutivo para el año 2025' },
+          { src: './images/dash - comparativa triple.png', title: 'Comparativa Triple', description: 'Análisis comparativo de múltiples métricas' },
+          { src: './images/dash - Ventas 2021-2025.png', title: 'Ventas 2021-2025', description: 'Evolución de ventas a lo largo de 5 años' },
+          { src: './images/dash - flota vehicular.png', title: 'Flota Vehicular', description: 'Monitoreo y control de flota de vehículos' }
         ]
       case 'Excel':
         return [
-          { src: '/images/costeo.png', title: 'Costeo de Importación', description: 'Sistema automatizado para cálculo de costos' },
-          { src: '/images/generador.png', title: 'Generador de Tarjetas', description: 'Herramienta para generar tarjetas automáticamente' },
-          { src: '/images/letragenerada.png', title: 'Letra Generada', description: 'Ejemplo de letra generada por el sistema' },
-          { src: '/images/entradaysalida.png', title: 'Control de Inventario', description: 'Sistema de entradas y salidas de inventario' },
-          { src: '/images/registrodeventas.png', title: 'Registro de Ventas', description: 'Automatización del registro de ventas' }
+          { src: './images/costeo.png', title: 'Costeo de Importación', description: 'Sistema automatizado para cálculo de costos' },
+          { src: './images/generador.png', title: 'Generador de Tarjetas', description: 'Herramienta para generar tarjetas automáticamente' },
+          { src: './images/letragenerada.png', title: 'Letra Generada', description: 'Ejemplo de letra generada por el sistema' },
+          { src: './images/entradaysalida.png', title: 'Control de Inventario', description: 'Sistema de entradas y salidas de inventario' },
+          { src: './images/registrodeventas.png', title: 'Registro de Ventas', description: 'Automatización del registro de ventas' }
         ]
       case 'SistemaRecomendacion':
         return [
-          { src: '/images/BD.jpg', title: 'Base de Datos', description: 'Estructura de la base de datos del sistema' },
-          { src: '/images/dashnoard.jpg', title: 'Dashboard Principal', description: 'Panel de control del sistema de recomendación' },
-          { src: '/images/spider.jpg', title: 'Diagrama Spider', description: 'Visualización de relaciones y similitudes' },
-          { src: '/images/comparativa.jpg', title: 'Análisis Comparativo', description: 'Comparación de perfiles de usuarios' },
-          { src: '/images/similitud.jpg', title: 'Matriz de Similitud', description: 'Cálculo de similitudes entre usuarios' },
-          { src: '/images/recomendacion.jpg', title: 'Resultados', description: 'Recomendaciones generadas por el algoritmo' }
+          { src: './images/BD.jpg', title: 'Base de Datos', description: 'Estructura de la base de datos del sistema' },
+          { src: './images/dashnoard.jpg', title: 'Dashboard Principal', description: 'Panel de control del sistema de recomendación' },
+          { src: './images/spider.jpg', title: 'Diagrama Spider', description: 'Visualización de relaciones y similitudes' },
+          { src: './images/comparativa.jpg', title: 'Análisis Comparativo', description: 'Comparación de perfiles de usuarios' },
+          { src: './images/similitud.jpg', title: 'Matriz de Similitud', description: 'Cálculo de similitudes entre usuarios' },
+          { src: './images/recomendacion.jpg', title: 'Resultados', description: 'Recomendaciones generadas por el algoritmo' }
         ]
       default:
         return [
