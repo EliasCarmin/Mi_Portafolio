@@ -30,7 +30,7 @@ const Projects = () => {
       features: ['Automatización de procesos', 'Gestión de rutas y tiendas', 'Control de permisos', 'Reportes automáticos'],
       link: '/projects/appsheet',
       github: '#',
-      stats: { apps: '4+', processes: '10+', efficiency: '+40%' },
+      stats: { apps: '4+', Procesos: '10+', Eficiencia: '+40%' },
       htmlContent: 'AppSheet'
     },
     {
