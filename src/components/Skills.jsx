@@ -23,7 +23,7 @@ const Skills = () => {
         { name: 'Power BI', level: 95, icon: '📊' },
         { name: 'Excel Avanzado', level: 95, icon: '📋' },
         { name: 'Looker Studio', level: 75, icon: '📊' },
-        { name: 'Alteryx', level: 75, icon: '🔄' }
+        //{ name: 'Alteryx', level: 75, icon: '🔄' }
       ]
     },
     {
@@ -42,7 +42,8 @@ const Skills = () => {
         //{ name: 'Scikit-learn', level: 85, icon: '🤖' },
         //{ name: 'TensorFlow', level: 75, icon: '🧠' },
         { name: 'Pandas', level: 90, icon: '🐼' },
-        { name: 'NumPy', level: 85, icon: '🔢' }
+        { name: 'NumPy', level: 85, icon: '🔢' },
+        { name: 'PLN', level: 85, icon: '🔢' }
       ]
     },
     {
@@ -50,8 +51,7 @@ const Skills = () => {
       icon: <Database className="text-data-green" size={32} />,
       skills: [
         { name: 'MySQL', level: 95, icon: '🐬' },
-        { name: 'PostgreSQL', level: 70, icon: '🐘' },
-        { name: 'BigQuery', level: 85, icon: '🔍' }
+        { name: 'PostgreSQL', level: 70, icon: '🐘' }
       ]
     },
     {
@@ -59,9 +59,9 @@ const Skills = () => {
       icon: <Cloud className="text-data-green" size={32} />,
       skills: [
         { name: 'GCP', level: 75, icon: '☁️' },
-        { name: 'BigQuery', level: 85, icon: '🔍' },
         { name: 'Cloud Run Functions', level: 70, icon: '⚡' },
         { name: 'Cloud Storage', level: 80, icon: '📦' },
+        { name: 'BigQuery', level: 85, icon: '🔍' },
         { name: 'Docker', level: 70, icon: '🐳' },
         { name: 'Git', level: 85, icon: '📝' }
       ]
@@ -167,10 +167,12 @@ const Skills = () => {
           </h3>
           <div className="grid md:grid-cols-4 gap-6">
             {[
-              { name: 'Microsoft Power BI', level: 'Data Analyst' },
-              { name: 'PostgresSQL', level: 'Databases' },
-              { name: 'Google Data Analytics', level: 'Professional' },
-              { name: 'GCP Cloud Associate', level: 'Foundational' }
+              { name: 'Microsoft Power BI', level: 'Platzi-Udemy' },
+              { name: 'PostgresSQL', level: 'Platzi' },
+              { name: 'Data Analyst', level: 'Platzi' },
+              { name: 'Scrum Fundamentals Certified', level: 'ScrumStudy' },
+              //{ name: 'Google Data Analytics', level: 'Professional' },
+              //{ name: 'GCP Cloud Associate', level: 'Foundational' }
             ].map((cert, index) => (
               <div 
                 key={index}
