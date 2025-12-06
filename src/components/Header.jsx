@@ -55,7 +55,7 @@ const Header = () => {
                 {item.name}
               </button>
             ))}
-            <a href="/CV_Analista_Datos_Elías_Carmin.pdf" download className="flex items-center space-x-1.5 bg-data-green text-data-dark px-3 py-1.5 lg:px-4 lg:py-2 rounded-lg hover:bg-neon-green transition-colors duration-300 font-medium text-sm lg:text-base">
+            <a href="/CV_Analista_Datos_Elías_Carmin.pdf" download="CV_Analista_Datos_Elías_Carmin.pdf" className="flex items-center space-x-1.5 bg-data-green text-data-dark px-3 py-1.5 lg:px-4 lg:py-2 rounded-lg hover:bg-neon-green transition-colors duration-300 font-medium text-sm lg:text-base">
               <Download size={14} className="lg:w-4 lg:h-4" />
               <span>CV</span>
             </a>
@@ -83,7 +83,7 @@ const Header = () => {
                   {item.name}
                 </button>
               ))}
-              <a href="/CV_Analista_Datos_Elías_Carmin.pdf" download className="flex items-center space-x-2 bg-data-green text-data-dark px-3 py-1.5 rounded-lg hover:bg-neon-green transition-colors duration-300 font-medium w-fit text-sm mt-2">
+              <a href="/CV_Analista_Datos_Elías_Carmin.pdf" download="CV_Analista_Datos_Elías_Carmin.pdf" className="flex items-center space-x-2 bg-data-green text-data-dark px-3 py-1.5 rounded-lg hover:bg-neon-green transition-colors duration-300 font-medium w-fit text-sm mt-2">
                 <Download size={14} />
                 <span>Descargar CV</span>
               </a>

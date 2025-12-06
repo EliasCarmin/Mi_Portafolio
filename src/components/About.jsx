@@ -5,9 +5,9 @@ const About = () => {
   const experiences = [
     {
       year: '2024 - Presente',
-      title: 'Analista de Datos & Desarrollador de Soluciones Internas',
-      company: 'Empresa Tecnológica',
-      description: 'Analista de Datos y Desarrollador de Soluciones Internas, con enfoque en automatización, análisis, visualización y desarrollo de herramientas digitales para optimizar procesos empresariales.'
+      title: 'Analista de Datos, Automatización y Data Cloud GCP',
+      company: 'Business Import Zeus Safety',
+      description: 'Lideré la transformación digital de la empresa desde Asistente Administrativo hasta Analista de Datos especializado. Inicié con automatización de procesos mediante macros y VBA, incluyendo formularios e integración con APIs. Implementé procesos ETL para consolidar datos dispersos en Excel y creé dashboards en Power BI. Desarrollé mini-aplicaciones con Google Sheets y AppSheet. Lideré la creación de un sistema integrado que mejoró significativamente procesos en marketing, logística, ventas y administración, evolucionando de Apps Script a un sistema monolítico con frontend (HTML, JavaScript, CSS) y backend (Python) en GCP. Actualmente gestiono un equipo de tres desarrolladores construyendo un sistema web moderno con Python (Cloud Run), Cloud SQL (MySQL), React/Next.js, y Vercel. Responsabilidades técnicas incluyen programación de APIs principales, administración de bases de datos, gestión de permisos GCP IAM, vinculación de Google Functions con Git, y creación de Data Streams MySQL-BigQuery para visualización en Power BI/Looker Studio.'
     },
     {
       year: '2023 - 2024',
@@ -58,17 +58,28 @@ const About = () => {
             <h3 className="text-2xl font-bold mb-6 gradient-text">Mi Historia</h3>
             <div className="space-y-4 text-gray-300">
               <p>
-                Soy un estudiante en su ultimo ciclo de la carrera de analista de datos apasionado con 1 año de experiencia en el campo del análisis de datos 
-                y Business Intelligence. Mi enfoque se centra en transformar datos complejos en insights accionables 
-                que impulsan la toma de decisiones estratégicas.
+                Soy Analista de Datos, Automatización y Data Cloud GCP con experiencia en Business Import Zeus Safety, 
+                donde he liderado la transformación digital de la empresa. Comencé como Asistente Administrativo y 
+                rápidamente migré hacia la automatización de procesos utilizando macros, VBA, y la construcción de 
+                formularios con integración de APIs externas.
               </p>
               <p>
-                He trabajado con empresas de diversos sectores, desde startups hasta corporaciones, ayudándolas a 
-                implementar soluciones de análisis de datos que optimizan sus procesos y mejoran sus resultados.
+                Detecté la falta de orden y jerarquía en los datos dispersos en archivos Excel, iniciando procesos ETL 
+                para consolidar información y crear paneles de control (dashboards) en Power BI. Utilicé el ecosistema 
+                de Google (Google Sheets, AppSheet) para desarrollar mini-aplicaciones que optimizaron diversos procesos 
+                internos.
               </p>
               <p>
-                Mi expertise incluye el desarrollo de dashboards interactivos, análisis predictivo, y la implementación 
-                de herramientas de Business Intelligence que permiten a las organizaciones aprovechar al máximo sus datos.
+                Lideré la creación de un sistema integrado que mejoró significativamente procesos en marketing, logística, 
+                ventas y administración. El proyecto evolucionó desde Apps Script hasta un sistema monolítico con frontend 
+                (HTML, JavaScript, CSS) y backend (Python) desplegado en Google Cloud Platform.
+              </p>
+              <p>
+                Actualmente gestiono un equipo de tres desarrolladores construyendo un sistema web empresarial moderno 
+                utilizando Python (Cloud Run), Cloud SQL (MySQL), React/Next.js, Vercel, Git y GitHub. Mi tiempo se divide 
+                entre liderazgo del equipo, seguimiento de tareas y responsabilidades técnicas clave como programación de 
+                APIs, administración de bases de datos, gestión de permisos GCP IAM, y creación de Data Streams para 
+                conectar MySQL con BigQuery.
               </p>
             </div>
 
@@ -80,9 +91,9 @@ const About = () => {
                   'Análisis de Datos Avanzado',
                   'Desarrollo de Dashboards',
                   'Business Intelligence',
-                  'Machine Learning',
-                  'SQL y Bases de Datos',
-                  'Visualización de Datos'
+                  'Google Cloud Platform (GCP)',
+                  'Automatización con VBA/Python',
+                  'Desarrollo Full Stack'
                 ].map((skill, index) => (
                   <div key={index} className="flex items-center space-x-2">
                     <CheckCircle className="text-data-green" size={16} />
