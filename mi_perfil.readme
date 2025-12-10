@@ -1,0 +1,44 @@
+📝 Perfil Profesional: Experiencia en Business Import Zeus Safety
+Primeros Meses: Automatización y Gestión de Datos
+
+Nombre de puesto definitivo: Analista de Datos, Automatización y Data Cloud GCP
+
+Comencé como Asistente Administrativo, pero rápidamente migré hacia la automatización de procesos utilizando macros y VBA, incluyendo la construcción de formularios y la integración con APIs externas.
+
+Detecté la falta de orden y jerarquía en los datos, que estaban dispersos en archivos Excel. Inicié un proceso de ETL (Extracción, Transformación y Carga) para consolidar la información y, posteriormente, crear paneles de control (dashboards) en Power BI.
+
+Utilicé el ecosistema de Google, específicamente Google Sheets y AppSheet, para desarrollar mini-aplicaciones que optimizaron diversos procesos internos de la empresa.
+
+Tiempo Medio: Liderazgo de Proyectos e Innovación en la Nube
+
+Lideré la creación de un sistema integrado para la empresa que resultó en una mejora significativa de procesos en las áreas de marketing, logística, ventas y administración.
+
+Este proyecto comenzó con desarrollos en Apps Script y evolucionó hacia un sistema monolítico. El frontend se construyó con HTML, JavaScript y CSS, mientras que el backend se implementó en Python.
+
+Implementé innovación en la nube utilizando Google Cloud Platform (GCP) para desplegar APIs personalizadas, bases de datos, alojamiento web y soluciones de análisis de datos.
+
+Realicé investigación y análisis de datos enfocados en estudiar la tasa de deserción de clientes (retención) para identificar las causas subyacentes.
+
+Últimos Meses: Liderazgo Técnico y Desarrollo de Sistemas Modernos
+
+
+Gestioné un equipo de tres desarrolladores para construir un sistema web empresarial más moderno.
+
+El stack tecnológico utilizado incluía Python para el backend (desplegado en Cloud Run), Cloud SQL (MySQL) para la base de datos, y React/Next.js para el frontend. También utilizamos HTML, CSS, JavaScript, Vercel (para producción), Git y GitHub.
+
+Mi tiempo se dividió entre el liderazgo del equipo, seguimiento de tareas y responsabilidades técnicas clave:
+
+Programación de las APIs principales (verificación de tokens, gestión de usuarios, login y control de accesos).
+
+
+Administración de la base de datos y gestión de permisos en GCP IAM.
+
+Vinculación de Google Functions con repositorios Git.
+
+Creación de un Data Stream para conectar MySQL con BigQuery, facilitando la visualización posterior en Power BI o Looker Studio.
+
+🌟 Proyectos Personales
+Pipeline Serverless para Análisis de Correos de Pagos: Construcción de un flujo de datos en la nube que captura correos de Gmail, procesa su contenido mediante Técnicas de Procesamiento del Lenguaje Natural (NLP), e integra la API de Gemini como fallback en caso de fallos. Almacena la información en una base de datos PostgreSQL y la expone a través de endpoints consumidos por una aplicación personal de finanzas (alojada en Vercel).
+
+
+API de Web Scraping para Consulta RUC de SUNAT: Desarrollo de una API en Python utilizando FastAPI para realizar web scraping directo desde el portal oficial de la SUNAT. El desarrollo de esta solución se optimizó con un flujo asistido por Inteligencia Artificial (IA), mejorando la generación de código y la validación lógica.
