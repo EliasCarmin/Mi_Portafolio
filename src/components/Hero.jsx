@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { ChevronDown, Download, ArrowRight, Database, BarChart3, TrendingUp } from 'lucide-react'
-import eliasImage from '../assets/EliasPNG.png'
+import eliasImage from '../assets/Elias.jpg'
 
 const Hero = () => {
   const [currentText, setCurrentText] = useState(0)
