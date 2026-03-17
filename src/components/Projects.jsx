@@ -97,23 +97,64 @@ const Projects = () => {
       github: '#',
       stats: { products: '500+', accuracy: '92%', users: '1K+' },
       htmlContent: 'SistemaRecomendacion'
+    },
+    {
+      id: 8,
+      title: 'Banco de Preguntas GCP',
+      category: 'web-app',
+      image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80',
+      description: 'Plataforma web interactiva para la preparación de certificaciones de Google Cloud Platform. Incluye simuladores de examen, modo estudio con retroalimentación inmediata y métricas de rendimiento por categoría.',
+      technologies: ['React', 'Tailwind CSS', 'Vite', 'Vercel', 'Google Cloud'],
+      features: ['Simulador de examen real', 'Modo de estudio interactivo', 'Feedback en tiempo real', 'Diseño responsive y moderno'],
+      link: 'https://goocle-cloud-bank-questions.vercel.app/',
+      github: '#',
+      stats: { Preguntas: '500+', Usuarios: '100+', Tipos: '6 Certs' },
+      htmlContent: 'GCPBank'
+    },
+    {
+      id: 9,
+      title: 'Elecciones Perú 2026',
+      category: 'web-app',
+      image: 'https://images.unsplash.com/photo-1540910419892-4a39d20b2944?w=800&q=80',
+      description: 'Portal informativo transparente para las elecciones generales de Perú en 2026. Permite a los ciudadanos comparar planes de gobierno, perfiles de candidatos y seguir tendencias electorales basadas en datos abiertos.',
+      technologies: ['React', 'Lucide-React', 'Tailwind CSS', 'Vercel', 'Data Analytics'],
+      features: ['Comparativa de candidatos', 'Análisis de planes de gobierno', 'Información de partidos políticos', 'Seguimiento de tendencias'],
+      link: 'https://elecciones-peru-2026-frontend.vercel.app/',
+      github: '#',
+      stats: { Candidatos: '20+', Planes: '100%', Impacto: 'Información Real' },
+      htmlContent: 'Elecciones2026'
+    },
+    {
+      id: 10,
+      title: 'Automatización Paltarumi',
+      category: 'automation',
+      image: 'https://images.unsplash.com/photo-1518433278988-d727daf0d8e1?w=800&q=80',
+      description: 'Sistema de escritorio robusto diseñado para automatizar la consulta de datos en múltiples portales del estado peruano (SUNAT, MTC, REINFO, INGEMMET). Integra OCR avanzado y modelos de lenguaje (Gemini/OpenAI) para el procesamiento inteligente de documentos.',
+      technologies: ['Python', 'Selenium', 'OCR', 'Gemini API', 'OpenAI API', 'FastAPI'],
+      features: ['Web Scraping SUNAT/MTC/REINFO', 'Procesamiento de documentos OCR', 'Integración con IA Generativa', 'Generación automática de reportes PDF'],
+      link: '#',
+      github: '#',
+      stats: { Eficiencia: '+95%', Fuentes: '6 Portales', Tiempo: 'Ahorro masivo' },
+      htmlContent: 'PaltarumiBot'
     }
   ]
 
+
   const filters = [
     { id: 'todos', name: 'Todos' },
+    { id: 'web-app', name: 'Web Apps' },
     { id: 'dashboard', name: 'Dashboards' },
-    { id: 'analytics', name: 'Analytics' },
     { id: 'automation', name: 'Automatización' },
     { id: 'machine-learning', name: 'Machine Learning' }
   ]
 
-  const filteredProjects = activeFilter === 'todos' 
-    ? projects 
+  const filteredProjects = activeFilter === 'todos'
+    ? projects
     : projects.filter(project => project.category === activeFilter)
 
   const getCategoryIcon = (category) => {
-    switch(category) {
+    switch (category) {
+      case 'web-app': return <Eye className="text-data-green" size={20} />
       case 'dashboard': return <BarChart3 className="text-data-green" size={20} />
       case 'analytics': return <TrendingUp className="text-data-green" size={20} />
       case 'automation': return <Database className="text-data-green" size={20} />
@@ -123,7 +164,7 @@ const Projects = () => {
   }
 
   const getStatsIcon = (stat) => {
-    switch(stat) {
+    switch (stat) {
       case 'users': return <Users className="text-data-green" size={16} />
       case 'revenue': return <TrendingUp className="text-data-green" size={16} />
       case 'conversion': return <BarChart3 className="text-data-green" size={16} />
@@ -168,11 +209,10 @@ const Projects = () => {
             <button
               key={filter.id}
               onClick={() => setActiveFilter(filter.id)}
-              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${
-                activeFilter === filter.id
-                  ? 'bg-data-green text-data-dark'
-                  : 'bg-data-light text-gray-300 hover:bg-data-green/20 hover:text-data-green'
-              }`}
+              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 ${activeFilter === filter.id
+                ? 'bg-data-green text-data-dark'
+                : 'bg-data-light text-gray-300 hover:bg-data-green/20 hover:text-data-green'
+                }`}
             >
               {filter.name}
             </button>
@@ -182,14 +222,14 @@ const Projects = () => {
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {filteredProjects.map((project) => (
-            <div 
+            <div
               key={project.id}
               className="bg-data-light rounded-lg overflow-hidden glow-border card-hover group"
             >
               {/* Project Image */}
               <div className="relative overflow-hidden h-48">
-                <img 
-                  src={project.image} 
+                <img
+                  src={project.image}
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
                 />
@@ -204,7 +244,7 @@ const Projects = () => {
                 <h3 className="text-xl font-bold text-white mb-3 group-hover:text-data-green transition-colors">
                   {project.title}
                 </h3>
-                
+
                 <p className="text-gray-400 mb-4 line-clamp-3">
                   {project.description}
                 </p>
@@ -212,7 +252,7 @@ const Projects = () => {
                 {/* Technologies */}
                 <div className="flex flex-wrap gap-2 mb-4">
                   {project.technologies.map((tech, index) => (
-                    <span 
+                    <span
                       key={index}
                       className="px-3 py-1 bg-data-green/10 text-data-green text-sm rounded-full border border-data-green/30"
                     >
@@ -248,7 +288,7 @@ const Projects = () => {
 
                 {/* Action Buttons */}
                 <div className="flex space-x-3">
-                  <button 
+                  <button
                     onClick={() => setSelectedProject(project)}
                     className="flex-1 flex items-center justify-center space-x-2 bg-data-green text-data-dark px-4 py-2 rounded-lg hover:bg-neon-green transition-colors font-medium"
                   >
@@ -256,7 +296,7 @@ const Projects = () => {
                     <span>Ver Demo</span>
                   </button>
                   {project.github !== '#' ? (
-                    <a 
+                    <a
                       href={project.github}
                       target="_blank"
                       rel="noopener noreferrer"
@@ -282,7 +322,7 @@ const Projects = () => {
               ¿Tienes un proyecto en mente?
             </h3>
             <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-              Estoy siempre interesado en nuevos desafíos. Si tienes un proyecto que requiera análisis de datos, 
+              Estoy siempre interesado en nuevos desafíos. Si tienes un proyecto que requiera análisis de datos,
               desarrollo de dashboards o implementación de soluciones de BI, ¡hablemos!
             </p>
             <button className="bg-data-green text-data-dark px-8 py-3 rounded-lg hover:bg-neon-green transition-colors font-medium">
@@ -294,9 +334,9 @@ const Projects = () => {
 
       {/* Project Detail Modal */}
       {selectedProject && (
-        <ProjectDetail 
-          project={selectedProject} 
-          onClose={() => setSelectedProject(null)} 
+        <ProjectDetail
+          project={selectedProject}
+          onClose={() => setSelectedProject(null)}
         />
       )}
     </section>

@@ -21,7 +21,7 @@ const ProjectDetail = ({ project, onClose }) => {
   useEffect(() => {
     setIsVisible(true)
     document.body.style.overflow = 'hidden'
-    
+
     return () => {
       document.body.style.overflow = 'unset'
     }
@@ -37,7 +37,7 @@ const ProjectDetail = ({ project, onClose }) => {
   }
 
   const getProjectContent = () => {
-    switch(project.htmlContent) {
+    switch (project.htmlContent) {
       case 'AppSheet':
         return <AppSheetContent />
       case 'CupAmerica2024':
@@ -50,15 +50,27 @@ const ProjectDetail = ({ project, onClose }) => {
         return <SistemaRecomendacionContent />
       case 'GmailPagos':
         return <GmailPagosContent />
+      case 'GCPBank':
+        return <GCPBankContent />
+      case 'Elecciones2026':
+        return <Elecciones2026Content />
+      case 'PaltarumiBot':
+        return <PaltarumiBotContent />
       default:
         return <DefaultContent />
     }
   }
 
   const getResultsContent = (project) => {
-    switch(project.htmlContent) {
+    switch (project.htmlContent) {
       case 'GmailPagos':
         return <GmailPagosResults project={project} />
+      case 'GCPBank':
+        return <GCPBankResults project={project} />
+      case 'Elecciones2026':
+        return <Elecciones2026Results project={project} />
+      case 'PaltarumiBot':
+        return <PaltarumiBotResults project={project} />
       case 'AppSheet':
         return <AppSheetResults project={project} />
       case 'CupAmerica2024':
@@ -97,12 +109,12 @@ const ProjectDetail = ({ project, onClose }) => {
                   <ArrowLeft size={18} className="group-hover:-translate-x-1 transition-transform" />
                   <span className="text-sm sm:text-base">Volver</span>
                 </button>
-                
+
                 <div className="flex items-center space-x-2 sm:space-x-4">
                   {project.github !== '#' && (
-                    <a 
-                      href={project.github} 
-                      target="_blank" 
+                    <a
+                      href={project.github}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center space-x-1 sm:space-x-2 bg-data-light px-2 sm:px-4 py-2 rounded-lg hover:bg-data-green hover:text-data-dark transition-colors"
                     >
@@ -131,11 +143,11 @@ const ProjectDetail = ({ project, onClose }) => {
                     {project.category === 'machine-learning' && <Database size={14} />}
                     <span className="capitalize text-xs sm:text-sm">{project.category.replace('-', ' ')}</span>
                   </div>
-                  
+
                   <h1 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold mb-4 leading-tight">
                     {project.title}
                   </h1>
-                  
+
                   <p className="text-sm sm:text-base lg:text-lg text-gray-400 mb-6 leading-relaxed">
                     {project.description}
                   </p>
@@ -154,7 +166,7 @@ const ProjectDetail = ({ project, onClose }) => {
                 <div className="relative order-first lg:order-last">
                   <div className="absolute inset-0 bg-gradient-to-r from-data-green/20 to-purple-500/20 rounded-2xl blur-3xl"></div>
                   <ImageLoader
-                    src={project.image} 
+                    src={project.image}
                     alt={project.title}
                     className="relative w-full h-48 sm:h-64 lg:h-80 object-contain bg-data-dark rounded-2xl glow-border"
                     fallbackSrc="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=300&fit=crop"
@@ -172,11 +184,10 @@ const ProjectDetail = ({ project, onClose }) => {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`flex items-center space-x-1 sm:space-x-2 px-3 sm:px-6 py-3 sm:py-4 font-medium transition-all duration-300 whitespace-nowrap ${
-                      activeTab === tab.id
-                        ? 'text-data-green border-b-2 border-data-green bg-data-green/5'
-                        : 'text-gray-400 hover:text-white hover:bg-data-light/50'
-                    }`}
+                    className={`flex items-center space-x-1 sm:space-x-2 px-3 sm:px-6 py-3 sm:py-4 font-medium transition-all duration-300 whitespace-nowrap ${activeTab === tab.id
+                      ? 'text-data-green border-b-2 border-data-green bg-data-green/5'
+                      : 'text-gray-400 hover:text-white hover:bg-data-light/50'
+                      }`}
                   >
                     <span className="text-sm sm:text-base">{tab.icon}</span>
                     <span className="text-sm sm:text-base">{tab.name}</span>
@@ -195,7 +206,7 @@ const ProjectDetail = ({ project, onClose }) => {
                   <h2 className="text-xl sm:text-2xl font-bold mb-4 sm:mb-6 gradient-text">Tecnologías Utilizadas</h2>
                   <div className="flex flex-wrap gap-2 sm:gap-3">
                     {project.technologies.map((tech, index) => (
-                      <span 
+                      <span
                         key={index}
                         className="px-3 sm:px-4 py-1 sm:py-2 bg-data-light text-data-green rounded-full border border-data-green/30 hover:bg-data-green/10 transition-colors text-sm sm:text-base"
                       >
@@ -236,8 +247,8 @@ const GmailPagosContent = () => (
     <div className="bg-data-light p-8 rounded-xl glow-border">
       <h2 className="text-2xl font-bold mb-6 gradient-text">Descripción del Proyecto</h2>
       <p className="text-gray-300 leading-relaxed mb-6">
-      El siguiente proyecto tiene como objetivo automatizar mis gastos (egresos bancarios), 
-      cada que realizo un yapeo, plin ó transferencia automáticamente en menos de 1 minuto los datos de dicha operación son guardadas y pueden ser visualizadas a través de mi app personal de Finanzas Personales.
+        El siguiente proyecto tiene como objetivo automatizar mis gastos (egresos bancarios),
+        cada que realizo un yapeo, plin ó transferencia automáticamente en menos de 1 minuto los datos de dicha operación son guardadas y pueden ser visualizadas a través de mi app personal de Finanzas Personales.
       </p>
     </div>
 
@@ -286,8 +297,8 @@ const AppSheetContent = () => (
     <div className="bg-data-light p-8 rounded-xl glow-border">
       <h2 className="text-2xl font-bold mb-6 gradient-text">Descripción del Proyecto</h2>
       <p className="text-gray-300 leading-relaxed mb-6">
-        Los siguientes proyectos fueron creados utilizando AppSheet, un SaaS de Google que permite desarrollar 
-        aplicaciones No Code. Su objetivo es mejorar procesos y automatizar tareas dentro de la empresa. 
+        Los siguientes proyectos fueron creados utilizando AppSheet, un SaaS de Google que permite desarrollar
+        aplicaciones No Code. Su objetivo es mejorar procesos y automatizar tareas dentro de la empresa.
         Además, se integran con otras áreas para optimizar la gestión de pedidos y ventas.
       </p>
     </div>
@@ -333,11 +344,11 @@ const CopaAmericaContent = () => (
     <div className="bg-data-light p-8 rounded-xl glow-border">
       <h2 className="text-2xl font-bold mb-6 gradient-text">Metodología del Proyecto</h2>
       <p className="text-gray-300 leading-relaxed mb-6">
-        Este proyecto de Data Science utiliza técnicas de web scraping para la recolección de datos y 
-        procesos ETL para su tratamiento. Para el pronóstico se utilizó un algoritmo de probabilidad 
+        Este proyecto de Data Science utiliza técnicas de web scraping para la recolección de datos y
+        procesos ETL para su tratamiento. Para el pronóstico se utilizó un algoritmo de probabilidad
         de Poisson, aunque se pretende reemplazarlo por algoritmos de Machine Learning en futuras versiones.
       </p>
-      
+
       <div className="grid md:grid-cols-3 gap-6 mt-8">
         <div className="text-center p-6 bg-data-dark rounded-lg border border-data-green/30">
           <div className="text-3xl font-bold text-data-green mb-2">16</div>
@@ -388,9 +399,9 @@ const DashboardsContent = () => (
     <div className="bg-data-light p-8 rounded-xl glow-border">
       <h2 className="text-2xl font-bold mb-6 gradient-text">Filosofía de Diseño</h2>
       <p className="text-gray-300 leading-relaxed mb-6">
-        Los dashboards están diseñados para simplificar información compleja y mostrar solamente los datos 
-        más relevantes junto con los KPIs cruciales. Se considera la estética, los colores, formatos y 
-        la jerarquía visual (patrones Z y F) para captar la atención de los stakeholders y facilitar 
+        Los dashboards están diseñados para simplificar información compleja y mostrar solamente los datos
+        más relevantes junto con los KPIs cruciales. Se considera la estética, los colores, formatos y
+        la jerarquía visual (patrones Z y F) para captar la atención de los stakeholders y facilitar
         la toma de decisiones estratégicas.
       </p>
     </div>
@@ -440,8 +451,8 @@ const ExcelContent = () => (
     <div className="bg-data-light p-8 rounded-xl glow-border">
       <h2 className="text-2xl font-bold mb-6 gradient-text">Automatización con VBA</h2>
       <p className="text-gray-300 leading-relaxed mb-6">
-        Desarrollo de soluciones de automatización en Excel utilizando VBA, desde macros básicos 
-        hasta formularios personalizados complejos. Estas herramientas mejoran significativamente 
+        Desarrollo de soluciones de automatización en Excel utilizando VBA, desde macros básicos
+        hasta formularios personalizados complejos. Estas herramientas mejoran significativamente
         la productividad y optimizan procesos repetitivos en el entorno empresarial.
       </p>
     </div>
@@ -493,8 +504,8 @@ const SistemaRecomendacionContent = () => (
     <div className="bg-data-light p-8 rounded-xl glow-border">
       <h2 className="text-2xl font-bold mb-6 gradient-text">Algoritmo de Similitud</h2>
       <p className="text-gray-300 leading-relaxed mb-6">
-        Sistema de recomendación basado en filtrado colaborativo utilizando el algoritmo de similitud 
-        de coseno. El proyecto integra múltiples tecnologías: SQL Server para consultas, Python para 
+        Sistema de recomendación basado en filtrado colaborativo utilizando el algoritmo de similitud
+        de coseno. El proyecto integra múltiples tecnologías: SQL Server para consultas, Python para
         procesamiento ETL, y Power BI para visualización interactiva de resultados.
       </p>
     </div>
@@ -562,7 +573,7 @@ const SistemaRecomendacionContent = () => (
 
 const GalleryContent = ({ project, isGalleryExpanded, setIsGalleryExpanded }) => {
   const getProjectImages = () => {
-    switch(project.htmlContent) {
+    switch (project.htmlContent) {
       case 'GmailPagos':
         return [
           { src: './gmail_transacciones/codigo_appsscript.png', title: 'Captura del correo de pago', description: 'El código de appscript captura el último correo de pago sin abrir cada 60 segundos' },
@@ -608,6 +619,21 @@ const GalleryContent = ({ project, isGalleryExpanded, setIsGalleryExpanded }) =>
           { src: './images/similitud.jpg', title: 'Matriz de Similitud', description: 'Cálculo de similitudes entre usuarios' },
           { src: './images/recomendacion.jpg', title: 'Resultados', description: 'Recomendaciones generadas por el algoritmo' }
         ]
+      case 'GCPBank':
+        return [
+          { src: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80', title: 'Simulador de Examen', description: 'Interfaz principal para resolver preguntas' },
+          { src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80', title: 'Modo Estudio', description: 'Visualización de explicaciones y teoría' }
+        ]
+      case 'Elecciones2026':
+        return [
+          { src: 'https://images.unsplash.com/photo-1540910419892-4a39d20b2944?w=800&q=80', title: 'Comparativa', description: 'Pantalla de comparación entre candidatos' },
+          { src: 'https://images.unsplash.com/photo-1541872703-74c5e443d1f9?w=800&q=80', title: 'Planes de Gobierno', description: 'Análisis dinámico de propuestas' }
+        ]
+      case 'PaltarumiBot':
+        return [
+          { src: 'https://images.unsplash.com/photo-1518433278988-d727daf0d8e1?w=800&q=80', title: 'Dashboard de Control', description: 'Estado de los bots y logs de extracción' },
+          { src: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=800&q=80', title: 'Procesamiento OCR', description: 'Lectura inteligente de documentos' }
+        ]
       default:
         return [
           { src: project.image, title: 'Vista Principal', description: 'Imagen principal del proyecto' }
@@ -625,8 +651,8 @@ const GalleryContent = ({ project, isGalleryExpanded, setIsGalleryExpanded }) =>
           <div key={index} className="bg-data-light p-3 sm:p-4 rounded-xl glow-border group cursor-pointer hover:scale-105 transition-transform duration-300">
             <div className="relative overflow-hidden rounded-lg mb-3">
               <ImageLoader
-                src={img.src} 
-                alt={img.title} 
+                src={img.src}
+                alt={img.title}
                 className="w-full h-40 sm:h-48 object-contain bg-data-dark rounded-lg group-hover:scale-110 transition-transform duration-300"
                 fallbackSrc={project.image}
               />
@@ -637,10 +663,10 @@ const GalleryContent = ({ project, isGalleryExpanded, setIsGalleryExpanded }) =>
           </div>
         ))}
       </div>
-      
+
       {/* Botón para ver galería completa */}
       <div className="text-center">
-        <button 
+        <button
           onClick={() => setIsGalleryExpanded(true)}
           className="bg-data-green/10 border border-data-green text-data-green px-6 py-3 rounded-lg hover:bg-data-green hover:text-data-dark transition-colors font-medium"
         >
@@ -654,7 +680,7 @@ const GalleryContent = ({ project, isGalleryExpanded, setIsGalleryExpanded }) =>
           <div className="bg-data-dark rounded-xl max-w-6xl w-full max-h-[95vh] sm:max-h-[90vh] overflow-y-auto">
             <div className="sticky top-0 bg-data-dark/95 backdrop-blur-md p-3 sm:p-4 border-b border-data-green/20 flex justify-between items-center">
               <h3 className="text-lg sm:text-xl font-bold gradient-text truncate pr-4">Galería - {project.title}</h3>
-              <button 
+              <button
                 onClick={() => setIsGalleryExpanded(false)}
                 className="text-gray-400 hover:text-white transition-colors flex-shrink-0"
               >
@@ -668,8 +694,8 @@ const GalleryContent = ({ project, isGalleryExpanded, setIsGalleryExpanded }) =>
                 {images.map((img, index) => (
                   <div key={index} className="bg-data-light p-3 sm:p-4 rounded-xl glow-border">
                     <ImageLoader
-                      src={img.src} 
-                      alt={img.title} 
+                      src={img.src}
+                      alt={img.title}
                       className="w-full h-48 sm:h-64 object-contain bg-data-dark rounded-lg mb-3 sm:mb-4"
                       fallbackSrc={project.image}
                     />
@@ -702,7 +728,7 @@ const GmailPagosResults = ({ project }) => (
           ))}
         </div>
       </div>
-      
+
       <div className="bg-data-light p-6 rounded-xl glow-border">
         <h3 className="text-xl font-semibold mb-4 text-data-green">Beneficios Obtenidos</h3>
         <ul className="space-y-3">
@@ -739,7 +765,7 @@ const AppSheetResults = ({ project }) => (
           ))}
         </div>
       </div>
-      
+
       <div className="bg-data-light p-6 rounded-xl glow-border">
         <h3 className="text-xl font-semibold mb-4 text-data-green">Beneficios Obtenidos</h3>
         <ul className="space-y-3">
@@ -776,7 +802,7 @@ const CopaAmericaResults = ({ project }) => (
           ))}
         </div>
       </div>
-      
+
       <div className="bg-data-light p-6 rounded-xl glow-border">
         <h3 className="text-xl font-semibold mb-4 text-data-green">Beneficios Obtenidos</h3>
         <ul className="space-y-3">
@@ -813,7 +839,7 @@ const DashboardsResults = ({ project }) => (
           ))}
         </div>
       </div>
-      
+
       <div className="bg-data-light p-6 rounded-xl glow-border">
         <h3 className="text-xl font-semibold mb-4 text-data-green">Beneficios Obtenidos</h3>
         <ul className="space-y-3">
@@ -850,7 +876,7 @@ const ExcelResults = ({ project }) => (
           ))}
         </div>
       </div>
-      
+
       <div className="bg-data-light p-6 rounded-xl glow-border">
         <h3 className="text-xl font-semibold mb-4 text-data-green">Beneficios Obtenidos</h3>
         <ul className="space-y-3">
@@ -863,6 +889,265 @@ const ExcelResults = ({ project }) => (
           ].map((benefit, index) => (
             <li key={index} className="flex items-start space-x-3">
               <TrendingUp className="text-data-green mt-0.5 flex-shrink-0" size={16} />
+              <span className="text-gray-300">{benefit}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+)
+
+const GCPBankContent = () => (
+  <div className="space-y-12">
+    <div className="bg-data-light p-8 rounded-xl glow-border">
+      <h2 className="text-2xl font-bold mb-6 gradient-text">Preparación para Certificaciones Cloud</h2>
+      <p className="text-gray-300 leading-relaxed mb-6">
+        Esta plataforma fue diseñada para centralizar y facilitar el estudio de las diversas certificaciones de Google Cloud Platform.
+        Permite a los usuarios enfrentarse a cuestionarios que simulan el entorno real de examen, ofreciendo explicaciones detalladas
+        por cada respuesta para reforzar el aprendizaje teórico y práctico.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-8">
+      <div className="bg-data-light p-6 rounded-xl glow-border">
+        <h3 className="text-xl font-semibold mb-4 text-data-green">Funcionalidades Clave</h3>
+        <ul className="space-y-3">
+          {[
+            'Simulador de examen con temporizador',
+            'Modo estudio con retroalimentación inmediata',
+            'Categorización por tipo de certificación (Associate, Professional)',
+            'Seguimiento de progreso y áreas de mejora',
+            'Interfaz optimizada para dispositivos móviles'
+          ].map((item, index) => (
+            <li key={index} className="flex items-start space-x-3">
+              <div className="w-2 h-2 bg-data-green rounded-full mt-2 flex-shrink-0"></div>
+              <span className="text-gray-300">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="bg-data-light p-6 rounded-xl glow-border">
+        <h3 className="text-xl font-semibold mb-4 text-data-green">Tecnologías y Enfoque</h3>
+        <div className="space-y-4 text-gray-300">
+          <p>El proyecto utiliza un stack moderno para garantizar rapidez y escalabilidad:</p>
+          <ul className="space-y-2">
+            <li>• <strong>React + Vite:</strong> Para una experiencia de usuario fluida</li>
+            <li>• <strong>Tailwind CSS:</strong> Diseño elegante y responsivo</li>
+            <li>• <strong>Vercel:</strong> Despliegue continuo y alta disponibilidad</li>
+            <li>• <strong>JSON API:</strong> Gestión eficiente del banco de preguntas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+)
+
+const Elecciones2026Content = () => (
+  <div className="space-y-12">
+    <div className="bg-data-light p-8 rounded-xl glow-border">
+      <h2 className="text-2xl font-bold mb-6 gradient-text">Transparencia Electoral y Voto Informado</h2>
+      <p className="text-gray-300 leading-relaxed mb-6">
+        Un proyecto dedicado a fortalecer la democracia en Perú mediante el acceso fácil y comparativo a la información electoral.
+        Este portal permite a los ciudadanos navegar entre los perfiles de los candidatos, sus trayectorias y, sobre todo, sus planes
+        de gobierno de manera interactiva.
+      </p>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-8">
+      <div className="bg-data-light p-6 rounded-xl glow-border">
+        <h3 className="text-xl font-semibold mb-4 text-data-green">Módulos del Sistema</h3>
+        <ul className="space-y-3">
+          {[
+            'Comparador dinámico de planes de gobierno',
+            'Fichas técnicas detalladas de candidatos',
+            'Visualización de tendencias y encuestas',
+            'Calendario electoral interactivo',
+            'Sección de noticias y eventos destacados'
+          ].map((item, index) => (
+            <li key={index} className="flex items-start space-x-3">
+              <CheckCircle2 className="text-data-green mt-0.5 flex-shrink-0" size={16} />
+              <span className="text-gray-300">{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="bg-data-light p-6 rounded-xl glow-border">
+        <h3 className="text-xl font-semibold mb-4 text-data-green">Impacto Social</h3>
+        <div className="space-y-4">
+          <div className="p-4 bg-data-dark rounded-lg border-l-4 border-data-green">
+            <h4 className="font-semibold text-white mb-1">Centralización</h4>
+            <p className="text-gray-400 text-sm">Toda la información relevante en un solo lugar</p>
+          </div>
+          <div className="p-4 bg-data-dark rounded-lg border-l-4 border-blue-500">
+            <h4 className="font-semibold text-white mb-1">Interactividad</h4>
+            <p className="text-gray-400 text-sm">Gráficos y herramientas que facilitan la comprensión</p>
+          </div>
+          <div className="p-4 bg-data-dark rounded-lg border-l-4 border-purple-500">
+            <h4 className="font-semibold text-white mb-1">Neutralidad</h4>
+            <p className="text-gray-400 text-sm">Presentación de datos de manera imparcial y objetiva</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+)
+
+const PaltarumiBotContent = () => (
+  <div className="space-y-12">
+    <div className="bg-data-light p-8 rounded-xl glow-border">
+      <h2 className="text-2xl font-bold mb-6 gradient-text">Automatización Inteligente de Consultas Estatales</h2>
+      <p className="text-gray-300 leading-relaxed mb-6">
+        Sistema diseñado para la empresa Paltarumi, enfocado en optimizar la búsqueda y recopilación de datos legales y operativos.
+        El sistema realiza web scraping en tiempo real a diversas entidades del estado y utiliza modelos de IA para analizar la información obtenida.
+      </p>
+    </div>
+
+    <div className="bg-data-light p-6 rounded-xl glow-border">
+      <h3 className="text-xl font-semibold mb-6 text-data-green">Arquitectura de Procesamiento</h3>
+      <div className="grid md:grid-cols-3 gap-6">
+        <div className="text-center p-6 bg-data-dark rounded-lg border border-data-green/30">
+          <Zap className="mx-auto text-data-green mb-3" size={32} />
+          <h4 className="font-semibold text-white mb-2">Web Scraping</h4>
+          <p className="text-gray-400 text-sm">Extracción automatizada desde SUNAT, MTC, REINFO e INGEMMET</p>
+        </div>
+        <div className="text-center p-6 bg-data-dark rounded-lg border border-data-green/30">
+          <Code className="mx-auto text-data-green mb-3" size={32} />
+          <h4 className="font-semibold text-white mb-2">Procesamiento IA</h4>
+          <p className="text-gray-400 text-sm">Integración con Gemini y OpenAI para análisis de texto y OCR</p>
+        </div>
+        <div className="text-center p-6 bg-data-dark rounded-lg border border-data-green/30">
+          <Database className="mx-auto text-data-green mb-3" size={32} />
+          <h4 className="font-semibold text-white mb-2">Reportes</h4>
+          <p className="text-gray-400 text-sm">Generación automática de informes PDF consolidados</p>
+        </div>
+      </div>
+    </div>
+
+    <div className="grid md:grid-cols-2 gap-8">
+      <div className="bg-data-light p-6 rounded-xl glow-border">
+        <h3 className="text-xl font-semibold mb-4 text-data-green">Conocimientos Técnicos</h3>
+        <ul className="space-y-2">
+          {['Python Avanzado', 'Selenium / Playwright', 'Cloud Vision API (OCR)', 'Prompt Engineering', 'FastAPI para integración'].map((item, index) => (
+            <li key={index} className="flex items-center space-x-2 text-gray-300">
+              <span className="w-1.5 h-1.5 bg-data-green rounded-full"></span>
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <div className="bg-data-light p-6 rounded-xl glow-border">
+        <h3 className="text-xl font-semibold mb-4 text-data-green">Retos Tecnológicos</h3>
+        <p className="text-gray-400 text-sm mb-4">Manejo de captchas, cambios dinámicos en las webs gubernamentales y optimización de tokens en las APIs de IA.</p>
+        <div className="flex gap-2">
+          <span className="px-2 py-1 bg-data-green/10 text-data-green text-xs rounded">Anti-bot</span>
+          <span className="px-2 py-1 bg-data-green/10 text-data-green text-xs rounded">OCR</span>
+          <span className="px-2 py-1 bg-data-green/10 text-data-green text-xs rounded">AI Integration</span>
+        </div>
+      </div>
+    </div>
+  </div>
+)
+
+const GCPBankResults = ({ project }) => (
+  <div className="space-y-8">
+    <h2 className="text-2xl font-bold gradient-text">Resultados e Impacto</h2>
+    <div className="grid md:grid-cols-2 gap-8">
+      <div className="bg-data-light p-6 rounded-xl glow-border">
+        <h3 className="text-xl font-semibold mb-4 text-data-green">Métricas Obtenidas</h3>
+        <div className="space-y-4">
+          {Object.entries(project.stats).map(([key, value]) => (
+            <div key={key} className="flex justify-between items-center p-3 bg-data-dark rounded-lg">
+              <span className="text-gray-300 capitalize">{key}</span>
+              <span className="text-data-green font-bold">{value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="bg-data-light p-6 rounded-xl glow-border">
+        <h3 className="text-xl font-semibold mb-4 text-data-green">Logros del Proyecto</h3>
+        <ul className="space-y-3">
+          {[
+            'Plataforma utilizada por más de 100 estudiantes',
+            'Tasa de aprobación reportada superior al 90%',
+            'Biblioteca de preguntas en constante crecimiento',
+            'Optimización del tiempo de estudio en un 50%'
+          ].map((benefit, index) => (
+            <li key={index} className="flex items-start space-x-3">
+              <TrendingUp className="text-data-green mt-0.5 flex-shrink-0" size={16} />
+              <span className="text-gray-300">{benefit}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+)
+
+const Elecciones2026Results = ({ project }) => (
+  <div className="space-y-8">
+    <h2 className="text-2xl font-bold gradient-text">Impacto en el Ciudadano</h2>
+    <div className="grid md:grid-cols-2 gap-8">
+      <div className="bg-data-light p-6 rounded-xl glow-border">
+        <h3 className="text-xl font-semibold mb-4 text-data-green">Indicadores</h3>
+        <div className="space-y-4">
+          {Object.entries(project.stats).map(([key, value]) => (
+            <div key={key} className="flex justify-between items-center p-3 bg-data-dark rounded-lg">
+              <span className="text-gray-300 capitalize">{key}</span>
+              <span className="text-data-green font-bold">{value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="bg-data-light p-6 rounded-xl glow-border">
+        <h3 className="text-xl font-semibold mb-4 text-data-green">Beneficios</h3>
+        <ul className="space-y-3">
+          {[
+            'Acceso democrático a los planes de gobierno',
+            'Facilidad para contrastar propuestas entre candidatos',
+            'Reducción de la desinformación electoral',
+            'Plataforma 100% gratuita y de acceso abierto'
+          ].map((benefit, index) => (
+            <li key={index} className="flex items-start space-x-3">
+              <Users className="text-data-green mt-0.5 flex-shrink-0" size={16} />
+              <span className="text-gray-300">{benefit}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+)
+
+const PaltarumiBotResults = ({ project }) => (
+  <div className="space-y-8">
+    <h2 className="text-2xl font-bold gradient-text">Optimización y Resultados</h2>
+    <div className="grid md:grid-cols-2 gap-8">
+      <div className="bg-data-light p-6 rounded-xl glow-border">
+        <h3 className="text-xl font-semibold mb-4 text-data-green">Eficiencia Operativa</h3>
+        <div className="space-y-4">
+          {Object.entries(project.stats).map(([key, value]) => (
+            <div key={key} className="flex justify-between items-center p-3 bg-data-dark rounded-lg">
+              <span className="text-gray-300 capitalize">{key}</span>
+              <span className="text-data-green font-bold">{value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+      <div className="bg-data-light p-6 rounded-xl glow-border">
+        <h3 className="text-xl font-semibold mb-4 text-data-green">Valor Agregado</h3>
+        <ul className="space-y-3">
+          {[
+            'Reducción del 95% en el tiempo de búsqueda manual',
+            'Eliminación de errores de digitación mediante OCR',
+            'Consolidación automática de 6 portales distintos',
+            'Generación de reportes listos para auditoría'
+          ].map((benefit, index) => (
+            <li key={index} className="flex items-start space-x-3">
+              <Award className="text-data-green mt-0.5 flex-shrink-0" size={16} />
               <span className="text-gray-300">{benefit}</span>
             </li>
           ))}
@@ -887,7 +1172,7 @@ const SistemaRecomendacionResults = ({ project }) => (
           ))}
         </div>
       </div>
-      
+
       <div className="bg-data-light p-6 rounded-xl glow-border">
         <h3 className="text-xl font-semibold mb-4 text-data-green">Beneficios Obtenidos</h3>
         <ul className="space-y-3">
@@ -924,7 +1209,7 @@ const DefaultResults = ({ project }) => (
           ))}
         </div>
       </div>
-      
+
       <div className="bg-data-light p-6 rounded-xl glow-border">
         <h3 className="text-xl font-semibold mb-4 text-data-green">Beneficios Obtenidos</h3>
         <ul className="space-y-3">
