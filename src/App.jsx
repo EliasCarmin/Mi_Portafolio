@@ -7,6 +7,7 @@ import Projects from './components/Projects'
 import Services from './components/Services'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import Clients from './components/Clients'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -35,6 +36,7 @@ function App() {
       <Header />
       <main>
         <Hero />
+        <Clients />
         <About />
         <Skills />
         <Projects />

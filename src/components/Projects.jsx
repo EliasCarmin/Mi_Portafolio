@@ -5,6 +5,7 @@ import ProjectDetail from './ProjectDetail'
 const Projects = () => {
   const [activeFilter, setActiveFilter] = useState('todos')
   const [selectedProject, setSelectedProject] = useState(null)
+  const [showAll, setShowAll] = useState(false)
 
   const projects = [
     {
@@ -221,7 +222,7 @@ const Projects = () => {
 
         {/* Projects Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProjects.map((project) => (
+          {(showAll ? filteredProjects : filteredProjects.slice(0, 6)).map((project) => (
             <div
               key={project.id}
               className="bg-data-light rounded-lg overflow-hidden glow-border card-hover group"
@@ -314,6 +315,18 @@ const Projects = () => {
             </div>
           ))}
         </div>
+        
+        {/* Show More Button */}
+        {filteredProjects.length > 6 && (
+          <div className="mt-16 text-center">
+            <button
+              onClick={() => setShowAll(!showAll)}
+              className="px-10 py-4 bg-data-green text-data-dark rounded-xl font-bold hover:bg-neon-green transition-all shadow-[0_0_20px_rgba(0,255,136,0.2)] hover:shadow-[0_0_30px_rgba(0,255,136,0.4)]"
+            >
+              {showAll ? 'Ver menos' : 'Ver todos los proyectos'}
+            </button>
+          </div>
+        )}
 
         {/* Call to Action */}
         <div className="text-center mt-16">

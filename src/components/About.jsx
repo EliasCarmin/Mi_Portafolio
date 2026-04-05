@@ -79,7 +79,7 @@ const About = () => {
     {
       icon: <Clock className="text-data-green" size={24} />,
       title: 'Experiencia',
-      description: '+1 años en análisis de datos'
+      description: '+2 años en análisis de datos'
     },
     {
       icon: <Target className="text-data-green" size={24} />,
