@@ -8,6 +8,7 @@ import Services from './components/Services'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 import Clients from './components/Clients'
+import ChatWidget from './components/chat/ChatWidget'
 
 function App() {
   const [isLoading, setIsLoading] = useState(true)
@@ -44,6 +45,7 @@ function App() {
         <Contact />
       </main>
       <Footer />
+      <ChatWidget />
     </div>
   )
 }
