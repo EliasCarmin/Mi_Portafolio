@@ -1,4 +1,13 @@
-const API_URL = (import.meta.env.VITE_CHAT_API_URL || 'http://localhost:50505').replace(/\/$/, '')
+const configuredApiUrl = import.meta.env.VITE_CHAT_API_URL?.trim()
+const API_URL = (configuredApiUrl || (import.meta.env.DEV ? 'http://localhost:50505' : '')).replace(/\/$/, '')
+
+const requireApiUrl = () => {
+  if (!API_URL) {
+    throw new Error('El asistente no está configurado en este entorno.')
+  }
+
+  return API_URL
+}
 
 const getErrorMessage = async (response) => {
   try {
@@ -10,7 +19,7 @@ const getErrorMessage = async (response) => {
 }
 
 export const checkHealth = async (signal) => {
-  const response = await fetch(`${API_URL}/health`, {
+  const response = await fetch(`${requireApiUrl()}/health`, {
     method: 'GET',
     headers: { Accept: 'application/json' },
     signal
@@ -58,7 +67,7 @@ export const sendChatMessageStream = async (
   let streamEnded = false
 
   try {
-    const response = await fetch(`${API_URL}/chat`, {
+    const response = await fetch(`${requireApiUrl()}/chat`, {
       method: 'POST',
       headers: {
         Accept: 'text/event-stream',
