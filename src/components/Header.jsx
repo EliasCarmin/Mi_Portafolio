@@ -1,98 +1,59 @@
-import React, { useState, useEffect } from 'react'
-import { Menu, X, Download } from 'lucide-react'
+import React, { useEffect, useState } from 'react'
+import { ArrowUpRight, Menu, X } from 'lucide-react'
+
+const links = [
+  { name: 'Perfil', href: '#about' },
+  { name: 'Experiencia', href: '#experience' },
+  { name: 'Stack', href: '#skills' },
+  { name: 'Capacidades', href: '#services' },
+  { name: 'Proyectos', href: '#projects' }
+]
 
 const Header = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const [isScrolled, setIsScrolled] = useState(false)
+  const [open, setOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50)
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    const onKeyDown = (event) => event.key === 'Escape' && setOpen(false)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('keydown', onKeyDown)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+      window.removeEventListener('keydown', onKeyDown)
     }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  const navItems = [
-    { name: 'Inicio', href: '#home' },
-    { name: 'Sobre Mí', href: '#about' },
-    { name: 'Habilidades', href: '#skills' },
-    { name: 'Proyectos', href: '#projects' },
-    { name: 'Servicios', href: '#services' },
-    { name: 'Contacto', href: '#contact' }
-  ]
-
-  const scrollToSection = (href) => {
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' })
-    }
-    setIsMenuOpen(false)
+  const navigate = (href) => {
+    document.querySelector(href)?.scrollIntoView({ behavior: 'smooth' })
+    setOpen(false)
   }
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled ? 'bg-data-dark/95 backdrop-blur-md shadow-lg' : 'bg-transparent'
-    }`}>
-      <div className="container-custom px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
-        <div className="flex items-center justify-between h-12 sm:h-14">
-          {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div className="w-7 h-7 sm:w-8 sm:h-8 bg-data-green rounded-lg flex items-center justify-center">
-              <span className="text-data-dark font-bold text-xs sm:text-sm">E</span>
-            </div>
-            <span className="text-lg sm:text-xl font-bold gradient-text">Elias</span>
-          </div>
+    <header className={`fixed inset-x-0 top-0 z-50 transition-all ${scrolled ? 'border-b border-white/[0.07] bg-data-dark/80 backdrop-blur-xl' : 'bg-transparent'}`}>
+      <div className="container-custom flex h-20 items-center justify-between px-5 sm:px-8 lg:px-10">
+        <button onClick={() => navigate('#home')} className="flex items-center gap-3" aria-label="Ir al inicio">
+          <span className="grid h-10 w-10 place-items-center rounded-xl bg-gradient-to-br from-cyan-400 to-violet-500 font-data font-bold text-slate-950 shadow-lg shadow-cyan-500/10">EC</span>
+          <span className="text-left leading-tight"><span className="block text-sm font-bold text-white">Elias Carmin</span><span className="block font-data text-[10px] uppercase tracking-wider text-slate-500">Cloud & Software</span></span>
+        </button>
 
-          {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center space-x-6 lg:space-x-8">
-            {navItems.map((item) => (
-              <button
-                key={item.name}
-                onClick={() => scrollToSection(item.href)}
-                className="text-gray-300 hover:text-data-green transition-colors duration-300 font-medium text-sm lg:text-base"
-              >
-                {item.name}
-              </button>
-            ))}
-            <a href="/CV_Analista_Datos_Elías_Carmin.pdf" download="CV_Analista_Datos_Elías_Carmin.pdf" className="flex items-center space-x-1.5 bg-data-green text-data-dark px-3 py-1.5 lg:px-4 lg:py-2 rounded-lg hover:bg-neon-green transition-colors duration-300 font-medium text-sm lg:text-base">
-              <Download size={14} className="lg:w-4 lg:h-4" />
-              <span>CV</span>
-            </a>
-          </nav>
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="Navegación principal">
+          {links.map((link) => <button key={link.href} onClick={() => navigate(link.href)} className="text-sm font-medium text-slate-400 transition hover:text-white">{link.name}</button>)}
+          <button onClick={() => navigate('#contact')} className="inline-flex items-center gap-2 rounded-xl bg-white px-4 py-2.5 text-sm font-semibold text-slate-950 transition hover:bg-cyan-200">Hablemos <ArrowUpRight size={16} /></button>
+        </nav>
 
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden text-gray-300 hover:text-data-green transition-colors duration-300 p-1"
-          >
-            {isMenuOpen ? <X size={20} /> : <Menu size={20} />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {isMenuOpen && (
-          <div className="md:hidden mt-2 pb-3 border-t border-gray-700/50">
-            <nav className="flex flex-col space-y-3 pt-3">
-              {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  onClick={() => scrollToSection(item.href)}
-                  className="text-gray-300 hover:text-data-green transition-colors duration-300 font-medium text-left text-sm py-1"
-                >
-                  {item.name}
-                </button>
-              ))}
-              <a href="/CV_Analista_Datos_Elías_Carmin.pdf" download="CV_Analista_Datos_Elías_Carmin.pdf" className="flex items-center space-x-2 bg-data-green text-data-dark px-3 py-1.5 rounded-lg hover:bg-neon-green transition-colors duration-300 font-medium w-fit text-sm mt-2">
-                <Download size={14} />
-                <span>Descargar CV</span>
-              </a>
-            </nav>
-          </div>
-        )}
+        <button onClick={() => setOpen((current) => !current)} className="rounded-xl border border-white/10 p-2.5 text-slate-300 lg:hidden" aria-label={open ? 'Cerrar menú' : 'Abrir menú'} aria-expanded={open} aria-controls="mobile-navigation">{open ? <X size={20} /> : <Menu size={20} />}</button>
       </div>
+
+      {open && (
+        <nav id="mobile-navigation" className="mx-4 mb-4 space-y-1 rounded-2xl border border-white/10 bg-data-gray/95 p-3 shadow-2xl backdrop-blur-xl lg:hidden" aria-label="Navegación móvil">
+          {links.map((link) => <button key={link.href} onClick={() => navigate(link.href)} className="block w-full rounded-xl px-4 py-3 text-left text-sm text-slate-300 hover:bg-white/5 hover:text-white">{link.name}</button>)}
+          <button onClick={() => navigate('#contact')} className="mt-2 block w-full rounded-xl bg-cyan-300 px-4 py-3 text-left text-sm font-semibold text-slate-950">Hablemos</button>
+        </nav>
+      )}
     </header>
   )
 }
 
-export default Header 
+export default Header

@@ -5,7 +5,6 @@ import {
   RefreshCw,
   RotateCcw,
   Send,
-  Sparkles,
   X
 } from 'lucide-react'
 import { useChat } from '../../hooks/useChat'
@@ -13,10 +12,10 @@ import { checkHealth } from '../../services/chatService'
 import ChatMessageItem from './ChatMessageItem'
 
 const QUICK_PROMPTS = [
-  '🚀 Proyectos principales',
-  '💼 Experiencia laboral',
-  '🛠️ Habilidades técnicas',
-  '📬 ¿Cómo contactar a Elias?'
+  'Experiencia en Google Cloud',
+  'Proyectos de software',
+  'Bases de datos y APIs',
+  'Cómo contactar a Elias'
 ]
 
 const ChatWidget = () => {
@@ -210,17 +209,10 @@ const ChatWidget = () => {
         </section>
       )}
 
-      {!isOpen && (
-        <div className="absolute bottom-1 right-16 hidden w-64 rounded-xl border border-data-green/20 bg-data-gray/95 px-3 py-2 text-xs text-gray-200 shadow-xl backdrop-blur sm:block">
-          <Sparkles className="mr-1.5 inline text-data-green" size={14} />
-          ¿Preguntas sobre mi experiencia? ¡Chatea conmigo!
-        </div>
-      )}
-
       <button
         type="button"
         onClick={toggleOpen}
-        className={`relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-data-green to-neon-green text-data-dark shadow-lg shadow-data-green/20 transition duration-300 hover:scale-105 hover:shadow-xl hover:shadow-data-green/30 ${!isOpen ? 'animate-pulse-slow' : ''}`}
+        className="relative flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-data-green to-neon-green text-data-dark shadow-lg shadow-data-green/20 transition duration-300 hover:scale-105 hover:shadow-xl hover:shadow-data-green/30"
         aria-label={isOpen ? 'Cerrar chat' : 'Abrir chat con el asistente de Elias'}
         aria-expanded={isOpen}
       >

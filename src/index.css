@@ -3,50 +3,53 @@
 @tailwind utilities;
 
 @layer base {
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-    @apply bg-data-dark text-white font-modern;
-  }
+  :root { color-scheme: dark; }
+  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  body { @apply m-0 bg-data-dark text-slate-100 font-modern antialiased; }
+  ::selection { @apply bg-cyan-400/30 text-white; }
+  button, a { -webkit-tap-highlight-color: transparent; }
+  :focus-visible { @apply outline-none ring-2 ring-cyan-400 ring-offset-2 ring-offset-data-dark; }
 }
 
 @layer components {
-  .section-padding {
-    @apply py-16 px-4 sm:px-6 lg:px-8;
-  }
-  
-  .container-custom {
-    @apply max-w-7xl mx-auto;
-  }
-  
-  .gradient-text {
-    @apply bg-gradient-to-r from-data-green to-neon-green bg-clip-text text-transparent;
-  }
-  
-  .card-hover {
-    @apply transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-data-green/20;
-  }
-  
-  .glow-border {
-    @apply border border-data-green/30 hover:border-data-green transition-colors duration-300;
-  }
+  .section-padding { @apply px-5 py-20 sm:px-8 md:py-28 lg:px-10; }
+  .container-custom { @apply mx-auto max-w-7xl; }
+  .section-kicker { @apply mb-4 inline-flex items-center gap-2 font-data text-xs font-semibold uppercase tracking-[0.22em] text-cyan-300; }
+  .section-title { @apply text-3xl font-bold tracking-tight text-white sm:text-4xl md:text-5xl; }
+  .section-copy { @apply mt-5 max-w-2xl text-base leading-8 text-slate-400 md:text-lg; }
+  .gradient-text { @apply bg-gradient-to-r from-cyan-300 via-sky-400 to-violet-400 bg-clip-text text-transparent; }
+  .surface { @apply border border-white/[0.08] bg-white/[0.035] backdrop-blur-xl; }
+  .glow-border { @apply border border-white/[0.08] transition duration-300 hover:border-cyan-400/30; }
+  .card-hover { @apply transition duration-300 hover:-translate-y-1 hover:shadow-glow; }
+  .custom-scrollbar::-webkit-scrollbar { width: 6px; }
+  .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+  .custom-scrollbar::-webkit-scrollbar-thumb { @apply rounded-full bg-cyan-400/30; }
+}
 
-  .custom-scrollbar::-webkit-scrollbar {
-    width: 6px;
-  }
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(circle at 12% 12%, rgba(34, 211, 238, .10), transparent 28%),
+    radial-gradient(circle at 88% 18%, rgba(139, 92, 246, .11), transparent 28%),
+    #070b14;
+}
 
-  .custom-scrollbar::-webkit-scrollbar-track {
-    background: transparent;
-  }
+.bg-grid {
+  background-image: linear-gradient(rgba(148,163,184,.05) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,.05) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent 90%);
+}
 
-  .custom-scrollbar::-webkit-scrollbar-thumb {
-    background: #00ff884d;
-    border-radius: 99px;
-  }
-
-  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #00ff8880;
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
   }
 }

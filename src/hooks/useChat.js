@@ -4,7 +4,7 @@ import { sendChatMessageStream } from '../services/chatService'
 const WELCOME_MESSAGE = {
   id: 'welcome',
   role: 'assistant',
-  content: '¡Hola! Soy el asistente virtual de Elias. Puedo contarte sobre sus proyectos, experiencia, habilidades y formas de contacto. ¿Qué te gustaría saber?'
+  content: '¡Hola! Soy el asistente virtual de Elias. Puedo contarte sobre su experiencia en cloud, desarrollo de software, APIs, bases de datos y proyectos. ¿Qué te gustaría conocer?'
 }
 
 const createMessage = (role, content) => ({

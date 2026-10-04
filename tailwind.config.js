@@ -1,46 +1,41 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
-        'data-green': '#00ff88',
-        'data-dark': '#0a0a0a',
-        'data-gray': '#1a1a1a',
-        'data-light': '#2a2a2a',
-        'neon-green': '#39ff14',
-        'dark-green': '#006400',
-        'light-green': '#90ee90'
+        'data-green': '#22d3ee',
+        'neon-green': '#a78bfa',
+        'data-dark': '#070b14',
+        'data-gray': '#0b1120',
+        'data-light': '#111a2e',
+        'dark-green': '#0891b2',
+        'light-green': '#c4b5fd'
       },
       fontFamily: {
-        'data': ['Courier New', 'monospace'],
-        'modern': ['Inter', 'sans-serif']
+        data: ['JetBrains Mono', 'Consolas', 'monospace'],
+        modern: ['Inter', 'Segoe UI', 'sans-serif']
+      },
+      boxShadow: {
+        glow: '0 0 40px rgba(34, 211, 238, 0.12)'
       },
       animation: {
-        'glow': 'glow 2s ease-in-out infinite alternate',
-        'float': 'float 6s ease-in-out infinite',
+        float: 'float 6s ease-in-out infinite',
         'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'fade-in': 'fade-in 0.3s ease-out forwards',
-        'ping-slow': 'ping 3s cubic-bezier(0, 0, 0.2, 1) infinite',
+        'fade-in': 'fade-in .4s ease-out forwards',
+        'ping-slow': 'ping 3s cubic-bezier(0, 0, .2, 1) infinite'
       },
       keyframes: {
-        glow: {
-          '0%': { boxShadow: '0 0 5px #00ff88, 0 0 10px #00ff88, 0 0 15px #00ff88' },
-          '100%': { boxShadow: '0 0 10px #00ff88, 0 0 20px #00ff88, 0 0 30px #00ff88' }
-        },
         float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-20px)' }
+          '0%, 100%': { transform: 'translateY(0)' },
+          '50%': { transform: 'translateY(-12px)' }
         },
         'fade-in': {
-          '0%': { opacity: '0', transform: 'scale(0.95)' },
-          '100%': { opacity: '1', transform: 'scale(1)' }
+          '0%': { opacity: '0', transform: 'translateY(8px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' }
         }
       }
-    },
+    }
   },
-  plugins: [],
-} 
+  plugins: []
+}

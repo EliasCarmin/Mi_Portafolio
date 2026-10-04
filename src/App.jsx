@@ -1,47 +1,26 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
+import Clients from './components/Clients'
 import About from './components/About'
 import Skills from './components/Skills'
-import Projects from './components/Projects'
 import Services from './components/Services'
+import Projects from './components/Projects'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import Clients from './components/Clients'
 import ChatWidget from './components/chat/ChatWidget'
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    // Simular tiempo de carga
-    setTimeout(() => {
-      setIsLoading(false)
-    }, 2000)
-  }, [])
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-data-dark flex items-center justify-center">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-32 w-32 border-b-2 border-data-green mx-auto mb-4"></div>
-          <h2 className="text-2xl font-bold gradient-text">Cargando Portfolio...</h2>
-          <p className="text-gray-400 mt-2">Preparando datos para análisis</p>
-        </div>
-      </div>
-    )
-  }
-
   return (
-    <div className="min-h-screen bg-data-dark">
+    <div className="min-h-screen overflow-x-hidden bg-data-dark">
       <Header />
       <main>
         <Hero />
         <Clients />
         <About />
         <Skills />
+        <Services />
         <Projects />
-        {/* <Services /> */}
         <Contact />
       </main>
       <Footer />
@@ -50,4 +29,4 @@ function App() {
   )
 }
 
-export default App 
+export default App

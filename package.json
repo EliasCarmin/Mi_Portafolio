@@ -12,14 +12,16 @@
   },
   "keywords": [
     "portfolio",
-    "data-analytics",
+    "cloud-engineering",
+    "software-engineering",
+    "google-cloud",
+    "python",
     "react",
-    "tailwindcss",
-    "business-intelligence"
+    "fastapi"
   ],
   "author": "Elias",
   "license": "MIT",
-  "description": "Portfolio profesional de Elias - Analista de Datos y Especialista en Business Intelligence",
+  "description": "Portafolio profesional de Elias Carmin, Cloud & Software Engineer especializado en aplicaciones cloud, APIs y bases de datos",
   "dependencies": {
     "lucide-react": "^0.263.1",
     "react": "^18.2.0",

@@ -1,65 +1,27 @@
 import React from 'react'
+import { Boxes, Cloud, Code2, Database } from 'lucide-react'
 
-const Clients = () => {
-  const clients = [
-    { name: 'SafeShields', logo: './images/safeshields_2.png' },
-    { name: 'Arizona Paver Pros', logo: './images/arizona_paver_pros.png' },
-    { name: 'JB Paltarumi', logo: './images/LOGO_JB_PALTARUMI.png' },
-    { name: 'Zeus Safety', logo: './images/zeus.png' },
-    // Replicamos para el efecto de scroll en mobile
-    { name: 'SafeShields', logo: './images/safeshields_2.png' },
-    { name: 'Arizona Paver Pros', logo: './images/arizona_paver_pros.png' },
-    { name: 'JB Paltarumi', logo: './images/LOGO_JB_PALTARUMI.png' },
-    { name: 'Zeus Safety', logo: './images/zeus.png' },
-  ]
+const pillars = [
+  { icon: Cloud, label: 'Cloud', value: 'Google Cloud' },
+  { icon: Code2, label: 'Software', value: 'React & Python' },
+  { icon: Database, label: 'Bases de datos', value: 'MySQL & PostgreSQL' },
+  { icon: Boxes, label: 'Integración', value: 'APIs & Automation' }
+]
 
-  return (
-    <section className="py-20 bg-data-dark overflow-hidden border-y border-white/5">
-      <div className="container-custom">
-        <h3 className="text-center text-gray-500 text-sm md:text-sm uppercase tracking-[0.4em] mb-16 font-bold">
-          Empresas que confíaron en mis servicios
-        </h3>
-        
-        {/* Carousel Desktop */}
-        <div className="hidden md:flex justify-center items-center gap-16 opacity-60 grayscale hover:grayscale-0 transition-all duration-700">
-          {clients.slice(0, 4).map((client, index) => (
-            <div key={index} className="flex items-center justify-center group px-4">
-              <img 
-                src={client.logo} 
-                alt={client.name} 
-                className="h-28 md:h-32 w-auto max-w-[280px] object-contain filter drop-shadow-[0_0_10px_rgba(255,255,255,0.05)] transition-all duration-500 transform group-hover:scale-110 group-hover:drop-shadow-[0_0_25px_rgba(0,255,136,0.25)]"
-              />
-            </div>
-          ))}
-        </div>
-
-        {/* Carousel Mobile - Auto Scroll */}
-        <div className="md:hidden relative flex overflow-hidden">
-          <div className="flex animate-scroll whitespace-nowrap gap-16 py-4 opacity-70">
-            {clients.map((client, index) => (
-              <div key={index} className="flex-shrink-0 px-4">
-                <img 
-                  src={client.logo} 
-                  alt={client.name} 
-                  className="h-16 w-auto object-contain"
-                />
-              </div>
-            ))}
+const Clients = () => (
+  <section className="border-y border-white/[0.06] bg-white/[0.015]">
+    <div className="container-custom grid grid-cols-2 divide-x divide-y divide-white/[0.06] px-5 sm:px-8 md:grid-cols-4 md:divide-y-0 lg:px-10">
+      {pillars.map(({ icon: Icon, label, value }) => (
+        <div key={label} className="flex items-center gap-3 px-3 py-7 sm:px-6">
+          <Icon className="shrink-0 text-cyan-300" size={22} />
+          <div>
+            <p className="font-data text-[10px] uppercase tracking-widest text-slate-500">{label}</p>
+            <p className="mt-1 text-sm font-semibold text-slate-200">{value}</p>
           </div>
         </div>
-      </div>
-
-      <style>{`
-        @keyframes scroll {
-          0% { transform: translateX(0); }
-          100% { transform: translateX(-50%); }
-        }
-        .animate-scroll {
-          animation: scroll 15s linear infinite;
-        }
-      `}</style>
-    </section>
-  )
-}
+      ))}
+    </div>
+  </section>
+)
 
 export default Clients
