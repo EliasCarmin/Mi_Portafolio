@@ -1,16 +1,18 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
-import { sendChatMessageStream } from '../services/chatService'
+import { getErrorMessage, sendChatMessageStream } from '../services/chatService'
 
-const WELCOME_MESSAGE = {
+export const WELCOME_MESSAGE = {
   id: 'welcome',
   role: 'assistant',
-  content: '¡Hola! Soy el asistente virtual de Elias. Puedo contarte sobre su experiencia en cloud, desarrollo de software, APIs, bases de datos y proyectos. ¿Qué te gustaría conocer?'
+  content: '¡Hola! Soy el asistente virtual de Elias. Puedo contarte sobre su experiencia en cloud, desarrollo de software, APIs, bases de datos y proyectos. ¿Qué te gustaría conocer?',
+  isWelcome: true
 }
 
-const createMessage = (role, content) => ({
+const createMessage = (role, content, extra = {}) => ({
   id: `${Date.now()}-${Math.random().toString(36).slice(2)}`,
   role,
-  content
+  content,
+  ...extra
 })
 
 export const useChat = () => {
@@ -23,15 +25,24 @@ export const useChat = () => {
 
   useEffect(() => () => abortControllerRef.current?.abort(), [])
 
-  const sendMessage = useCallback(async (content, baseMessages = messages) => {
-    const trimmedContent = content.trim()
+  const sendMessage = useCallback(async (content, baseMessages = null) => {
+    const trimmedContent = typeof content === 'string' ? content.trim() : ''
     if (!trimmedContent || isStreaming) return
 
-    const userMessage = createMessage('user', trimmedContent)
-    const assistantMessage = createMessage('assistant', '')
-    const conversation = [...baseMessages, userMessage]
+    // 1. Se captura el historial válido antes de crear el placeholder del asistente.
+    const sourceMessages = baseMessages ?? messages
+    const validHistory = sourceMessages.filter(
+      (message) => message && !message.isError && !message.isWelcome && typeof message.content === 'string' && message.content.trim()
+    )
 
-    setMessages([...conversation, assistantMessage])
+    // 2. Se agrega el mensaje del usuario.
+    const userMessage = createMessage('user', trimmedContent)
+
+    // 3. Se crea localmente un placeholder vacío para mostrar el streaming.
+    const assistantPlaceholder = createMessage('assistant', '')
+
+    const visualHistory = sourceMessages.filter((message) => !message.isError)
+    setMessages([...visualHistory, userMessage, assistantPlaceholder])
     setLastUserMessage(trimmedContent)
     setError(null)
     setIsStreaming(true)
@@ -41,12 +52,15 @@ export const useChat = () => {
     let streamedContent = ''
 
     try {
-      await sendChatMessageStream(conversation, {
+      // 4. Ese placeholder vacío no se incluye en la solicitud (se pasa validHistory + userInput).
+      await sendChatMessageStream(validHistory, {
+        userInput: trimmedContent,
         signal: controller.signal,
+        // 5. Al recibir fragmentos, se actualiza exclusivamente ese placeholder.
         onChunk: (chunk) => {
           streamedContent += chunk
           setMessages((current) => current.map((message) =>
-            message.id === assistantMessage.id
+            message.id === assistantPlaceholder.id
               ? { ...message, content: streamedContent }
               : message
           ))
@@ -55,17 +69,23 @@ export const useChat = () => {
           if (!completedContent) return
           streamedContent = completedContent
           setMessages((current) => current.map((message) =>
-            message.id === assistantMessage.id
+            message.id === assistantPlaceholder.id
               ? { ...message, content: completedContent }
               : message
           ))
         }
       })
     } catch (streamError) {
-      setMessages((current) => current.filter((message) =>
-        message.id !== assistantMessage.id || message.content
+      if (streamError.name === 'AbortError') return
+
+      // 6. Si falla, se reemplaza por un mensaje de error legible.
+      const readableError = getErrorMessage(streamError)
+      setMessages((current) => current.map((message) =>
+        message.id === assistantPlaceholder.id
+          ? { ...message, content: readableError, isError: true }
+          : message
       ))
-      setError(streamError.message || 'No fue posible conectar con el asistente.')
+      setError(readableError)
     } finally {
       if (abortControllerRef.current === controller) {
         abortControllerRef.current = null
@@ -83,15 +103,19 @@ export const useChat = () => {
     setIsStreaming(false)
   }, [])
 
+  // 7. Al reintentar, se elimina el mensaje de error anterior antes de reconstruir la solicitud.
   const retryLastMessage = useCallback(() => {
     if (!lastUserMessage || isStreaming) return
 
-    const lastUserIndex = messages.findLastIndex?.((message) =>
+    const cleanMessages = messages.filter((message) => !message.isError)
+    const lastUserIndex = cleanMessages.findLastIndex?.((message) =>
       message.role === 'user' && message.content === lastUserMessage
     ) ?? -1
-    const baseMessages = lastUserIndex >= 0 ? messages.slice(0, lastUserIndex) : messages
 
-    setMessages(baseMessages)
+    const baseMessages = lastUserIndex >= 0
+      ? cleanMessages.slice(0, lastUserIndex)
+      : cleanMessages
+
     setError(null)
     sendMessage(lastUserMessage, baseMessages)
   }, [isStreaming, lastUserMessage, messages, sendMessage])
@@ -99,10 +123,14 @@ export const useChat = () => {
   const toggleOpen = useCallback(() => setIsOpen((open) => !open), [])
   const closeChat = useCallback(() => setIsOpen(false), [])
 
+  const hasEmptyAssistantPlaceholder = messages.some(
+    (message) => message.role === 'assistant' && !message.content && !message.isError
+  )
+
   return {
     messages,
     isOpen,
-    isLoading: isStreaming && messages.at(-1)?.content === '',
+    isLoading: isStreaming && hasEmptyAssistantPlaceholder,
     isStreaming,
     error,
     sendMessage,

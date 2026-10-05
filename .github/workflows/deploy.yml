@@ -14,7 +14,7 @@ jobs:
     env:
       # Vite sustituye esta variable durante el build. Se admite tanto
       # Repository Variable como Repository Secret con el mismo nombre.
-      VITE_CHAT_API_URL: ${{ vars.VITE_CHAT_API_URL || secrets.VITE_CHAT_API_URL }}
+      VITE_CHAT_API_URL: ${{ vars.VITE_CHAT_API_URL || secrets.VITE_CHAT_API_URL || 'https://ca-api-mmcfhdyruss6c.bluedesert-cd79cd5b.eastus.azurecontainerapps.io' }}
 
     steps:
     - name: Checkout
@@ -43,7 +43,15 @@ jobs:
             ;;
         esac
 
+    - name: Run linter
+      run: npm run lint
+
+    - name: Run tests
+      run: npm test
+
     - name: Build
+      env:
+        VITE_CHAT_API_URL: ${{ vars.VITE_CHAT_API_URL || secrets.VITE_CHAT_API_URL || 'https://ca-api-mmcfhdyruss6c.bluedesert-cd79cd5b.eastus.azurecontainerapps.io' }}
       run: npm run build
 
     - name: Verify production bundle

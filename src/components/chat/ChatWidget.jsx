@@ -8,7 +8,7 @@ import {
   X
 } from 'lucide-react'
 import { useChat } from '../../hooks/useChat'
-import { checkHealth } from '../../services/chatService'
+import { checkHealth, getErrorMessage } from '../../services/chatService'
 import ChatMessageItem from './ChatMessageItem'
 
 const QUICK_PROMPTS = [
@@ -167,7 +167,7 @@ const ChatWidget = () => {
 
             {error && (
               <div role="alert" className="rounded-xl border border-red-400/20 bg-red-400/10 p-3 text-sm text-red-100">
-                <p>{error}</p>
+                <p>{getErrorMessage(error)}</p>
                 <button
                   type="button"
                   onClick={retryLastMessage}

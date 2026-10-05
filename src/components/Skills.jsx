@@ -19,7 +19,7 @@ const Skills = () => (
           <h2 className="section-title">Herramientas para construir, conectar y <span className="gradient-text">operar.</span></h2>
           <p className="section-copy">Un stack formado en proyectos reales: desde la interfaz y la API hasta la persistencia, automatización y nube.</p>
         </div>
-        <p className="max-w-sm font-data text-xs leading-6 text-slate-500">// Aplicaciones cloud · backend · bases de datos · automatización</p>
+        <p className="max-w-sm font-data text-xs leading-6 text-slate-500">{'// Aplicaciones cloud · backend · bases de datos · automatización'}</p>
       </div>
       <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
         {groups.map(({ icon: Icon, title, description, skills }, index) => (

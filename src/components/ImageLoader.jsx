@@ -2,14 +2,12 @@ import React, { useState } from 'react'
 
 const ImageLoader = ({ src, alt, className, fallbackSrc, ...props }) => {
   const [isLoading, setIsLoading] = useState(true)
-  const [hasError, setHasError] = useState(false)
 
   const handleLoad = () => {
     setIsLoading(false)
   }
 
   const handleError = (e) => {
-    setHasError(true)
     setIsLoading(false)
     if (fallbackSrc) {
       e.target.src = fallbackSrc
