@@ -13,17 +13,17 @@ const Hero = () => {
 
       <div className="container-custom section-padding relative z-10 grid items-center gap-14 lg:grid-cols-[1.15fr_.85fr]">
         <div>
-          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/[0.06] px-3 py-1.5 font-data text-xs text-cyan-200">
+          <div className="mb-7 inline-flex items-center gap-2 rounded-full border border-cyan-400/20 bg-cyan-400/[0.06] px-3.5 py-1.5 font-data text-xs text-cyan-200">
             <span className="h-2 w-2 animate-pulse rounded-full bg-cyan-300" />
-            Disponible para proyectos cloud & software
+            Cloud Champion · Microsoft Azure & Software Engineer
           </div>
 
           <h1 className="max-w-4xl text-5xl font-extrabold leading-[1.04] tracking-[-0.045em] text-white sm:text-6xl lg:text-7xl">
-            Construyo productos digitales que viven y escalan en la <span className="gradient-text">nube.</span>
+            Arquitectura cloud, desarrollo e integración que escalan con <span className="gradient-text">solidez.</span>
           </h1>
 
           <p className="mt-7 max-w-2xl text-lg leading-8 text-slate-400 sm:text-xl">
-            Soy Elias, Cloud & Software Engineer. Construyo APIs, aplicaciones web y sistemas de datos sobre Google Cloud, convirtiendo necesidades operativas en productos mantenibles.
+            Soy Elias Carmín, Cloud & Software Engineer. Diseño e implemento soluciones en <strong className="text-slate-200 font-semibold">Microsoft Azure</strong> y multicloud, conectividad híbrida, backend con <strong className="text-slate-200 font-semibold">Python</strong> y sistemas de datos preparados para operar de forma eficiente.
           </p>
 
           <div className="mt-9 flex flex-col gap-3 sm:flex-row">
@@ -31,7 +31,7 @@ const Hero = () => {
               Explorar proyectos <ArrowRight size={18} />
             </button>
             <button onClick={() => scrollTo('#contact')} className="inline-flex items-center justify-center gap-2 rounded-xl border border-white/10 bg-white/[0.04] px-6 py-3.5 font-semibold text-white transition hover:border-violet-400/40 hover:bg-white/[0.07]">
-              Trabajemos juntos
+              Conversar sobre un proyecto
             </button>
           </div>
 
@@ -48,11 +48,11 @@ const Hero = () => {
             <div className="relative overflow-hidden rounded-[1.45rem] bg-gradient-to-br from-slate-800 to-slate-950">
               <img src={eliasImage} alt="Elias Carmin, Cloud & Software Engineer" className="aspect-[4/5] w-full object-cover object-top opacity-90" />
               <div className="absolute inset-0 bg-gradient-to-t from-data-dark via-transparent to-transparent" />
-              <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/10 bg-slate-950/75 p-4 backdrop-blur-xl">
+              <div className="absolute inset-x-5 bottom-5 rounded-2xl border border-white/10 bg-slate-950/80 p-4 backdrop-blur-xl">
                 <div className="flex items-center justify-between">
                   <div>
-                    <p className="font-data text-xs text-cyan-300">CURRENT_FOCUS</p>
-                    <p className="mt-1 font-semibold text-white">GCP · Python · Cloud Native</p>
+                    <p className="font-data text-xs text-cyan-300">CURRENT_ROLE & FOCUS</p>
+                    <p className="mt-1 font-semibold text-white">Azure Cloud Champion · Python · FinOps</p>
                   </div>
                   <ServerCog className="text-violet-300" size={25} />
                 </div>

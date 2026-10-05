@@ -4,7 +4,7 @@ import { getErrorMessage, sendChatMessageStream } from '../services/chatService'
 export const WELCOME_MESSAGE = {
   id: 'welcome',
   role: 'assistant',
-  content: '¡Hola! Soy el asistente virtual de Elias. Puedo contarte sobre su experiencia en cloud, desarrollo de software, APIs, bases de datos y proyectos. ¿Qué te gustaría conocer?',
+  content: 'Hola. Soy JARVIS, el asistente profesional de Elías Carmín. Puedo contarte sobre su experiencia en Microsoft Azure, desarrollo de software, automatización, datos, proyectos y certificaciones. ¿Qué te gustaría conocer?',
   isWelcome: true
 }
 

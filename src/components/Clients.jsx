@@ -1,11 +1,11 @@
 import React from 'react'
-import { Boxes, Cloud, Code2, Database } from 'lucide-react'
+import { Award, Cloud, Code2, Network } from 'lucide-react'
 
 const pillars = [
-  { icon: Cloud, label: 'Cloud', value: 'Google Cloud' },
-  { icon: Code2, label: 'Software', value: 'React & Python' },
-  { icon: Database, label: 'Bases de datos', value: 'MySQL & PostgreSQL' },
-  { icon: Boxes, label: 'Integración', value: 'APIs & Automation' }
+  { icon: Cloud, label: 'Nube principal', value: 'Microsoft Azure (AZ-900) & GCP' },
+  { icon: Code2, label: 'Desarrollo & Backend', value: 'Python, FastAPI & React' },
+  { icon: Network, label: 'Infraestructura & Redes', value: 'VPN Híbrida, BGP & FinOps' },
+  { icon: Award, label: 'Formación profesional', value: 'Bachiller Ing. de Sistemas · UTP' }
 ]
 
 const Clients = () => (

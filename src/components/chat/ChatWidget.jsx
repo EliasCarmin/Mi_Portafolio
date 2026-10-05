@@ -12,9 +12,9 @@ import { checkHealth, getErrorMessage } from '../../services/chatService'
 import ChatMessageItem from './ChatMessageItem'
 
 const QUICK_PROMPTS = [
-  'Experiencia en Google Cloud',
-  'Proyectos de software',
-  'Bases de datos y APIs',
+  'Experiencia en Microsoft Azure',
+  'Arquitectura cloud & networking',
+  'Desarrollo backend & APIs',
   'Cómo contactar a Elias'
 ]
 
@@ -106,7 +106,7 @@ const ChatWidget = () => {
               <span className={`absolute -bottom-0.5 -right-0.5 h-3 w-3 rounded-full border-2 border-data-dark ${isOnline ? 'bg-data-green animate-pulse' : isOnline === false ? 'bg-amber-400' : 'bg-gray-500'}`} />
             </div>
             <div className="min-w-0 flex-1">
-              <h2 className="truncate font-semibold">Asistente de Elias</h2>
+              <h2 className="truncate font-semibold">JARVIS · Asistente de Elias</h2>
               <p className="text-xs text-gray-400">
                 {isOnline ? 'Online · Listo para ayudarte' : isOnline === false ? 'Offline · Intenta más tarde' : 'Comprobando conexión...'}
               </p>
